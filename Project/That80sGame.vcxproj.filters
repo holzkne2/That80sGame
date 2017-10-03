@@ -18,11 +18,11 @@
     <ClInclude Include="DeviceResources.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\That 80%27s Game\That80sGame\RectTransform.h" />
-    <ClInclude Include="..\..\That 80%27s Game\That80sGame\UIImageRenderer.h" />
-    <ClInclude Include="..\..\That 80%27s Game\That80sGame\GameObject.h" />
-    <ClInclude Include="..\..\That 80%27s Game\That80sGame\Component.h" />
-    <ClInclude Include="..\..\That 80%27s Game\That80sGame\UITextRenderer.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="RectTransform.h" />
+    <ClInclude Include="UIImageRenderer.h" />
+    <ClInclude Include="UITextRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -31,11 +31,11 @@
     <ClCompile Include="DeviceResources.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\That 80%27s Game\That80sGame\RectTransform.cpp" />
-    <ClCompile Include="..\..\That 80%27s Game\That80sGame\UIImageRenderer.cpp" />
-    <ClCompile Include="..\..\That 80%27s Game\That80sGame\GameObject.cpp" />
-    <ClCompile Include="..\..\That 80%27s Game\That80sGame\Component.cpp" />
-    <ClCompile Include="..\..\That 80%27s Game\That80sGame\UITextRenderer.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="RectTransform.cpp" />
+    <ClCompile Include="UIImageRenderer.cpp" />
+    <ClCompile Include="UITextRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />
@@ -44,10 +44,10 @@
     <Image Include="directx.ico">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="..\..\That 80%27s Game\That80sGame\GameTitle.png">
+    <Image Include="GameTitle.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="..\..\That 80%27s Game\That80sGame\Arrow.png">
+    <Image Include="Arrow.png">
       <Filter>Assets</Filter>
     </Image>
   </ItemGroup>
