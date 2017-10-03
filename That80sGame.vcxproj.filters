@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>7d8901bf-df25-4507-ae16-28ec0dc36403</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>97904335-1722-4a31-8c56-e295f2244ac8</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dds;dlg;fbx;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms;spritefont</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="StepTimer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceResources.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\That 80%27s Game\That80sGame\RectTransform.h" />
+    <ClInclude Include="..\..\That 80%27s Game\That80sGame\UIImageRenderer.h" />
+    <ClInclude Include="..\..\That 80%27s Game\That80sGame\GameObject.h" />
+    <ClInclude Include="..\..\That 80%27s Game\That80sGame\Component.h" />
+    <ClInclude Include="..\..\That 80%27s Game\That80sGame\UITextRenderer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="DeviceResources.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\That 80%27s Game\That80sGame\RectTransform.cpp" />
+    <ClCompile Include="..\..\That 80%27s Game\That80sGame\UIImageRenderer.cpp" />
+    <ClCompile Include="..\..\That 80%27s Game\That80sGame\GameObject.cpp" />
+    <ClCompile Include="..\..\That 80%27s Game\That80sGame\Component.cpp" />
+    <ClCompile Include="..\..\That 80%27s Game\That80sGame\UITextRenderer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="directx.ico">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\That 80%27s Game\That80sGame\GameTitle.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\That 80%27s Game\That80sGame\Arrow.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="settings.manifest">
+      <Filter>Assets</Filter>
+    </Manifest>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\That 80%27s Game\That80sGame\packages.config" />
+    <None Include="StillTime64.spritefont">
+      <Filter>Assets</Filter>
+    </None>
+  </ItemGroup>
+</Project>
