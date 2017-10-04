@@ -19,6 +19,7 @@ Game::Game()
     m_deviceResources = std::make_unique<DX::DeviceResources>();
     m_deviceResources->RegisterDeviceNotify(this);
 
+	m_gamePad = std::make_unique<GamePad>();
 	m_gameObjects = std::vector<std::unique_ptr<GameObject>>();
 }
 
@@ -97,10 +98,15 @@ void Game::Tick()
 void Game::Update(DX::StepTimer const& timer)
 {
     float elapsedTime = float(timer.GetElapsedSeconds());
-
-
     // TODO: Add your game logic here.
     elapsedTime;
+
+	auto state = GamePad::Get().GetState(0, GamePad::DEAD_ZONE_CIRCULAR);
+
+	if (state.IsConnected())
+	{
+		GamePad::Get().SetVibration(0, state.triggers.left, state.triggers.right);
+	}
 }
 #pragma endregion
 
@@ -173,11 +179,13 @@ void Game::Clear()
 void Game::OnActivated()
 {
     // TODO: Game is becoming active window.
+	m_gamePad->Resume();
 }
 
 void Game::OnDeactivated()
 {
     // TODO: Game is becoming background window.
+	m_gamePad->Suspend();
 }
 
 void Game::OnSuspending()

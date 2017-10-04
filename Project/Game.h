@@ -55,6 +55,7 @@ private:
     // Rendering loop timer.
     DX::StepTimer                           m_timer;
 	
+	std::unique_ptr<DirectX::GamePad> m_gamePad;
 
 	std::unique_ptr<DirectX::SpriteBatch> m_spriteBatch;
 	std::unique_ptr<DirectX::CommonStates> m_states;
