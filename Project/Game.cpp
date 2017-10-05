@@ -6,6 +6,7 @@
 #include "Game.h"
 #include "UIImageRenderer.h"
 #include "UITextRenderer.h"
+#include "ModelRenderer.h"
 
 extern void ExitGame();
 
@@ -88,10 +89,11 @@ void Game::Initialize(HWND window, int width, int height)
 	///
 	/// Terrain
 	///
-	m_meshObject = std::make_unique<GameObject>();
-	m_fxFactory = std::make_unique<EffectFactory>(m_deviceResources->GetD3DDevice());
+	gameObject = std::make_unique<GameObject>();
+	gameObject->AddComponent<ModelRenderer>()->SetModel(m_deviceResources->GetD3DDevice(), L"MenuTerrain.cmo");
 
-	m_model = Model::CreateFromCMO(m_deviceResources->GetD3DDevice(), L"MenuTerrain.cmo", *m_fxFactory);
+	m_gameObjects.push_back(std::move(gameObject));
+
 
     // TODO: Change the timer settings if you want something other than the default variable timestep mode.
     // e.g. for 60 FPS fixed timestep update logic, call:
@@ -150,12 +152,18 @@ void Game::Render()
     // TODO: Add your rendering code here.
     context;
 
-	m_model->Draw(context, *m_states, m_meshObject->GetTransform()->GetWorldMatrix(), m_view, m_proj);
-
+	GameObject* gameObject;
+	for (unsigned int i = 0; i < m_gameObjects.size(); i++)
+	{
+		gameObject = m_gameObjects[i].get();
+		if (gameObject->GetComponent<ModelRenderer>() != nullptr)
+		{
+			gameObject->GetComponent<ModelRenderer>()->Render(context, m_states.get(), m_view, m_proj);
+		}
+	}
 
 	m_spriteBatch->Begin(SpriteSortMode_Deferred, m_states->NonPremultiplied());
 
-	GameObject* gameObject;
 	for (unsigned int i = 0; i < m_gameObjects.size(); i++)
 	{
 		gameObject = m_gameObjects[i].get();
@@ -272,11 +280,11 @@ void Game::OnDeviceLost()
 			gameObject->GetComponent<UIImageRenderer>()->OnDeviceLost();
 		if (gameObject->GetComponent<UITextRenderer>() != nullptr)
 			gameObject->GetComponent<UITextRenderer>()->OnDeviceLost();
+		if (gameObject->GetComponent<ModelRenderer>() != nullptr)
+			gameObject->GetComponent<ModelRenderer>()->OnDeviceLost();
 	}
 	m_spriteBatch.reset();
 	m_states.reset();
-	m_fxFactory.reset();
-	m_model.reset();
 }
 
 void Game::OnDeviceRestored()
