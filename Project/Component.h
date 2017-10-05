@@ -3,7 +3,7 @@
 #include "pch.h"
 
 class GameObject;
-class RectTransform;
+class Transform;
 
 class Component
 {
@@ -15,6 +15,5 @@ public:
 
 protected:
 	GameObject* m_gameObject;
-	RectTransform* m_transform;
 };
 

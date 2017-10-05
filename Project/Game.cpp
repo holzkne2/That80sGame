@@ -34,45 +34,64 @@ void Game::Initialize(HWND window, int width, int height)
     m_deviceResources->CreateWindowSizeDependentResources();
     CreateWindowSizeDependentResources();
 
+	m_states = std::make_unique<CommonStates>(m_deviceResources->GetD3DDevice());
 	m_spriteBatch = std::make_unique<SpriteBatch>(m_deviceResources->GetD3DDeviceContext());
 
+	///
+	/// Title
+	///
 	std::unique_ptr<GameObject> gameObject = std::make_unique<GameObject>();
 	UIImageRenderer* uiImageRenderer = gameObject->AddComponent<UIImageRenderer>();
+	RectTransform* rectTransform = dynamic_cast<RectTransform*>(gameObject->GetTransform());
 	uiImageRenderer->SetImage(m_deviceResources->GetD3DDevice(), L"GameTitle.png");
 
-	gameObject->GetTransform()->SetPivot(Vector2(uiImageRenderer->GetWidth() / 2.0, uiImageRenderer->GetHeight() / 2.0));
-	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 0));
-	gameObject->GetTransform()->SetScale(0.75);
-	gameObject->GetTransform()->SetAnchors(Vector2(0.5, 0.25));
+	rectTransform->SetPivot(Vector2(uiImageRenderer->GetWidth() / 2.0, uiImageRenderer->GetHeight() / 2.0));
+	rectTransform->SetPosition(Vector3(0, 0, 0));
+	rectTransform->SetScale(0.75);
+	rectTransform->SetAnchors(Vector2(0.5, 0.25));
 
 	m_gameObjects.push_back(std::move(gameObject));
 
+	///
+	/// Select Arrow
+	///
 	gameObject = std::make_unique<GameObject>();
 	uiImageRenderer = gameObject->AddComponent<UIImageRenderer>();
+	rectTransform = dynamic_cast<RectTransform*>(gameObject->GetTransform());
 	uiImageRenderer->SetImage(m_deviceResources->GetD3DDevice(), L"Arrow.png");
-	uiImageRenderer->SetColor(Colors::Green);
+	uiImageRenderer->SetColor(Colors::Red);
 
-	gameObject->GetTransform()->SetPivot(Vector2(uiImageRenderer->GetWidth() / 2.0, uiImageRenderer->GetHeight() / 2.0));
-	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 0));
-	gameObject->GetTransform()->SetScale(1);
-	gameObject->GetTransform()->SetAnchors(Vector2(0.45, 0.66));
+	rectTransform->SetPivot(Vector2(uiImageRenderer->GetWidth() / 2.0, uiImageRenderer->GetHeight() / 2.0));
+	rectTransform->SetPosition(Vector3(0, 0, 0));
+	rectTransform->SetScale(1);
+	rectTransform->SetAnchors(Vector2(0.45, 0.66));
 
 	m_gameObjects.push_back(std::move(gameObject));
 
+	///
+	/// Play Button
+	///
 	gameObject = std::make_unique<GameObject>();
 	UITextRenderer* uiTextRenderer = gameObject->AddComponent<UITextRenderer>();
+	rectTransform = dynamic_cast<RectTransform*>(gameObject->GetTransform());
 	uiTextRenderer->SetFont(m_deviceResources->GetD3DDevice(), L"StillTime64.spritefont");
-	uiTextRenderer->SetColor(Colors::Green);
+	uiTextRenderer->SetColor(Colors::Cyan);
 	uiTextRenderer->SetText(L"Play");
 
-	gameObject->GetTransform()->SetPivot(uiTextRenderer->GetFont()->MeasureString(uiTextRenderer->GetText().c_str()) / 2.0);
-	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 0));
-	gameObject->GetTransform()->SetScale(1);
-	gameObject->GetTransform()->SetAnchors(Vector2(0.5, 0.66));
+	rectTransform->SetPivot(uiTextRenderer->GetFont()->MeasureString(uiTextRenderer->GetText().c_str()) / 2.0);
+	rectTransform->SetPosition(Vector3(0, 0, 0));
+	rectTransform->SetScale(1);
+	rectTransform->SetAnchors(Vector2(0.5, 0.66));
 
 	m_gameObjects.push_back(std::move(gameObject));
 
-	m_states = std::make_unique<CommonStates>(m_deviceResources->GetD3DDevice());
+	///
+	/// Terrain
+	///
+	m_meshObject = std::make_unique<GameObject>();
+	m_fxFactory = std::make_unique<EffectFactory>(m_deviceResources->GetD3DDevice());
+
+	m_model = Model::CreateFromCMO(m_deviceResources->GetD3DDevice(), L"MenuTerrain.cmo", *m_fxFactory);
 
     // TODO: Change the timer settings if you want something other than the default variable timestep mode.
     // e.g. for 60 FPS fixed timestep update logic, call:
@@ -107,6 +126,10 @@ void Game::Update(DX::StepTimer const& timer)
 	{
 		GamePad::Get().SetVibration(0, state.triggers.left, state.triggers.right);
 	}
+
+	m_view = Matrix::CreateLookAt(Vector3(-3.3, 1.57, 0), Vector3(-2.31, 1.57, 4.9), Vector3::UnitY);
+
+	m_proj = Matrix::CreatePerspectiveFieldOfView(XM_PI / 4.0, float(m_deviceResources->GetOutputSize().right) / float(m_deviceResources->GetOutputSize().bottom), 0.1, 1000);
 }
 #pragma endregion
 
@@ -126,6 +149,9 @@ void Game::Render()
     auto context = m_deviceResources->GetD3DDeviceContext();
     // TODO: Add your rendering code here.
     context;
+
+	m_model->Draw(context, *m_states, m_meshObject->GetTransform()->GetWorldMatrix(), m_view, m_proj);
+
 
 	m_spriteBatch->Begin(SpriteSortMode_Deferred, m_states->NonPremultiplied());
 
@@ -249,6 +275,8 @@ void Game::OnDeviceLost()
 	}
 	m_spriteBatch.reset();
 	m_states.reset();
+	m_fxFactory.reset();
+	m_model.reset();
 }
 
 void Game::OnDeviceRestored()

@@ -2,6 +2,7 @@
 
 #include "pch.h"
 #include "Component.h"
+#include "RectTransform.h"
 
 class UIImageRenderer :
 	public Component

@@ -287,7 +287,7 @@ void DeviceResources::CreateWindowSizeDependentResources()
             swapChainDesc.Format = m_backBufferFormat;
             swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
             swapChainDesc.BufferCount = m_backBufferCount;
-            swapChainDesc.SampleDesc.Count = 1;
+			swapChainDesc.SampleDesc.Count = 1;
             swapChainDesc.SampleDesc.Quality = 0;
             swapChainDesc.Scaling = DXGI_SCALING_STRETCH;
             swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
@@ -314,7 +314,7 @@ void DeviceResources::CreateWindowSizeDependentResources()
             swapChainDesc.BufferDesc.Width = backBufferWidth;
             swapChainDesc.BufferDesc.Height = backBufferHeight;
             swapChainDesc.BufferDesc.Format = m_backBufferFormat;
-            swapChainDesc.SampleDesc.Count = 1;
+			swapChainDesc.SampleDesc.Count = 1;
             swapChainDesc.SampleDesc.Quality = 0;
             swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
             swapChainDesc.BufferCount = m_backBufferCount;

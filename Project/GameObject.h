@@ -16,10 +16,11 @@ public:
 	template<typename T> T* AddComponent();
 	template<typename T> T* GetComponent();
 
-	RectTransform* GetTransform() { return m_transform.get(); }
+	Transform* GetTransform() { return m_transform.get(); }
+	void MakeRectTransform();
 
 private:
-	std::unique_ptr<RectTransform> m_transform;
+	std::unique_ptr<Transform> m_transform;
 	std::vector<std::unique_ptr<Component>> m_components;
 };
 

@@ -6,7 +6,6 @@
 Component::Component(GameObject* gameObject)
 {
 	m_gameObject = gameObject;
-	m_transform = gameObject->GetTransform();
 }
 
 

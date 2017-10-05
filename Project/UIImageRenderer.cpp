@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "UIImageRenderer.h"
 #include "RectTransform.h"
+#include "GameObject.h"
 
 using namespace DirectX;
 
@@ -9,6 +10,8 @@ using Microsoft::WRL::ComPtr;
 UIImageRenderer::UIImageRenderer(GameObject* gameObject) : Component(gameObject)
 {
 	m_color = Colors::White;
+
+	m_gameObject->MakeRectTransform();
 }
 
 
@@ -18,9 +21,11 @@ UIImageRenderer::~UIImageRenderer()
 
 void UIImageRenderer::Render(SpriteBatch* spriteBatch, const RECT& screen)
 {
-	spriteBatch->Draw(m_image.Get(), m_transform->GetScreenPosition(screen),
+	RectTransform* rectTransform = dynamic_cast<RectTransform*>(m_gameObject->GetTransform());
+
+	spriteBatch->Draw(m_image.Get(), rectTransform->GetScreenPosition(screen),
 		nullptr, m_color, 0.0 /*TODO: Rotation*/,
-		m_transform->GetPivot(), m_transform->GetScale());
+		rectTransform->GetPivot(), rectTransform->GetScale());
 }
 
 void UIImageRenderer::OnDeviceLost()
