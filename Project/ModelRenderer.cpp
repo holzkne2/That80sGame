@@ -1,11 +1,13 @@
 #include "ModelRenderer.h"
 #include "GameObject.h"
+#include "Game.h"
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
 
 ModelRenderer::ModelRenderer(GameObject* gameObject) : Component(gameObject)
 {
+	Game::Get()->GetScene()->AddModelRenderer(this);
 }
 
 

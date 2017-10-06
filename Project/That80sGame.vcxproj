@@ -157,6 +157,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\ModelRenderer.h" />
+    <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\Scene.h" />
     <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\Transform.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="GameObject.h" />
@@ -175,6 +176,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\Scene.cpp" />
     <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\Transform.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="GameObject.cpp" />

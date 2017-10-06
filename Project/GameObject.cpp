@@ -5,7 +5,6 @@
 GameObject::GameObject()
 {
 	m_transform = std::make_unique<Transform>();
-	Game::Get();
 }
 
 

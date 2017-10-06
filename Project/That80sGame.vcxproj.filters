@@ -25,6 +25,7 @@
     <ClInclude Include="UITextRenderer.h" />
     <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\Transform.h" />
     <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\ModelRenderer.h" />
+    <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\Scene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -40,6 +41,7 @@
     <ClCompile Include="UITextRenderer.cpp" />
     <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\Transform.cpp" />
     <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\ModelRenderer.cpp" />
+    <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />

@@ -11,6 +11,7 @@
 
 #include "GameObject.h"
 #include "Transform.h"
+#include "Scene.h"
 
 // A basic game implementation that creates a D3D11 device and
 // provides a game loop.
@@ -40,6 +41,9 @@ public:
 	// Properties
 	void GetDefaultSize(int& width, int& height) const;
 
+	DX::DeviceResources* GetDeviceResources() { return m_deviceResources.get(); }
+	Scene* GetScene() { return m_scene.get(); }
+
 private:
 
 	void Update(DX::StepTimer const& timer);
@@ -58,13 +62,7 @@ private:
 
 	std::unique_ptr<DirectX::GamePad> m_gamePad;
 
-	std::unique_ptr<DirectX::SpriteBatch> m_spriteBatch;
-	std::unique_ptr<DirectX::CommonStates> m_states;
-
-	std::vector<std::unique_ptr<GameObject>> m_gameObjects;
-
-	DirectX::SimpleMath::Matrix m_view;
-	DirectX::SimpleMath::Matrix m_proj;
+	std::unique_ptr<Scene> m_scene;
 
 	// Singleton
 public:

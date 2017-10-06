@@ -17,5 +17,9 @@ Transform::~Transform()
 
 Matrix Transform::GetWorldMatrix()
 {
-	return Matrix::CreateScale(m_scale) * Matrix::CreateFromQuaternion(m_rotation) * Matrix::CreateTranslation(m_position);
+	Matrix r = Matrix::Identity;
+	r *= Matrix::CreateScale(m_scale);
+	r *= Matrix::CreateFromQuaternion(m_rotation);
+	r *= Matrix::CreateTranslation(m_position);
+	return r;
 }
