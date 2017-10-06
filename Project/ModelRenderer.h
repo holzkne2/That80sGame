@@ -15,7 +15,7 @@ public:
 
 	void OnDeviceLost();
 
-	void SetModel(ID3D11Device*, const wchar_t*);
+	void SetModel(ID3D11Device* device, const wchar_t* fileName, bool isAlpha = false);
 
 private:
 	std::unique_ptr<DirectX::IEffectFactory> m_fxFactory;

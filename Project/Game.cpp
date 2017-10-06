@@ -15,8 +15,12 @@ using namespace DirectX::SimpleMath;
 
 using Microsoft::WRL::ComPtr;
 
+Game* Game::s_instance;
+
 Game::Game()
 {
+	Game::s_instance = this;
+
     m_deviceResources = std::make_unique<DX::DeviceResources>();
     m_deviceResources->RegisterDeviceNotify(this);
 
@@ -94,6 +98,14 @@ void Game::Initialize(HWND window, int width, int height)
 
 	m_gameObjects.push_back(std::move(gameObject));
 
+	///
+	/// Sun
+	///
+	gameObject = std::make_unique<GameObject>();
+	gameObject->AddComponent<ModelRenderer>()->SetModel(m_deviceResources->GetD3DDevice(), L"Sun.cmo", true);
+	gameObject->GetTransform()->SetPosition(Vector3(0, 2.6, 32.4));
+
+	m_gameObjects.push_back(std::move(gameObject));
 
     // TODO: Change the timer settings if you want something other than the default variable timestep mode.
     // e.g. for 60 FPS fixed timestep update logic, call:
@@ -289,6 +301,8 @@ void Game::OnDeviceLost()
 
 void Game::OnDeviceRestored()
 {
+	// TODO: Rebuild Scene
+
     CreateDeviceDependentResources();
 
     CreateWindowSizeDependentResources();

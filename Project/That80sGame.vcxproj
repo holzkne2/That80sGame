@@ -197,6 +197,7 @@
   <ItemGroup>
     <Image Include="..\..\..\That 80%27s Game\That80sGame\Project\GridThin.dds" />
     <Image Include="..\..\..\That 80%27s Game\That80sGame\Project\GridThin.png" />
+    <Image Include="..\..\..\That 80%27s Game\That80sGame\Project\Sun.dds" />
     <Image Include="Arrow.png" />
     <Image Include="GameTitle.png" />
     <Image Include="directx.ico" />
@@ -206,6 +207,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\That 80%27s Game\That80sGame\Project\MenuTerrain.cmo" />
+    <None Include="..\..\..\That 80%27s Game\That80sGame\Project\Sun.cmo" />
     <None Include="..\..\That 80%27s Game\That80sGame\packages.config" />
     <None Include="StillTime64.spritefont" />
   </ItemGroup>

@@ -60,6 +60,9 @@
     <Image Include="..\..\..\That 80%27s Game\That80sGame\Project\GridThin.dds">
       <Filter>Assets</Filter>
     </Image>
+    <Image Include="..\..\..\That 80%27s Game\That80sGame\Project\Sun.dds">
+      <Filter>Assets</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="settings.manifest">
@@ -72,6 +75,9 @@
       <Filter>Assets</Filter>
     </None>
     <None Include="..\..\..\That 80%27s Game\That80sGame\Project\MenuTerrain.cmo">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\..\That 80%27s Game\That80sGame\Project\Sun.cmo">
       <Filter>Assets</Filter>
     </None>
   </ItemGroup>

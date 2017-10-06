@@ -1,10 +1,11 @@
 #include "pch.h"
 #include "GameObject.h"
-
+#include "Game.h"
 
 GameObject::GameObject()
 {
 	m_transform = std::make_unique<Transform>();
+	Game::Get();
 }
 
 

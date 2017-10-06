@@ -18,44 +18,44 @@ class Game : public DX::IDeviceNotify
 {
 public:
 
-    Game();
+	Game();
 
-    // Initialization and management
-    void Initialize(HWND window, int width, int height);
+	// Initialization and management
+	void Initialize(HWND window, int width, int height);
 
-    // Basic game loop
-    void Tick();
+	// Basic game loop
+	void Tick();
 
-    // IDeviceNotify
-    virtual void OnDeviceLost() override;
-    virtual void OnDeviceRestored() override;
+	// IDeviceNotify
+	virtual void OnDeviceLost() override;
+	virtual void OnDeviceRestored() override;
 
-    // Messages
-    void OnActivated();
-    void OnDeactivated();
-    void OnSuspending();
-    void OnResuming();
-    void OnWindowSizeChanged(int width, int height);
+	// Messages
+	void OnActivated();
+	void OnDeactivated();
+	void OnSuspending();
+	void OnResuming();
+	void OnWindowSizeChanged(int width, int height);
 
-    // Properties
-    void GetDefaultSize( int& width, int& height ) const;
+	// Properties
+	void GetDefaultSize(int& width, int& height) const;
 
 private:
 
-    void Update(DX::StepTimer const& timer);
-    void Render();
+	void Update(DX::StepTimer const& timer);
+	void Render();
 
-    void Clear();
+	void Clear();
 
-    void CreateDeviceDependentResources();
-    void CreateWindowSizeDependentResources();
+	void CreateDeviceDependentResources();
+	void CreateWindowSizeDependentResources();
 
-    // Device resources.
-    std::unique_ptr<DX::DeviceResources>    m_deviceResources;
+	// Device resources.
+	std::unique_ptr<DX::DeviceResources>    m_deviceResources;
 
-    // Rendering loop timer.
-    DX::StepTimer                           m_timer;
-	
+	// Rendering loop timer.
+	DX::StepTimer                           m_timer;
+
 	std::unique_ptr<DirectX::GamePad> m_gamePad;
 
 	std::unique_ptr<DirectX::SpriteBatch> m_spriteBatch;
@@ -65,4 +65,13 @@ private:
 
 	DirectX::SimpleMath::Matrix m_view;
 	DirectX::SimpleMath::Matrix m_proj;
+
+	// Singleton
+public:
+	static Game* Get()
+	{
+		return s_instance;
+	}
+private:
+	static Game* s_instance;
 };

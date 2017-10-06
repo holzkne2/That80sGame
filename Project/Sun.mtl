@@ -1,0 +1,14 @@
+newmtl lambert3SG
+illum 4
+Kd 1 1 1
+Ka 1 1 1
+Ks 0 0 0
+map_Kd GridThin.dds
+Ni 1.00
+newmtl lambert4SG
+illum 4
+Kd 1 1 1
+Ka 1 1 1
+Ks 0 0 0
+map_Kd Sun.dds
+Ni 1.00

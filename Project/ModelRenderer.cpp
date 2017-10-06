@@ -13,10 +13,17 @@ ModelRenderer::~ModelRenderer()
 {
 }
 
-void ModelRenderer::SetModel(ID3D11Device* device, const wchar_t* fileName)
+void ModelRenderer::SetModel(ID3D11Device* device, const wchar_t* fileName, bool isAlpha)
 {
 	m_fxFactory = std::make_unique<EffectFactory>(device);
 	m_model = Model::CreateFromCMO(device, fileName, *m_fxFactory);
+
+	if (isAlpha)
+	{
+		for (unsigned int m = 0; m < m_model->meshes.size(); ++m)
+			for (unsigned int p = 0; p < m_model->meshes[m]->meshParts.size(); ++p)
+				m_model->meshes[m]->meshParts[p]->isAlpha = true;
+	}
 }
 
 void ModelRenderer::Render(ID3D11DeviceContext* context, CommonStates* states,
