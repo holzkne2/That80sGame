@@ -3001,6 +3001,47 @@ inline Quaternion operator* (float S, const Quaternion& Q)
 // Quaternion operations
 //------------------------------------------------------------------------------
 
+inline Vector3 Quaternion::EulerAngles() const
+{
+	Vector3 euler = Vector3();
+
+	double sqw = w*w;
+	double sqx = x*x;
+	double sqy = y*y;
+	double sqz = z*z;
+	double test = 2.0 * (y*w - x*z);
+
+	if (abs(test - 1.0) < 0.000001)
+	{
+		// heading = rotation about z-axis
+		euler.z = (float)(-2.0*atan2(x, w));
+		// bank = rotation about x-axis
+		euler.x = 0;
+		// attitude = rotation about y-axis
+		euler.y = (float)(XM_PI / 2.0);
+	}
+	else if (abs(test + 1.0) < 0.000001)
+	{
+		// heading = rotation about z-axis
+		euler.z = (float)(2.0*atan2(x, w));
+		// bank = rotation about x-axis
+		euler.x = 0;
+		// attitude = rotation about y-axis
+		euler.y = (float)(XM_PI / -2.0);
+	}
+	else
+	{
+		// heading = rotation about z-axis
+		euler.z = (float)atan2(2.0 * (x*y + z*w), (sqx - sqy - sqz + sqw));
+		// bank = rotation about x-axis
+		euler.x = (float)atan2(2.0 * (y*z + x*w), (-sqx - sqy + sqz + sqw));
+		// attitude = rotation about y-axis
+		euler.y = (float)asin(std::min<float>(1.0, std::max<float>(-1.0, (float)test)));
+	}
+
+	return euler * (180.0 / XM_PI);
+}
+
 inline float Quaternion::Length() const
 {
     using namespace DirectX;
@@ -3061,6 +3102,36 @@ inline float Quaternion::Dot( const Quaternion& q ) const
 //------------------------------------------------------------------------------
 // Static functions
 //------------------------------------------------------------------------------
+
+inline Quaternion Quaternion::Euler(const Vector3& euler)
+{
+	double angle;
+
+	angle = euler.x * XM_PI / 180 * 0.5;
+	double sr = sin(angle);
+	double cr = cos(angle);
+
+	angle = euler.y * XM_PI / 180 * 0.5;
+	double sp = sin(angle);
+	double cp = cos(angle);
+
+	angle = euler.z * XM_PI / 180 * 0.5;
+	double sy = sin(angle);
+	double cy = cos(angle);
+
+	double cpcy = cp * cy;
+	double spcy = sp * cy;
+	double cpsy = cp * sy;
+	double spsy = sp * sy;
+
+	Quaternion quaternion = Quaternion((float)(sr * cpcy - cr * spsy),
+		(float)(cr * spcy + sr * cpsy),
+		(float)(cr * cpsy - sr * spcy),
+		(float)(cr * cpcy + sr * spsy));
+	quaternion.Normalize();
+
+	return quaternion;
+}
 
 inline Quaternion Quaternion::CreateFromAxisAngle( const Vector3& axis, float angle )
 {

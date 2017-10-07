@@ -146,7 +146,6 @@ void Scene::Render()
 		gameObject = m_gameObjects[i].get();
 		if (gameObject->GetComponent<UIImageRenderer>() != nullptr)
 		{
-			//TODO: Rotation
 			gameObject->GetComponent<UIImageRenderer>()->Render(m_spriteBatch.get(), deviceResources->GetOutputSize());
 		}
 		if (gameObject->GetComponent<UITextRenderer>() != nullptr)

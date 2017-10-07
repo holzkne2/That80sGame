@@ -658,6 +658,8 @@ struct Quaternion : public XMFLOAT4
     Quaternion operator- () const;
 
     // Quaternion operations
+	Vector3 EulerAngles() const;
+
     float Length() const;
     float LengthSquared() const;
 
@@ -672,6 +674,8 @@ struct Quaternion : public XMFLOAT4
     float Dot( const Quaternion& Q ) const;
 
     // Static functions
+	static Quaternion Euler(const Vector3& euler);
+
     static Quaternion CreateFromAxisAngle( const Vector3& axis, float angle );
     static Quaternion CreateFromYawPitchRoll( float yaw, float pitch, float roll );
     static Quaternion CreateFromRotationMatrix( const Matrix& M );
