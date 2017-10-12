@@ -5,6 +5,7 @@
 #include "pch.h"
 #include "GameObject.h"
 #include "ModelRenderer.h"
+#include "Camera.h"
 
 class Scene
 {
@@ -20,6 +21,7 @@ public:
 
 	void AddGameObject(std::unique_ptr<GameObject>&);
 	void AddModelRenderer(ModelRenderer*);
+	void AddCamera(Camera*);
 
 private:
 	void LoadScene0();
@@ -31,6 +33,8 @@ private:
 	std::vector<std::unique_ptr<GameObject>> m_gameObjects;
 
 	std::vector<ModelRenderer*> m_modelRenderers;
+
+	std::vector<Camera*> m_cameras;
 
 	DirectX::SimpleMath::Matrix m_view;
 	DirectX::SimpleMath::Matrix m_proj;

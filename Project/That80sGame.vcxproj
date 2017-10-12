@@ -156,6 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\Camera.h" />
     <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\ModelRenderer.h" />
     <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\Scene.h" />
     <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\Transform.h" />
@@ -170,6 +171,7 @@
     <ClInclude Include="StepTimer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\Camera.cpp" />
     <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\ModelRenderer.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>

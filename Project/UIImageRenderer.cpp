@@ -25,7 +25,7 @@ void UIImageRenderer::Render(SpriteBatch* spriteBatch, const RECT& screen)
 	RectTransform* rectTransform = dynamic_cast<RectTransform*>(m_gameObject->GetTransform());
 
 	spriteBatch->Draw(m_image.Get(), rectTransform->GetScreenPosition(screen),
-		nullptr, m_color, rectTransform->GetRotation().EulerAngles().z * XM_PI / 180,
+		nullptr, m_color, XMConvertToRadians(rectTransform->GetRotation().EulerAngles().z),
 		rectTransform->GetPivot(), rectTransform->GetScale());
 }
 

@@ -15,6 +15,7 @@ Scene::Scene()
 {
 	m_gameObjects = std::vector<std::unique_ptr<GameObject>>();
 	m_modelRenderers = std::vector<ModelRenderer*>();
+	m_cameras = std::vector<Camera*>();
 }
 
 
@@ -96,7 +97,18 @@ void Scene::LoadScene0()
 	///
 	gameObject = std::make_unique<GameObject>();
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Sun.cmo", true);
-	gameObject->GetTransform()->SetPosition(Vector3(0, 2.6, 32.4));
+	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 32.4));
+
+	AddGameObject(gameObject);
+
+	///
+	/// Camera
+	///
+	gameObject = std::make_unique<GameObject>();
+	gameObject->AddComponent<Camera>();
+	gameObject->GetTransform()->SetPosition(Vector3(-3.3, 1.57, 0));
+	gameObject->GetTransform()->SetRotation(
+		Quaternion::Euler(Vector3(0, 191.4, 0)));
 
 	AddGameObject(gameObject);
 }
@@ -105,12 +117,23 @@ void Scene::Update()
 {
 	DX::DeviceResources* deviceResources = Game::Get()->GetDeviceResources();
 
-	m_proj = Matrix::CreatePerspectiveFieldOfView(XM_PI / 4.0,
-		float(deviceResources->GetOutputSize().right) /
-		float(deviceResources->GetOutputSize().bottom),
-		0.1, 1000);
+	auto state = GamePad::Get().GetState(0, GamePad::DEAD_ZONE_CIRCULAR);
 
-	m_view = Matrix::CreateLookAt(Vector3(-3.3, 1.57, 0), Vector3(-2.31, 1.57, 4.9), Vector3::UnitY);
+	if (state.IsConnected())
+	{
+		if (state.IsAPressed())
+		{
+			Vector3 past = m_cameras[0]->GetGameObject()->GetTransform()->GetPosition();
+			m_cameras[0]->GetGameObject()->GetTransform()->SetPosition(past + Vector3::UnitZ);
+		}
+		if (state.IsBPressed())
+		{
+			Vector3 past = m_cameras[0]->GetGameObject()->GetTransform()->GetPosition();
+			m_cameras[0]->GetGameObject()->GetTransform()->SetPosition(past - Vector3::UnitZ);
+		}
+	}
+
+	//m_view = Matrix::CreateLookAt(Vector3(-3.3, 1.57, 0), Vector3(-2.31, 1.57, 4.9), Vector3::UnitY);
 }
 
 void Scene::Render()
@@ -124,11 +147,20 @@ void Scene::Render()
 
 	GameObject* gameObject;
 	ModelRenderer* modelRenderer;
-	for (unsigned int i = 0; i < m_modelRenderers.size(); i++)
+	Camera* camera;
+	for (unsigned int c = 0; c < m_cameras.size(); c++)
 	{
-		modelRenderer = m_modelRenderers[i];
-		if (modelRenderer != nullptr)
-			modelRenderer->Render(context, m_states.get(), m_view, m_proj);
+		camera = m_cameras[c];
+		if (camera == nullptr)
+			continue;
+		Matrix view = camera->GetViewMatrix();
+		Matrix projection = camera->GetProjectionMatrix(deviceResources->GetOutputSize());
+		for (unsigned int i = 0; i < m_modelRenderers.size(); i++)
+		{
+			modelRenderer = m_modelRenderers[i];
+			if (modelRenderer != nullptr)
+				modelRenderer->Render(context, m_states.get(), view, projection);
+		}
 	}
 	//for (unsigned int i = 0; i < m_gameObjects.size(); i++)
 	//{
@@ -184,4 +216,9 @@ void Scene::AddGameObject(std::unique_ptr<GameObject>& gameObject)
 void Scene::AddModelRenderer(ModelRenderer* modelRenderer)
 {
 	m_modelRenderers.push_back(modelRenderer);
+}
+
+void Scene::AddCamera(Camera* camera)
+{
+	m_cameras.push_back(camera);
 }

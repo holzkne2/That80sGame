@@ -26,7 +26,7 @@ void UITextRenderer::Render(SpriteBatch* spriteBatch, const RECT& screen)
 
 	m_font->DrawString(spriteBatch, m_text.c_str(),
 		rectTransform->GetScreenPosition(screen), m_color,
-		rectTransform->GetRotation().EulerAngles().z * XM_PI / 180,
+		XMConvertToRadians(rectTransform->GetRotation().EulerAngles().z),
 		rectTransform->GetPivot(), rectTransform->GetScale());
 }
 

@@ -3107,15 +3107,15 @@ inline Quaternion Quaternion::Euler(const Vector3& euler)
 {
 	double angle;
 
-	angle = euler.x * XM_PI / 180 * 0.5;
+	angle = XMConvertToRadians(euler.x) * 0.5;
 	double sr = sin(angle);
 	double cr = cos(angle);
 
-	angle = euler.y * XM_PI / 180 * 0.5;
+	angle = XMConvertToRadians(euler.y) * 0.5;
 	double sp = sin(angle);
 	double cp = cos(angle);
 
-	angle = euler.z * XM_PI / 180 * 0.5;
+	angle = XMConvertToRadians(euler.z) * 0.5;
 	double sy = sin(angle);
 	double cy = cos(angle);
 
