@@ -25,6 +25,9 @@ public:
 
 private:
 	void LoadScene0();
+	void LoadScene1();
+
+	void UnloadCurrentScene();
 
 private:
 	std::unique_ptr<DirectX::SpriteBatch> m_spriteBatch;

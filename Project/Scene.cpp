@@ -25,8 +25,12 @@ Scene::~Scene()
 
 void Scene::LoadScene(int sceneIndex)
 {
+	UnloadCurrentScene();
+
 	if (sceneIndex == 0)
 		LoadScene0();
+	else if (sceneIndex == 1)
+		LoadScene1();
 }
 
 void Scene::LoadScene0()
@@ -102,6 +106,15 @@ void Scene::LoadScene0()
 	AddGameObject(gameObject);
 
 	///
+	/// Ship
+	///
+	gameObject = std::make_unique<GameObject>();
+	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ship01.cmo");
+	gameObject->GetTransform()->SetPosition(Vector3(0, 1, 4));
+
+	AddGameObject(gameObject);
+
+	///
 	/// Camera
 	///
 	gameObject = std::make_unique<GameObject>();
@@ -111,6 +124,50 @@ void Scene::LoadScene0()
 		Quaternion::Euler(Vector3(0, 191.4, 0)));
 
 	AddGameObject(gameObject);
+}
+
+void Scene::LoadScene1()
+{
+	DX::DeviceResources* deviceResources = Game::Get()->GetDeviceResources();
+
+	m_states = std::make_unique<CommonStates>(deviceResources->GetD3DDevice());
+	m_spriteBatch = std::make_unique<SpriteBatch>(deviceResources->GetD3DDeviceContext());
+
+	///
+	/// Grid
+	///
+	std::unique_ptr<GameObject> gameObject = std::make_unique<GameObject>();
+	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"TestGrid500.cmo");
+	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 0));
+
+	AddGameObject(gameObject);
+
+	///
+	/// Ship
+	///
+	gameObject = std::make_unique<GameObject>();
+	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ship01.cmo");
+	gameObject->GetTransform()->SetPosition(Vector3(0, 2, 0));
+
+	AddGameObject(gameObject);
+
+	///
+	/// Camera
+	///
+	gameObject = std::make_unique<GameObject>();
+	gameObject->AddComponent<Camera>();
+	gameObject->GetTransform()->SetPosition(Vector3(0, 3, -3));
+	gameObject->GetTransform()->SetRotation(
+		Quaternion::Euler(Vector3(0, 180, 0)));
+
+	AddGameObject(gameObject);
+}
+
+void Scene::UnloadCurrentScene()
+{
+	m_gameObjects.clear();
+	m_modelRenderers.clear();
+	m_cameras.clear();
 }
 
 void Scene::Update()
@@ -123,13 +180,11 @@ void Scene::Update()
 	{
 		if (state.IsAPressed())
 		{
-			Vector3 past = m_cameras[0]->GetGameObject()->GetTransform()->GetPosition();
-			m_cameras[0]->GetGameObject()->GetTransform()->SetPosition(past + Vector3::UnitZ);
+			LoadScene(1);
 		}
 		if (state.IsBPressed())
 		{
-			Vector3 past = m_cameras[0]->GetGameObject()->GetTransform()->GetPosition();
-			m_cameras[0]->GetGameObject()->GetTransform()->SetPosition(past - Vector3::UnitZ);
+			LoadScene(0);
 		}
 	}
 
