@@ -8,6 +8,8 @@ public:
 	Transform();
 	virtual ~Transform();
 
+	void Translate(DirectX::SimpleMath::Vector3 translation) { m_position += translation; }
+
 	void SetPosition(DirectX::SimpleMath::Vector3 position) { m_position = position; }
 	DirectX::SimpleMath::Vector3 GetPosition() { return m_position; }
 
@@ -16,6 +18,8 @@ public:
 
 	void SetScale(float scale) { m_scale = scale; }
 	float GetScale() { return m_scale; }
+
+	DirectX::SimpleMath::Vector3 GetForward();
 
 	DirectX::SimpleMath::Matrix GetWorldMatrix();
 

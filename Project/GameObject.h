@@ -19,6 +19,8 @@ public:
 	Transform* GetTransform() { return m_transform.get(); }
 	void MakeRectTransform();
 
+	void UpdateComponents();
+
 private:
 	std::unique_ptr<Transform> m_transform;
 	std::vector<std::unique_ptr<Component>> m_components;

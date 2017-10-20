@@ -27,6 +27,7 @@
     <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\ModelRenderer.h" />
     <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\Scene.h" />
     <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\Camera.h" />
+    <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\ShipController.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -44,6 +45,7 @@
     <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\ModelRenderer.cpp" />
     <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\Scene.cpp" />
     <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\Camera.cpp" />
+    <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\ShipController.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />

@@ -68,13 +68,6 @@ void Game::Update(DX::StepTimer const& timer)
     // TODO: Add your game logic here.
     elapsedTime;
 
-	auto state = GamePad::Get().GetState(0, GamePad::DEAD_ZONE_CIRCULAR);
-
-	if (state.IsConnected())
-	{
-		GamePad::Get().SetVibration(0, state.triggers.left, state.triggers.right);
-	}
-
 	m_scene->Update();
 }
 #pragma endregion

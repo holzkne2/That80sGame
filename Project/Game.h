@@ -44,6 +44,8 @@ public:
 	DX::DeviceResources* GetDeviceResources() { return m_deviceResources.get(); }
 	Scene* GetScene() { return m_scene.get(); }
 
+	DX::StepTimer* GetTimer() { return &m_timer; }
+
 private:
 
 	void Update(DX::StepTimer const& timer);

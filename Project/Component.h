@@ -13,6 +13,8 @@ public:
 
 	GameObject* GetGameObject() { return m_gameObject; }
 
+	virtual void Update() {}
+
 protected:
 	GameObject* m_gameObject;
 };

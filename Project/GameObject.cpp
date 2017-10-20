@@ -20,3 +20,11 @@ void GameObject::MakeRectTransform()
 		m_transform = std::make_unique<RectTransform>(m_transform.get());
 	}
 }
+
+void GameObject::UpdateComponents()
+{
+	for (unsigned int i = 0; i < m_components.size(); i++)
+	{
+		m_components[i]->Update();
+	}
+}

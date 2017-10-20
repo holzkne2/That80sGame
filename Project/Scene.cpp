@@ -5,6 +5,7 @@
 #include "UIImageRenderer.h"
 #include "UITextRenderer.h"
 #include "ModelRenderer.h"
+#include "ShipController.h"
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -148,6 +149,7 @@ void Scene::LoadScene1()
 	gameObject = std::make_unique<GameObject>();
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ship01.cmo");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 2, 0));
+	gameObject->AddComponent<ShipController>();
 
 	AddGameObject(gameObject);
 
@@ -174,15 +176,20 @@ void Scene::Update()
 {
 	DX::DeviceResources* deviceResources = Game::Get()->GetDeviceResources();
 
+	for (unsigned int i = 0; i < m_gameObjects.size(); i++)
+	{
+		m_gameObjects[i]->UpdateComponents();
+	}
+
 	auto state = GamePad::Get().GetState(0, GamePad::DEAD_ZONE_CIRCULAR);
 
 	if (state.IsConnected())
 	{
-		if (state.IsAPressed())
+		if (state.IsStartPressed())
 		{
 			LoadScene(1);
 		}
-		if (state.IsBPressed())
+		if (state.IsBackPressed())
 		{
 			LoadScene(0);
 		}
