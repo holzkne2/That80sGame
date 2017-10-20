@@ -6,6 +6,7 @@
 #include "UITextRenderer.h"
 #include "ModelRenderer.h"
 #include "ShipController.h"
+#include "CameraFollow.h"
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -152,6 +153,7 @@ void Scene::LoadScene1()
 	gameObject->AddComponent<ShipController>();
 
 	AddGameObject(gameObject);
+	GameObject* player = m_gameObjects[m_gameObjects.size() - 1].get();
 
 	///
 	/// Camera
@@ -161,6 +163,7 @@ void Scene::LoadScene1()
 	gameObject->GetTransform()->SetPosition(Vector3(0, 3, -3));
 	gameObject->GetTransform()->SetRotation(
 		Quaternion::Euler(Vector3(0, 180, 0)));
+	gameObject->AddComponent<CameraFollow>()->SetTarget(player->GetTransform());
 
 	AddGameObject(gameObject);
 }
@@ -179,6 +182,11 @@ void Scene::Update()
 	for (unsigned int i = 0; i < m_gameObjects.size(); i++)
 	{
 		m_gameObjects[i]->UpdateComponents();
+	}
+
+	for (unsigned int i = 0; i < m_gameObjects.size(); i++)
+	{
+		m_gameObjects[i]->LateUpdateComponents();
 	}
 
 	auto state = GamePad::Get().GetState(0, GamePad::DEAD_ZONE_CIRCULAR);

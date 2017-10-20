@@ -20,6 +20,7 @@ public:
 	void MakeRectTransform();
 
 	void UpdateComponents();
+	void LateUpdateComponents();
 
 private:
 	std::unique_ptr<Transform> m_transform;

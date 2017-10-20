@@ -28,3 +28,11 @@ void GameObject::UpdateComponents()
 		m_components[i]->Update();
 	}
 }
+
+void GameObject::LateUpdateComponents()
+{
+	for (unsigned int i = 0; i < m_components.size(); i++)
+	{
+		m_components[i]->LateUpdate();
+	}
+}

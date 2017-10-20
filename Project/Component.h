@@ -14,6 +14,7 @@ public:
 	GameObject* GetGameObject() { return m_gameObject; }
 
 	virtual void Update() {}
+	virtual void LateUpdate() {}
 
 protected:
 	GameObject* m_gameObject;
