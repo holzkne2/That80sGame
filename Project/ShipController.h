@@ -11,5 +11,6 @@ public:
 
 private:
 	float m_forwardSpeed;
+	float m_slideSpeed;
 };
 

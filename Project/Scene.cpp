@@ -140,7 +140,17 @@ void Scene::LoadScene1()
 	///
 	std::unique_ptr<GameObject> gameObject = std::make_unique<GameObject>();
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"TestGrid500.cmo");
-	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 0));
+	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 250));
+
+	AddGameObject(gameObject);
+
+	///
+	/// Sun
+	///
+	gameObject = std::make_unique<GameObject>();
+	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Sun.cmo", true);
+	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 500));
+	gameObject->GetTransform()->SetScale(3);
 
 	AddGameObject(gameObject);
 
@@ -160,7 +170,7 @@ void Scene::LoadScene1()
 	///
 	gameObject = std::make_unique<GameObject>();
 	gameObject->AddComponent<Camera>();
-	gameObject->GetTransform()->SetPosition(Vector3(0, 3, -3));
+	gameObject->GetTransform()->SetPosition(Vector3(0, 3.33, -3));
 	gameObject->GetTransform()->SetRotation(
 		Quaternion::Euler(Vector3(0, 180, 0)));
 	gameObject->AddComponent<CameraFollow>()->SetTarget(player->GetTransform());
