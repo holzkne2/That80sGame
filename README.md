@@ -6,3 +6,5 @@ DirectX 11 C++ game I am creating.
 
 # Screen Shot
 ![Alt text](/That80sGameScreenShot001.jpg "Screen Shot")
+
+![Alt text](/That80sGameVideo001-Short.gif "Moving Player with Xbox Controller")
