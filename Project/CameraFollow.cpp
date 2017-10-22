@@ -16,7 +16,7 @@ void CameraFollow::LateUpdate()
 	if (m_targetTransform == nullptr)
 		return;
 
-	m_gameObject->GetTransform()->SetPosition(m_targetTransform->GetPosition() + m_offset);
+	//m_gameObject->GetTransform()->SetPosition(m_targetTransform->GetPosition() + m_offset);
 }
 
 void CameraFollow::SetTarget(Transform* target)

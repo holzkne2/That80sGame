@@ -12,5 +12,8 @@ public:
 private:
 	float m_forwardSpeed;
 	float m_slideSpeed;
+
+	DirectX::SimpleMath::Vector2 m_minPosition;
+	DirectX::SimpleMath::Vector2 m_maxPosition;
 };
 
