@@ -23,11 +23,15 @@ public:
 	void UpdateComponents();
 	void LateUpdateComponents();
 
+	bool IsActive() { return m_active; }
+	void SetActive(bool active) { m_active = active; }
+
 private:
 	std::unique_ptr<Transform> m_transform;
 	std::vector<std::unique_ptr<Component>> m_components;
 
 	std::string m_name;
+	bool m_active;
 };
 
 template<typename T> T* GameObject::AddComponent()

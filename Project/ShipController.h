@@ -9,8 +9,7 @@ public:
 
 	void Update() override;
 
-private:
-	float m_forwardSpeed;
+private:	
 	float m_slideSpeed;
 
 	DirectX::SimpleMath::Vector2 m_minPosition;

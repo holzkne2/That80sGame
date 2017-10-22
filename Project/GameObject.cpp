@@ -5,6 +5,7 @@
 GameObject::GameObject()
 {
 	m_transform = std::make_unique<Transform>();
+	m_active = true;
 }
 
 GameObject::GameObject(std::string name) : GameObject()

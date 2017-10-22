@@ -8,7 +8,6 @@ using namespace DirectX::SimpleMath;
 
 ShipController::ShipController(GameObject* gameObject) : Component(gameObject)
 {
-	m_forwardSpeed = 10;
 	m_slideSpeed = 10;
 
 	m_minPosition = Vector2(-2.5, 1.75);
@@ -28,7 +27,6 @@ void ShipController::Update()
 
 	float deltaTime = Game::Get()->GetTimer()->GetElapsedSeconds();
 
-	//position += (forwardDir * m_forwardSpeed * deltaTime);
 
 
 	auto state = GamePad::Get().GetState(0, GamePad::DEAD_ZONE_CIRCULAR);

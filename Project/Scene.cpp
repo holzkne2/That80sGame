@@ -7,6 +7,7 @@
 #include "ModelRenderer.h"
 #include "ShipController.h"
 #include "CameraFollow.h"
+#include "TrackManager.h"
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -136,9 +137,17 @@ void Scene::LoadScene1()
 	m_spriteBatch = std::make_unique<SpriteBatch>(deviceResources->GetD3DDeviceContext());
 
 	///
+	/// Track Manager
+	///
+	std::unique_ptr<GameObject> gameObject = std::make_unique<GameObject>("Track Manager");
+	gameObject->AddComponent<TrackManager>();
+
+	AddGameObject(gameObject);
+
+	///
 	/// Grid
 	///
-	std::unique_ptr<GameObject> gameObject = std::make_unique<GameObject>("Grid");
+	gameObject = std::make_unique<GameObject>("Grid");
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"TestGrid500.cmo");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 250));
 
@@ -191,12 +200,14 @@ void Scene::Update()
 
 	for (unsigned int i = 0; i < m_gameObjects.size(); i++)
 	{
-		m_gameObjects[i]->UpdateComponents();
+		if (m_gameObjects[i]->IsActive())
+			m_gameObjects[i]->UpdateComponents();
 	}
 
 	for (unsigned int i = 0; i < m_gameObjects.size(); i++)
 	{
-		m_gameObjects[i]->LateUpdateComponents();
+		if (m_gameObjects[i]->IsActive())
+			m_gameObjects[i]->LateUpdateComponents();
 	}
 
 	auto state = GamePad::Get().GetState(0, GamePad::DEAD_ZONE_CIRCULAR);
@@ -231,36 +242,30 @@ void Scene::Render()
 	for (unsigned int c = 0; c < m_cameras.size(); c++)
 	{
 		camera = m_cameras[c];
-		if (camera == nullptr)
+		if (camera == nullptr || !camera->IsActive())
 			continue;
 		Matrix view = camera->GetViewMatrix();
 		Matrix projection = camera->GetProjectionMatrix(deviceResources->GetOutputSize());
 		for (unsigned int i = 0; i < m_modelRenderers.size(); i++)
 		{
 			modelRenderer = m_modelRenderers[i];
-			if (modelRenderer != nullptr)
+			if (modelRenderer != nullptr && modelRenderer->IsActive())
 				modelRenderer->Render(context, m_states.get(), view, projection);
 		}
 	}
-	//for (unsigned int i = 0; i < m_gameObjects.size(); i++)
-	//{
-	//	gameObject = m_gameObjects[i].get();
-	//	if (gameObject->GetComponent<ModelRenderer>() != nullptr)
-	//	{
-	//		gameObject->GetComponent<ModelRenderer>()->Render(context, m_states.get(), m_view, m_proj);
-	//	}
-	//}
 
+	// TODO: Cache
 	m_spriteBatch->Begin(SpriteSortMode_Deferred, m_states->NonPremultiplied());
 
 	for (unsigned int i = 0; i < m_gameObjects.size(); i++)
 	{
 		gameObject = m_gameObjects[i].get();
-		if (gameObject->GetComponent<UIImageRenderer>() != nullptr)
+
+		if (gameObject->GetComponent<UIImageRenderer>() != nullptr && gameObject->GetComponent<UIImageRenderer>()->IsActive())
 		{
 			gameObject->GetComponent<UIImageRenderer>()->Render(m_spriteBatch.get(), deviceResources->GetOutputSize());
 		}
-		if (gameObject->GetComponent<UITextRenderer>() != nullptr)
+		if (gameObject->GetComponent<UITextRenderer>() != nullptr && gameObject->GetComponent<UITextRenderer>()->IsActive())
 		{
 			gameObject->GetComponent<UITextRenderer>()->Render(m_spriteBatch.get(), deviceResources->GetOutputSize());
 		}
