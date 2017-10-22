@@ -45,7 +45,7 @@ void Scene::LoadScene0()
 	///
 	/// Title
 	///
-	std::unique_ptr<GameObject> gameObject = std::make_unique<GameObject>();
+	std::unique_ptr<GameObject> gameObject = std::make_unique<GameObject>("Menu Title");
 	UIImageRenderer* uiImageRenderer = gameObject->AddComponent<UIImageRenderer>();
 	RectTransform* rectTransform = dynamic_cast<RectTransform*>(gameObject->GetTransform());
 	uiImageRenderer->SetImage(deviceResources->GetD3DDevice(), L"GameTitle.png");
@@ -60,7 +60,7 @@ void Scene::LoadScene0()
 	///
 	/// Select Arrow
 	///
-	gameObject = std::make_unique<GameObject>();
+	gameObject = std::make_unique<GameObject>("Select Arrow");
 	uiImageRenderer = gameObject->AddComponent<UIImageRenderer>();
 	rectTransform = dynamic_cast<RectTransform*>(gameObject->GetTransform());
 	uiImageRenderer->SetImage(deviceResources->GetD3DDevice(), L"Arrow.png");
@@ -76,7 +76,7 @@ void Scene::LoadScene0()
 	///
 	/// Play Button
 	///
-	gameObject = std::make_unique<GameObject>();
+	gameObject = std::make_unique<GameObject>("Play Button");
 	UITextRenderer* uiTextRenderer = gameObject->AddComponent<UITextRenderer>();
 	rectTransform = dynamic_cast<RectTransform*>(gameObject->GetTransform());
 	uiTextRenderer->SetFont(deviceResources->GetD3DDevice(), L"StillTime64.spritefont");
@@ -93,7 +93,7 @@ void Scene::LoadScene0()
 	///
 	/// Terrain
 	///
-	gameObject = std::make_unique<GameObject>();
+	gameObject = std::make_unique<GameObject>("Terrain");
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"MenuTerrain.cmo");
 
 	AddGameObject(gameObject);
@@ -101,7 +101,7 @@ void Scene::LoadScene0()
 	///
 	/// Sun
 	///
-	gameObject = std::make_unique<GameObject>();
+	gameObject = std::make_unique<GameObject>("Sun");
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Sun.cmo", true);
 	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 32.4));
 
@@ -110,7 +110,7 @@ void Scene::LoadScene0()
 	///
 	/// Ship
 	///
-	gameObject = std::make_unique<GameObject>();
+	gameObject = std::make_unique<GameObject>("Ship");
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ship01.cmo");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 1, 4));
 
@@ -119,7 +119,7 @@ void Scene::LoadScene0()
 	///
 	/// Camera
 	///
-	gameObject = std::make_unique<GameObject>();
+	gameObject = std::make_unique<GameObject>("Camera");
 	gameObject->AddComponent<Camera>();
 	gameObject->GetTransform()->SetPosition(Vector3(-3.3, 1.57, 0));
 	gameObject->GetTransform()->SetRotation(
@@ -138,7 +138,7 @@ void Scene::LoadScene1()
 	///
 	/// Grid
 	///
-	std::unique_ptr<GameObject> gameObject = std::make_unique<GameObject>();
+	std::unique_ptr<GameObject> gameObject = std::make_unique<GameObject>("Grid");
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"TestGrid500.cmo");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 250));
 
@@ -147,17 +147,17 @@ void Scene::LoadScene1()
 	///
 	/// Sun
 	///
-	gameObject = std::make_unique<GameObject>();
+	gameObject = std::make_unique<GameObject>("Sun");
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Sun.cmo", true);
 	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 500));
-	gameObject->GetTransform()->SetScale(3);
+	gameObject->GetTransform()->SetScale(5);
 
 	AddGameObject(gameObject);
 
 	///
 	/// Ship
 	///
-	gameObject = std::make_unique<GameObject>();
+	gameObject = std::make_unique<GameObject>("Ship");
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ship01.cmo");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 2, 0));
 	gameObject->AddComponent<ShipController>();
@@ -168,7 +168,7 @@ void Scene::LoadScene1()
 	///
 	/// Camera
 	///
-	gameObject = std::make_unique<GameObject>();
+	gameObject = std::make_unique<GameObject>("Camera");
 	gameObject->AddComponent<Camera>();
 	gameObject->GetTransform()->SetPosition(Vector3(0, 3.33, -3));
 	gameObject->GetTransform()->SetRotation(

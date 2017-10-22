@@ -7,6 +7,10 @@ GameObject::GameObject()
 	m_transform = std::make_unique<Transform>();
 }
 
+GameObject::GameObject(std::string name) : GameObject()
+{
+	m_name = name;
+}
 
 GameObject::~GameObject()
 {

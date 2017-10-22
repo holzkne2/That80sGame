@@ -11,6 +11,7 @@ class GameObject
 {
 public:
 	GameObject();
+	GameObject(std::string);
 	virtual ~GameObject();
 
 	template<typename T> T* AddComponent();
@@ -25,6 +26,8 @@ public:
 private:
 	std::unique_ptr<Transform> m_transform;
 	std::vector<std::unique_ptr<Component>> m_components;
+
+	std::string m_name;
 };
 
 template<typename T> T* GameObject::AddComponent()
