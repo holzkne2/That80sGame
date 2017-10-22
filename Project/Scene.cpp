@@ -140,7 +140,7 @@ void Scene::LoadScene1()
 	/// Track Manager
 	///
 	std::unique_ptr<GameObject> gameObject = std::make_unique<GameObject>("Track Manager");
-	gameObject->AddComponent<TrackManager>();
+	TrackManager* trackManager = gameObject->AddComponent<TrackManager>();
 
 	AddGameObject(gameObject);
 
@@ -151,6 +151,7 @@ void Scene::LoadScene1()
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"TestGrid500.cmo");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 250));
 
+	trackManager->AddObject(gameObject.get());
 	AddGameObject(gameObject);
 
 	///

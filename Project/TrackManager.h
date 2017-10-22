@@ -11,9 +11,14 @@ public:
 
 	void Update() override;
 
+	void AddObject(GameObject*);
+
+private:
+
 private:
 	float m_speed;
 
+	int m_liveThreshold;
 	std::vector<GameObject*> m_deadObjects;
 	std::vector<GameObject*> m_liveObjects;
 };
