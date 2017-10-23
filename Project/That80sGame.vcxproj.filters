@@ -93,8 +93,10 @@
     <None Include="..\..\..\That 80%27s Game\That80sGame\Project\Ship01.cmo">
       <Filter>Assets</Filter>
     </None>
-    <None Include="..\..\..\That 80%27s Game\That80sGame\Project\Ship01.mtl" />
     <None Include="..\..\..\That 80%27s Game\That80sGame\Project\TestGrid500.cmo">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\..\That 80%27s Game\That80sGame\Project\Tower01.cmo">
       <Filter>Assets</Filter>
     </None>
   </ItemGroup>

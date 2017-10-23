@@ -3,7 +3,7 @@
 
 using namespace DirectX::SimpleMath;
 
-RectTransform::RectTransform() : Transform()
+RectTransform::RectTransform(GameObject* gameObject) : Transform(gameObject)
 {
 	m_anchors = Vector2(0.5, 0.5);
 	m_pivot = Vector2::Zero;
@@ -14,14 +14,11 @@ RectTransform::~RectTransform()
 {
 }
 
-RectTransform::RectTransform(Transform* base)
+RectTransform::RectTransform(Transform* base) : RectTransform(base->GetGameObject())
 {
 	m_position = base->GetPosition();
 	m_rotation = base->GetRotation();
 	m_scale = base->GetScale();
-
-	m_anchors = Vector2(0.5, 0.5);
-	m_pivot = Vector2::Zero;
 }
 
 Vector2 RectTransform::GetScreenPosition(const RECT& screen)

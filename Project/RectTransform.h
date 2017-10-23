@@ -6,12 +6,14 @@
 class RectTransform : public Transform
 {
 public:
-	RectTransform();
+	RectTransform(GameObject*);
 	virtual ~RectTransform();
 
 	RectTransform(Transform*);
 
 	DirectX::SimpleMath::Vector2 GetScreenPosition(const RECT&);
+
+	// TODO: parenting
 
 	void SetAnchors(DirectX::SimpleMath::Vector2 anchors) { m_anchors = anchors; }
 	DirectX::SimpleMath::Vector2 GetAnchors() { return m_anchors; }

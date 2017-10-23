@@ -4,7 +4,7 @@
 
 GameObject::GameObject()
 {
-	m_transform = std::make_unique<Transform>();
+	m_transform = std::make_unique<Transform>(this);
 	m_active = true;
 }
 
@@ -40,4 +40,12 @@ void GameObject::LateUpdateComponents()
 	{
 		m_components[i]->LateUpdate();
 	}
+}
+
+bool GameObject::IsActive()
+{
+	if (m_transform->GetParent() == nullptr)
+		return m_active;
+	else
+		return m_active && m_transform->GetParent()->GetGameObject()->IsActive();
 }

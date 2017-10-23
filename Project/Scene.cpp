@@ -144,6 +144,8 @@ void Scene::LoadScene1()
 
 	AddGameObject(gameObject);
 
+	GameObject* tempParent;
+
 	///
 	/// Grid
 	///
@@ -151,7 +153,32 @@ void Scene::LoadScene1()
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"TestGrid500.cmo");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 250));
 
+	tempParent = gameObject.get();
 	trackManager->AddObject(gameObject.get());
+	AddGameObject(gameObject);
+
+	///
+	/// Tower2
+	///
+	gameObject = std::make_unique<GameObject>("Tower");
+	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Tower01.cmo");
+	gameObject->GetTransform()->SetParent(tempParent->GetTransform());
+	gameObject->GetTransform()->SetPosition(Vector3(3, 0, 120));
+
+	AddGameObject(gameObject);
+
+	gameObject = std::make_unique<GameObject>("Tower 1");
+	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Tower01.cmo");
+	gameObject->GetTransform()->SetParent(tempParent->GetTransform());
+	gameObject->GetTransform()->SetPosition(Vector3(-2.5, 0, 90));
+
+	AddGameObject(gameObject);
+
+	gameObject = std::make_unique<GameObject>("Tower 2");
+	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Tower01.cmo");
+	gameObject->GetTransform()->SetParent(tempParent->GetTransform());
+	gameObject->GetTransform()->SetPosition(Vector3(0.1, -1.5, 175));
+
 	AddGameObject(gameObject);
 
 	///
@@ -198,6 +225,8 @@ void Scene::UnloadCurrentScene()
 void Scene::Update()
 {
 	DX::DeviceResources* deviceResources = Game::Get()->GetDeviceResources();
+
+	Matrix temp = m_gameObjects[2]->GetTransform()->GetWorldToLocalMatrix();
 
 	for (unsigned int i = 0; i < m_gameObjects.size(); i++)
 	{

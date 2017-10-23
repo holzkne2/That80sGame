@@ -23,7 +23,7 @@ public:
 	void UpdateComponents();
 	void LateUpdateComponents();
 
-	bool IsActive() { return m_active; }
+	bool IsActive();
 	void SetActive(bool active) { m_active = active; }
 
 private:
