@@ -2,9 +2,9 @@
 
 DirectX 11 C++ game I am creating.
 
-![Alt text](/That80sGameLogo.jpg "Logo")
+![Alt text](/Screenshots/That80sGameLogo.jpg "Logo")
 
 # Screen Shot
-![Alt text](/That80sGameScreenShot001.jpg "Screen Shot")
+![Alt text](/Screenshots/That80sGameScreenShot001.jpg "Main Menu")
 
-![Alt text](/That80sGameVideo001-Short.gif "Moving Player with Xbox Controller")
+![Alt text](/Screenshots/That80sGameVideo002.gif "Gameplay")
