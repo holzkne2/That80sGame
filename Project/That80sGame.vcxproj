@@ -91,6 +91,9 @@
       <FloatingPointModel>Fast</FloatingPointModel>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Bullet-Build\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -107,6 +110,9 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <FloatingPointModel>Fast</FloatingPointModel>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Bullet-Build\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -126,6 +132,9 @@
       <FloatingPointModel>Fast</FloatingPointModel>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Bullet-Build\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -146,6 +155,9 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <FloatingPointModel>Fast</FloatingPointModel>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Bullet-Build\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -223,6 +235,17 @@
     <None Include="..\..\..\That 80%27s Game\That80sGame\Project\Tower01.cmo" />
     <None Include="..\..\That 80%27s Game\That80sGame\packages.config" />
     <None Include="StillTime64.spritefont" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bullet-Build\build3\vs2010\BulletCollision.vcxproj">
+      <Project>{b91153c5-259d-c089-2eae-437e9ab81c8a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Bullet-Build\build3\vs2010\BulletDynamics.vcxproj">
+      <Project>{45122e0f-31e0-2115-1a74-923b06e1fd79}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Bullet-Build\build3\vs2010\LinearMath.vcxproj">
+      <Project>{eaf25dfd-d6aa-9f4a-3fb2-78a62b893a3b}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

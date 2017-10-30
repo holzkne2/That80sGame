@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="test">
+      <UniqueIdentifier>{92F1E451-F6A0-9542-8E24-641F6BD742AC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test\clsocket">
+      <UniqueIdentifier>{A990AF4B-D66E-8247-A602-0140F9BFBB77}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\test\clsocket\QueryDayTime.cpp">
+      <Filter>test\clsocket</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -9,6 +9,8 @@
 #include "CameraFollow.h"
 #include "TrackManager.h"
 
+#include "btBulletCollisionCommon.h"
+
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
 

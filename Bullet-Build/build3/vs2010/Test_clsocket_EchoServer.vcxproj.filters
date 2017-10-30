@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="test">
+      <UniqueIdentifier>{806AD819-38EE-4E4C-9435-4F0975233CAD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test\clsocket">
+      <UniqueIdentifier>{D6464E85-D933-5647-B96E-66C3FE1E30DC}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\test\clsocket\EchoServer.cpp">
+      <Filter>test\clsocket</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

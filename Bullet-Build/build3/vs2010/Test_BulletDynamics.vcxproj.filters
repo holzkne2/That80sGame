@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="examples">
+      <UniqueIdentifier>{7559BDFA-9CFC-F74F-900C-6E878B7E514D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="examples\MultiBody">
+      <UniqueIdentifier>{FDDB9FA6-903D-C34C-9A4F-A595B32F4C2E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\examples\MultiBody\pendulum_gold.h">
+      <Filter>examples\MultiBody</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\examples\MultiBody\Pendulum.cpp">
+      <Filter>examples\MultiBody</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
