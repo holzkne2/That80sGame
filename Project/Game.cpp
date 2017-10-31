@@ -26,6 +26,7 @@ Game::Game()
 
 	m_gamePad = std::make_unique<GamePad>();
 	m_scene = std::make_unique<Scene>();
+	m_physicsManager = std::make_unique<PhysicsManager>();
 }
 
 // Initialize the Direct3D resources required to run.
@@ -39,11 +40,12 @@ void Game::Initialize(HWND window, int width, int height)
     m_deviceResources->CreateWindowSizeDependentResources();
     CreateWindowSizeDependentResources();
 
+	m_physicsManager->Initialize();
+
 	m_scene->LoadScene(0);
 
     // TODO: Change the timer settings if you want something other than the default variable timestep mode.
-    // e.g. for 60 FPS fixed timestep update logic, call:
-    
+    // e.g. for 60 FPS fixed timestep update logic, call:    
     m_timer.SetFixedTimeStep(true);
     m_timer.SetTargetElapsedSeconds(1.0 / 60);
     

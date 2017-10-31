@@ -12,6 +12,7 @@
 #include "GameObject.h"
 #include "Transform.h"
 #include "Scene.h"
+#include "PhysicsManager.h"
 
 // A basic game implementation that creates a D3D11 device and
 // provides a game loop.
@@ -65,6 +66,8 @@ private:
 	std::unique_ptr<DirectX::GamePad> m_gamePad;
 
 	std::unique_ptr<Scene> m_scene;
+
+	std::unique_ptr<PhysicsManager> m_physicsManager;
 
 	// Singleton
 public:

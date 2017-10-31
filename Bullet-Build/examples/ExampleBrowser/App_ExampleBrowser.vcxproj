@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{035F6BF5-E3BE-382D-A7FB-A089A7269137}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>App_ExampleBrowser</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ExampleBrowser\Debug\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">App_ExampleBrowser.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">App_ExampleBrowser</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ExampleBrowser\Release\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">App_ExampleBrowser.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">App_ExampleBrowser</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ExampleBrowser\MinSizeRel\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">App_ExampleBrowser.dir\MinSizeRel\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">App_ExampleBrowser</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ExampleBrowser\RelWithDebInfo\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">App_ExampleBrowser.dir\RelWithDebInfo\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">App_ExampleBrowser</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\.;O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_DEBUG;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;GLEW_STATIC;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;GLEW_STATIC;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\.;O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\.;O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -E copy_directory O:/Users/skibo_000/Desktop/bullet3-master/data C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/data
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:X86</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\Debug\BulletExampleBrowserLib_Debug.lib;..\..\lib\Debug\Bullet3Common_Debug.lib;..\..\lib\Debug\BulletSoftBody_Debug.lib;..\..\lib\Debug\BulletDynamics_Debug.lib;..\..\lib\Debug\BulletCollision_Debug.lib;..\..\lib\Debug\BulletInverseDynamicsUtils_Debug.lib;..\..\lib\Debug\BulletInverseDynamics_Debug.lib;..\..\lib\Debug\LinearMath_Debug.lib;..\..\lib\Debug\OpenGLWindow_Debug.lib;..\..\lib\Debug\gwen_Debug.lib;..\..\lib\Debug\BussIK_Debug.lib;opengl32.lib;glu32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/ExampleBrowser/Debug/App_ExampleBrowser.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/ExampleBrowser/Debug/App_ExampleBrowser.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\.;O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;GLEW_STATIC;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;GLEW_STATIC;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\.;O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\.;O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -E copy_directory O:/Users/skibo_000/Desktop/bullet3-master/data C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/data
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:X86</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\Release\BulletExampleBrowserLib.lib;..\..\lib\Release\Bullet3Common.lib;..\..\lib\Release\BulletSoftBody.lib;..\..\lib\Release\BulletDynamics.lib;..\..\lib\Release\BulletCollision.lib;..\..\lib\Release\BulletInverseDynamicsUtils.lib;..\..\lib\Release\BulletInverseDynamics.lib;..\..\lib\Release\LinearMath.lib;..\..\lib\Release\OpenGLWindow.lib;..\..\lib\Release\gwen.lib;..\..\lib\Release\BussIK.lib;opengl32.lib;glu32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/ExampleBrowser/Release/App_ExampleBrowser.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/ExampleBrowser/Release/App_ExampleBrowser.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\.;O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;GLEW_STATIC;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;GLEW_STATIC;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\.;O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\.;O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -E copy_directory O:/Users/skibo_000/Desktop/bullet3-master/data C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/data
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:X86</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\MinSizeRel\BulletExampleBrowserLib_MinsizeRel.lib;..\..\lib\MinSizeRel\Bullet3Common_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletSoftBody_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletDynamics_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletCollision_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletInverseDynamicsUtils_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletInverseDynamics_MinsizeRel.lib;..\..\lib\MinSizeRel\LinearMath_MinsizeRel.lib;..\..\lib\MinSizeRel\OpenGLWindow_MinsizeRel.lib;..\..\lib\MinSizeRel\gwen_MinsizeRel.lib;..\..\lib\MinSizeRel\BussIK_MinsizeRel.lib;opengl32.lib;glu32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/ExampleBrowser/MinSizeRel/App_ExampleBrowser.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/ExampleBrowser/MinSizeRel/App_ExampleBrowser.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\.;O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;GLEW_STATIC;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;GLEW_STATIC;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\.;O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\.;O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -E copy_directory O:/Users/skibo_000/Desktop/bullet3-master/data C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/data
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:X86</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\RelWithDebInfo\BulletExampleBrowserLib_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\Bullet3Common_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletSoftBody_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletDynamics_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletCollision_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletInverseDynamicsUtils_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletInverseDynamics_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\LinearMath_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\OpenGLWindow_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\gwen_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BussIK_RelWithDebugInfo.lib;opengl32.lib;glu32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/ExampleBrowser/RelWithDebInfo/App_ExampleBrowser.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/ExampleBrowser/RelWithDebInfo/App_ExampleBrowser.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule O:/Users/skibo_000/Desktop/bullet3-master/examples/ExampleBrowser/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -HO:/Users/skibo_000/Desktop/bullet3-master -BC:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build --check-stamp-file C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/ExampleBrowser/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">O:/Users/skibo_000/Desktop/bullet3-master/examples/ExampleBrowser/CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ExampleBrowser\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule O:/Users/skibo_000/Desktop/bullet3-master/examples/ExampleBrowser/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -HO:/Users/skibo_000/Desktop/bullet3-master -BC:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build --check-stamp-file C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/ExampleBrowser/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">O:/Users/skibo_000/Desktop/bullet3-master/examples/ExampleBrowser/CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ExampleBrowser\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule O:/Users/skibo_000/Desktop/bullet3-master/examples/ExampleBrowser/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -HO:/Users/skibo_000/Desktop/bullet3-master -BC:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build --check-stamp-file C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/ExampleBrowser/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">O:/Users/skibo_000/Desktop/bullet3-master/examples/ExampleBrowser/CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ExampleBrowser\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule O:/Users/skibo_000/Desktop/bullet3-master/examples/ExampleBrowser/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -HO:/Users/skibo_000/Desktop/bullet3-master -BC:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build --check-stamp-file C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/ExampleBrowser/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">O:/Users/skibo_000/Desktop/bullet3-master/examples/ExampleBrowser/CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ExampleBrowser\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\ExampleEntries.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\Chain.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\Bridge.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\RigidBodyFromObj.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\SimpleBox.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\MultipleBoxes.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\CompoundBoxes.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\SimpleCloth.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\SimpleJoint.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\NewtonsCradle.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\InclinedPlane.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\MultiPendulum.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\TinyRendererVisualShapeConverter.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\IKTrajectoryHelper.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsDirect.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsDirectC_API.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsLoopBack.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsLoopBackC_API.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerCommandProcessor.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\SharedMemoryCommands.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\SharedMemoryPublic.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RobotSimulator\b3RobotSimulatorClientAPI.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\BasicDemo\BasicExample.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\InverseDynamics\InverseDynamicsExample.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\InverseKinematics\InverseKinematicsExample.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ForkLift\ForkLiftDemo.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiThreadedDemo\MultiThreadedDemo.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiThreadedDemo\CommonRigidBodyMTBase.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Tutorial\Tutorial.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Tutorial\Dof6ConstraintTutorial.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Evolution\NN3DWalkers.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Evolution\NN3DWalkersTimeWarpBase.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\NewtonsRopeCradle.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Collision\CollisionSdkC_Api.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Collision\CollisionTutorialBullet2.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Collision\Internal\Bullet2CollisionSdk.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Collision\Internal\CollisionSdkInterface.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Collision\Internal\RealTimeBullet3CollisionSdk.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\GyroscopicDemo\GyroscopicSetup.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Planar2D\Planar2D.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RollingFrictionDemo\RollingFrictionDemo.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\FractureDemo\FractureDemo.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\FractureDemo\btFractureBody.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\FractureDemo\btFractureDynamicsWorld.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\DynamicControlDemo\MotorDemo.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\TimeSeriesCanvas.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\TimeSeriesFontData.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\DynamicTexturedCubeDemo.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\TinyVRGui.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RoboticsLearning\GripperGraspExample.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RoboticsLearning\R2D2GraspExample.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RoboticsLearning\KukaGraspExample.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\CoordinateSystemDemo.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\RaytracerSetup.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\RenderInstancingDemo.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Benchmarks\BenchmarkDemo.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Benchmarks\landscapeData.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Benchmarks\TaruData.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportBsp\BspConverter.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportBullet\SerializeSetup.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportMeshUtility\b3ImportMeshUtility.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportBsp\BspLoader.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportBsp\ImportBspExample.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportColladaDemo\btMatrix4x4.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportColladaDemo\ColladaGraphicsInstance.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportColladaDemo\ImportColladaSetup.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportColladaDemo\LoadMeshFromCollada.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportObjDemo\ImportObjExample.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportObjDemo\LoadMeshFromObj.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportSTLDemo\ImportSTLSetup.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportSTLDemo\LoadMeshFromSTL.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\ConvertRigidBodies2MultiBody.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\ImportURDFSetup.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\URDF2Bullet.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\urdf_samples.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\ImportMJCFSetup.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Utils\RobotLoggingUtil.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\urdfStringSplit.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\BulletUrdfImporter.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\VoronoiFracture\VoronoiFractureDemo.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\VoronoiFracture\btConvexConvexMprAlgorithm.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Vehicles\Hinge2Vehicle.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiBody\TestJointTorqueSetup.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiBody\InvertedPendulumPDControl.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiBody\MultiDofDemo.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Constraints\TestHingeTorque.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Constraints\ConstraintDemo.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Constraints\Dof6Spring2Setup.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Constraints\ConstraintPhysicsSetup.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\stb_image\stb_image.h" />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\main.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\ExampleEntries.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\Chain.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\Bridge.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\RigidBodyFromObj.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\SimpleBox.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\MultipleBoxes.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\CompoundBoxes.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\SimpleCloth.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\SimpleJoint.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\NewtonsCradle.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\InclinedPlane.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\MultiPendulum.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\TinyRenderer\geometry.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\TinyRenderer\model.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\TinyRenderer\tgaimage.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\TinyRenderer\our_gl.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\TinyRenderer\TinyRenderer.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\TinyRendererVisualShapeConverter.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\IKTrajectoryHelper.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsServer.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory_C_API.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsClient.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientC_API.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerExample.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerExampleBullet2.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientExample.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PosixSharedMemory.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\Win32SharedMemory.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\InProcessMemory.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerSharedMemory.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsDirect.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsDirectC_API.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\SharedMemoryInProcessPhysicsC_API.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsLoopBack.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsLoopBackC_API.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerCommandProcessor.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\b3PluginManager.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RobotSimulator\b3RobotSimulatorClientAPI.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\BasicDemo\BasicExample.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\InverseDynamics\InverseDynamicsExample.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\InverseKinematics\InverseKinematicsExample.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ForkLift\ForkLiftDemo.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiThreadedDemo\MultiThreadedDemo.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiThreadedDemo\CommonRigidBodyMTBase.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Tutorial\Tutorial.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Tutorial\Dof6ConstraintTutorial.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Evolution\NN3DWalkers.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExtendedTutorials\NewtonsRopeCradle.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Collision\CollisionSdkC_Api.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Collision\CollisionTutorialBullet2.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Collision\Internal\Bullet2CollisionSdk.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Collision\Internal\RealTimeBullet3CollisionSdk.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\GyroscopicDemo\GyroscopicSetup.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Planar2D\Planar2D.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RollingFrictionDemo\RollingFrictionDemo.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\FractureDemo\FractureDemo.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\FractureDemo\btFractureBody.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\FractureDemo\btFractureDynamicsWorld.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\DynamicControlDemo\MotorDemo.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiThreading\MultiThreadingExample.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiThreading\b3PosixThreadSupport.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiThreading\b3Win32ThreadSupport.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiThreading\b3ThreadSupportInterface.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiThreading\btTaskScheduler.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\TinyRendererSetup.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\TimeSeriesCanvas.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\TimeSeriesFontData.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\DynamicTexturedCubeDemo.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\TinyVRGui.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RoboticsLearning\GripperGraspExample.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RoboticsLearning\R2D2GraspExample.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RoboticsLearning\KukaGraspExample.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\CoordinateSystemDemo.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\RaytracerSetup.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\RenderInstancingDemo.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\TimeSeriesExample.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Benchmarks\BenchmarkDemo.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Raycast\RaytestDemo.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportBullet\SerializeSetup.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportMeshUtility\b3ImportMeshUtility.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\Extras\Serialize\BulletWorldImporter\btBulletWorldImporter.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\Extras\Serialize\BulletFileLoader\bChunk.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\Extras\Serialize\BulletFileLoader\bFile.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\Extras\Serialize\BulletFileLoader\bDNA.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\Extras\Serialize\BulletFileLoader\btBulletFile.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\ImportMJCFSetup.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportBsp\BspConverter.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportBsp\BspLoader.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportBsp\ImportBspExample.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportColladaDemo\ImportColladaSetup.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportColladaDemo\LoadMeshFromCollada.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportObjDemo\ImportObjExample.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportObjDemo\LoadMeshFromObj.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportSTLDemo\ImportSTLSetup.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportSDFDemo\ImportSDFSetup.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\ImportURDFSetup.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\URDF2Bullet.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Utils\RobotLoggingUtil.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\urdfStringSplit.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\BulletUrdfImporter.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\VoronoiFracture\VoronoiFractureDemo.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\VoronoiFracture\btConvexConvexMprAlgorithm.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Vehicles\Hinge2Vehicle.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiBody\Pendulum.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiBody\MultiBodySoftContact.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiBody\TestJointTorqueSetup.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiBody\InvertedPendulumPDControl.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiBody\MultiBodyConstraintFeedback.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiBody\MultiDofDemo.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RigidBody\RigidBodySoftContact.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Constraints\TestHingeTorque.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Constraints\ConstraintDemo.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Constraints\Dof6Spring2Setup.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Constraints\ConstraintPhysicsSetup.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\stb_image\stb_image.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Wavefront\tiny_obj_loader.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\tinyxml\tinystr.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\tinyxml\tinyxml.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\tinyxml\tinyxmlerror.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\tinyxml\tinyxmlparser.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\InProcessExampleBrowser.cpp"  />
+    <ResourceCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\build3\bullet.rc"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\ZERO_CHECK.vcxproj">
+      <Project>90DFD1D1-281F-3322-9650-3F166924C974</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\Bullet3Common\Bullet3Common.vcxproj">
+      <Project>B801D66E-68A7-3D29-AC09-2540BF0315C7</Project>
+      <Name>Bullet3Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\BulletCollision\BulletCollision.vcxproj">
+      <Project>52EA6BEB-F7F9-3EFE-B7D8-E5BDC53A8AF9</Project>
+      <Name>BulletCollision</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\BulletDynamics\BulletDynamics.vcxproj">
+      <Project>DDB72483-B3D4-3AA4-93D7-0D1F3E5938AF</Project>
+      <Name>BulletDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ExampleBrowser\BulletExampleBrowserLib.vcxproj">
+      <Project>2DD93202-8F58-368A-888A-77A8F199307D</Project>
+      <Name>BulletExampleBrowserLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\BulletInverseDynamics\BulletInverseDynamics.vcxproj">
+      <Project>CF963A15-E654-379B-8231-FE88E412F156</Project>
+      <Name>BulletInverseDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\Extras\InverseDynamics\BulletInverseDynamicsUtils.vcxproj">
+      <Project>C671D773-90CF-3916-B9E6-016E4F08F108</Project>
+      <Name>BulletInverseDynamicsUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\BulletSoftBody\BulletSoftBody.vcxproj">
+      <Project>0BB6A4AF-EE01-30CA-9019-B9736479C4C3</Project>
+      <Name>BulletSoftBody</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ThirdPartyLibs\BussIK\BussIK.vcxproj">
+      <Project>C81A01BB-12A8-3D12-A4AA-6E667B5BE6FC</Project>
+      <Name>BussIK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\LinearMath\LinearMath.vcxproj">
+      <Project>3E44C469-1376-3387-98E9-B35CFC06D381</Project>
+      <Name>LinearMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\OpenGLWindow\OpenGLWindow.vcxproj">
+      <Project>EA364919-148B-3357-AF68-EABBEC970EF2</Project>
+      <Name>OpenGLWindow</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ThirdPartyLibs\Gwen\gwen.vcxproj">
+      <Project>2B212810-4863-335F-9192-73F34577AAAA</Project>
+      <Name>gwen</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

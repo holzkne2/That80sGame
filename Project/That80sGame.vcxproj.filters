@@ -23,13 +23,14 @@
     <ClInclude Include="RectTransform.h" />
     <ClInclude Include="UIImageRenderer.h" />
     <ClInclude Include="UITextRenderer.h" />
-    <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\Transform.h" />
-    <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\ModelRenderer.h" />
-    <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\Scene.h" />
-    <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\Camera.h" />
-    <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\ShipController.h" />
-    <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\CameraFollow.h" />
-    <ClInclude Include="..\..\..\That 80%27s Game\That80sGame\Project\TrackManager.h" />
+    <ClInclude Include="PhysicsManager.h" />
+    <ClInclude Include="ModelRenderer.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CameraFollow.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="ShipController.h" />
+    <ClInclude Include="TrackManager.h" />
+    <ClInclude Include="Transform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -43,13 +44,14 @@
     <ClCompile Include="RectTransform.cpp" />
     <ClCompile Include="UIImageRenderer.cpp" />
     <ClCompile Include="UITextRenderer.cpp" />
-    <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\Transform.cpp" />
-    <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\ModelRenderer.cpp" />
-    <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\Scene.cpp" />
-    <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\Camera.cpp" />
-    <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\ShipController.cpp" />
-    <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\CameraFollow.cpp" />
-    <ClCompile Include="..\..\..\That 80%27s Game\That80sGame\Project\TrackManager.cpp" />
+    <ClCompile Include="PhysicsManager.cpp" />
+    <ClCompile Include="ModelRenderer.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CameraFollow.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="ShipController.cpp" />
+    <ClCompile Include="TrackManager.cpp" />
+    <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />
@@ -80,7 +82,6 @@
     </Manifest>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\That 80%27s Game\That80sGame\packages.config" />
     <None Include="StillTime64.spritefont">
       <Filter>Assets</Filter>
     </None>
@@ -99,5 +100,6 @@
     <None Include="..\..\..\That 80%27s Game\That80sGame\Project\Tower01.cmo">
       <Filter>Assets</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

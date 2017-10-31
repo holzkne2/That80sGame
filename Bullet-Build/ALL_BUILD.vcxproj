@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{95D5F26A-BD8F-325A-AE0A-7D04B5248B6B}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="O:\Users\skibo_000\Desktop\bullet3-master\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule O:/Users/skibo_000/Desktop/bullet3-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -HO:/Users/skibo_000/Desktop/bullet3-master -BC:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build --check-stamp-file C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">O:/Users/skibo_000/Desktop/bullet3-master/CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\CMakeLists.txt;C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\3.8.0-rc4\CMakeSystem.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\3.8.0-rc4\CMakeCCompiler.cmake;C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\3.8.0-rc4\CMakeCXXCompiler.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeGenericSystem.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\WindowsPaths.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-C.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\3.8.0-rc4\CMakeRCCompiler.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeRCInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCXXInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Compiler\MSVC-CXX.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-CXX.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\FindOpenGL.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;O:\Users\skibo_000\Desktop\bullet3-master\BulletConfig.cmake.in;O:\Users\skibo_000\Desktop\bullet3-master\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule O:/Users/skibo_000/Desktop/bullet3-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -HO:/Users/skibo_000/Desktop/bullet3-master -BC:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build --check-stamp-file C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">O:/Users/skibo_000/Desktop/bullet3-master/CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\CMakeLists.txt;C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\3.8.0-rc4\CMakeSystem.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\3.8.0-rc4\CMakeCCompiler.cmake;C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\3.8.0-rc4\CMakeCXXCompiler.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeGenericSystem.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\WindowsPaths.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-C.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\3.8.0-rc4\CMakeRCCompiler.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeRCInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCXXInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Compiler\MSVC-CXX.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-CXX.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\FindOpenGL.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;O:\Users\skibo_000\Desktop\bullet3-master\BulletConfig.cmake.in;O:\Users\skibo_000\Desktop\bullet3-master\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule O:/Users/skibo_000/Desktop/bullet3-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -HO:/Users/skibo_000/Desktop/bullet3-master -BC:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build --check-stamp-file C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">O:/Users/skibo_000/Desktop/bullet3-master/CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\CMakeLists.txt;C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\3.8.0-rc4\CMakeSystem.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\3.8.0-rc4\CMakeCCompiler.cmake;C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\3.8.0-rc4\CMakeCXXCompiler.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeGenericSystem.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\WindowsPaths.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-C.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\3.8.0-rc4\CMakeRCCompiler.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeRCInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCXXInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Compiler\MSVC-CXX.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-CXX.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\FindOpenGL.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;O:\Users\skibo_000\Desktop\bullet3-master\BulletConfig.cmake.in;O:\Users\skibo_000\Desktop\bullet3-master\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule O:/Users/skibo_000/Desktop/bullet3-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -HO:/Users/skibo_000/Desktop/bullet3-master -BC:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build --check-stamp-file C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">O:/Users/skibo_000/Desktop/bullet3-master/CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\CMakeLists.txt;C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\3.8.0-rc4\CMakeSystem.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\3.8.0-rc4\CMakeCCompiler.cmake;C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\3.8.0-rc4\CMakeCXXCompiler.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeSystemSpecificInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeGenericSystem.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\WindowsPaths.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-C.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\3.8.0-rc4\CMakeRCCompiler.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeRCInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCXXInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeLanguageInformation.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Compiler\MSVC-CXX.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC-CXX.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\Platform\Windows-MSVC.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\CMakeCommonLanguageInclude.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\FindOpenGL.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageHandleStandardArgs.cmake;O:\Program Files\CMake\share\cmake-3.8\Modules\FindPackageMessage.cmake;O:\Users\skibo_000\Desktop\bullet3-master\BulletConfig.cmake.in;O:\Users\skibo_000\Desktop\bullet3-master\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\ZERO_CHECK.vcxproj">
+      <Project>90DFD1D1-281F-3322-9650-3F166924C974</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\BasicDemo\AppBasicExampleGui.vcxproj">
+      <Project>424B513A-BBEA-3A2D-8CC3-5DCD23FCD86D</Project>
+      <Name>AppBasicExampleGui</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\BasicDemo\App_BasicExample.vcxproj">
+      <Project>BBE060DB-6D36-3010-8EC2-9CFC79C356C7</Project>
+      <Name>App_BasicExample</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ExampleBrowser\App_ExampleBrowser.vcxproj">
+      <Project>035F6BF5-E3BE-382D-A7FB-A089A7269137</Project>
+      <Name>App_ExampleBrowser</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\HelloWorld\App_HelloWorld.vcxproj">
+      <Project>025C1F6F-97F1-3866-90D6-75BF1F2EF068</Project>
+      <Name>App_HelloWorld</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\SharedMemory\App_PhysicsServer_SharedMemory.vcxproj">
+      <Project>3DD1D307-8FB2-38C0-BE0D-55EB0F948A52</Project>
+      <Name>App_PhysicsServer_SharedMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\SharedMemory\App_PhysicsServer_SharedMemory_GUI.vcxproj">
+      <Project>011225BE-F292-3531-8615-581EC266E9B6</Project>
+      <Name>App_PhysicsServer_SharedMemory_GUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\SharedMemory\App_PhysicsServer_SharedMemory_VR.vcxproj">
+      <Project>CA010A36-F5CA-331D-BE32-BA9F44948A69</Project>
+      <Name>App_PhysicsServer_SharedMemory_VR</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\RobotSimulator\App_RobotSimulator.vcxproj">
+      <Project>7A1E988F-37BC-3E7F-B7E9-510ABDE77B2A</Project>
+      <Name>App_RobotSimulator</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\Extras\obj2sdf\App_obj2sdf.vcxproj">
+      <Project>BD12897D-03E1-3E4D-B5D2-70F659B74E15</Project>
+      <Name>App_obj2sdf</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\Bullet3Serialize\Bullet2FileLoader\Bullet2FileLoader.vcxproj">
+      <Project>E39410C3-77B2-31C2-AF0B-830B3BA10201</Project>
+      <Name>Bullet2FileLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\Bullet3Collision\Bullet3Collision.vcxproj">
+      <Project>3115569C-8444-3049-9C0D-29E6920BBD4A</Project>
+      <Name>Bullet3Collision</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\Bullet3Common\Bullet3Common.vcxproj">
+      <Project>B801D66E-68A7-3D29-AC09-2540BF0315C7</Project>
+      <Name>Bullet3Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\Bullet3Dynamics\Bullet3Dynamics.vcxproj">
+      <Project>BF10948F-95AC-364B-9867-BA2B1F55A18F</Project>
+      <Name>Bullet3Dynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\Bullet3Geometry\Bullet3Geometry.vcxproj">
+      <Project>35F49627-0427-38D8-B9D4-62AA6DC945E6</Project>
+      <Name>Bullet3Geometry</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\Bullet3OpenCL\Bullet3OpenCL_clew.vcxproj">
+      <Project>2C9C99E6-3606-3AA6-9DA0-9F6DA2D95A23</Project>
+      <Name>Bullet3OpenCL_clew</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\BulletCollision\BulletCollision.vcxproj">
+      <Project>52EA6BEB-F7F9-3EFE-B7D8-E5BDC53A8AF9</Project>
+      <Name>BulletCollision</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\BulletDynamics\BulletDynamics.vcxproj">
+      <Project>DDB72483-B3D4-3AA4-93D7-0D1F3E5938AF</Project>
+      <Name>BulletDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ExampleBrowser\BulletExampleBrowserLib.vcxproj">
+      <Project>2DD93202-8F58-368A-888A-77A8F199307D</Project>
+      <Name>BulletExampleBrowserLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\Extras\Serialize\BulletFileLoader\BulletFileLoader.vcxproj">
+      <Project>02B778AF-A660-360F-88DF-EAB8D4600304</Project>
+      <Name>BulletFileLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\BulletInverseDynamics\BulletInverseDynamics.vcxproj">
+      <Project>CF963A15-E654-379B-8231-FE88E412F156</Project>
+      <Name>BulletInverseDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\Extras\InverseDynamics\BulletInverseDynamicsUtils.vcxproj">
+      <Project>C671D773-90CF-3916-B9E6-016E4F08F108</Project>
+      <Name>BulletInverseDynamicsUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\Extras\BulletRobotics\BulletRobotics.vcxproj">
+      <Project>0D0847A1-8509-39B9-B5D2-70B0F46040AA</Project>
+      <Name>BulletRobotics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\BulletSoftBody\BulletSoftBody.vcxproj">
+      <Project>0BB6A4AF-EE01-30CA-9019-B9736479C4C3</Project>
+      <Name>BulletSoftBody</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\Extras\Serialize\BulletWorldImporter\BulletWorldImporter.vcxproj">
+      <Project>CDBC7175-8633-3F8C-B5CC-AE8DBA909BFA</Project>
+      <Name>BulletWorldImporter</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\Extras\Serialize\BulletXmlWorldImporter\BulletXmlWorldImporter.vcxproj">
+      <Project>19A79548-74E9-3101-86AF-3F47DF00F7EA</Project>
+      <Name>BulletXmlWorldImporter</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ThirdPartyLibs\BussIK\BussIK.vcxproj">
+      <Project>C81A01BB-12A8-3D12-A4AA-6E667B5BE6FC</Project>
+      <Name>BussIK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\Extras\ConvexDecomposition\ConvexDecomposition.vcxproj">
+      <Project>96B0ED0D-0819-37A3-9B26-1A5660BCAF67</Project>
+      <Name>ConvexDecomposition</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\Extras\GIMPACTUtils\GIMPACTUtils.vcxproj">
+      <Project>05D44944-30C4-3FC5-A9CA-5E1FB6ADE989</Project>
+      <Name>GIMPACTUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\Extras\HACD\HACD.vcxproj">
+      <Project>CFEB6585-63A8-31B5-8A3E-78C0F0BF2423</Project>
+      <Name>HACD</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\LinearMath\LinearMath.vcxproj">
+      <Project>3E44C469-1376-3387-98E9-B35CFC06D381</Project>
+      <Name>LinearMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\OpenGLWindow\OpenGLWindow.vcxproj">
+      <Project>EA364919-148B-3357-AF68-EABBEC970EF2</Project>
+      <Name>OpenGLWindow</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\test\BulletDynamics\pendulum\Test_BulletDynamics.vcxproj">
+      <Project>B2CC10D2-4BE0-326B-89F7-6979696C6F1F</Project>
+      <Name>Test_BulletDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\test\InverseDynamics\Test_BulletInverseDynamics.vcxproj">
+      <Project>75E5530C-4DBE-39C6-9DD5-2636BB09CF79</Project>
+      <Name>Test_BulletInverseDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\test\InverseDynamics\Test_BulletInverseDynamicsJacobian.vcxproj">
+      <Project>000FDD15-668A-3E65-9909-BC0E3157F1C0</Project>
+      <Name>Test_BulletInverseDynamicsJacobian</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\test\InverseDynamics\Test_BulletInverseForwardDynamics.vcxproj">
+      <Project>9D8BF150-7F4E-38DE-A153-8800955DB6AE</Project>
+      <Name>Test_BulletInverseForwardDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\test\collision\Test_Collision.vcxproj">
+      <Project>D7808CB9-97DA-3B77-AE4D-7542E426BB92</Project>
+      <Name>Test_Collision</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\test\SharedMemory\Test_PhysicsClientServer.vcxproj">
+      <Project>953EE004-28FA-3C34-BA1B-95015C60FFA6</Project>
+      <Name>Test_PhysicsClientServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\test\BulletDynamics\Test_btKinematicCharacterController.vcxproj">
+      <Project>490638C7-5086-3DCA-AF69-02B650814897</Project>
+      <Name>Test_btKinematicCharacterController</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ThirdPartyLibs\clsocket\clsocket.vcxproj">
+      <Project>D7CF5B62-FC73-3E79-8819-73274361C5E1</Project>
+      <Name>clsocket</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\test\gtest-1.7.0\gtest.vcxproj">
+      <Project>3F324021-E025-3ABD-92E9-35DAFEF490D2</Project>
+      <Name>gtest</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ThirdPartyLibs\Gwen\gwen.vcxproj">
+      <Project>2B212810-4863-335F-9192-73F34577AAAA</Project>
+      <Name>gwen</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

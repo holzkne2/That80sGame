@@ -1,0 +1,579 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{CA010A36-F5CA-331D-BE32-BA9F44948A69}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>App_PhysicsServer_SharedMemory_VR</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\SharedMemory\Debug\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">App_PhysicsServer_SharedMemory_VR.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">App_PhysicsServer_SharedMemory_VR</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\SharedMemory\Release\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">App_PhysicsServer_SharedMemory_VR.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">App_PhysicsServer_SharedMemory_VR</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\SharedMemory\MinSizeRel\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">App_PhysicsServer_SharedMemory_VR.dir\MinSizeRel\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">App_PhysicsServer_SharedMemory_VR</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\SharedMemory\RelWithDebInfo\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">App_PhysicsServer_SharedMemory_VR.dir\RelWithDebInfo\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">App_PhysicsServer_SharedMemory_VR</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\headers;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_DEBUG;BT_ENABLE_VR;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;B3_USE_STANDALONE_EXAMPLE;GLEW_STATIC;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;BT_ENABLE_VR;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;B3_USE_STANDALONE_EXAMPLE;GLEW_STATIC;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\headers;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\headers;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>	</Message>
+      <Command>setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -E copy_if_different O:/Users/skibo_000/Desktop/bullet3-master/examples/ThirdPartyLibs/openvr/bin/win32/openvr_api.dll C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/SharedMemory/openvr_api.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -E copy_directory O:/Users/skibo_000/Desktop/bullet3-master/data C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/data
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:X86</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\Debug\Bullet3Common_Debug.lib;..\..\lib\Debug\BulletWorldImporter_Debug.lib;..\..\lib\Debug\BulletFileLoader_Debug.lib;..\..\lib\Debug\BulletInverseDynamicsUtils_Debug.lib;..\..\lib\Debug\BulletInverseDynamics_Debug.lib;..\..\lib\Debug\BulletDynamics_Debug.lib;..\..\lib\Debug\BulletCollision_Debug.lib;..\..\lib\Debug\LinearMath_Debug.lib;..\..\lib\Debug\BussIK_Debug.lib;..\..\lib\Debug\Bullet3Common_Debug.lib;..\..\lib\Debug\BulletWorldImporter_Debug.lib;..\..\lib\Debug\BulletInverseDynamicsUtils_Debug.lib;..\..\lib\Debug\BulletInverseDynamics_Debug.lib;..\..\lib\Debug\BulletDynamics_Debug.lib;..\..\lib\Debug\BulletCollision_Debug.lib;..\..\lib\Debug\LinearMath_Debug.lib;..\..\lib\Debug\BussIK_Debug.lib;..\..\lib\Debug\OpenGLWindow_Debug.lib;opengl32.lib;glu32.lib;..\..\lib\Debug\Bullet3Common_Debug.lib;..\..\lib\Debug\BulletWorldImporter_Debug.lib;..\..\lib\Debug\BulletInverseDynamicsUtils_Debug.lib;..\..\lib\Debug\BulletInverseDynamics_Debug.lib;..\..\lib\Debug\BulletDynamics_Debug.lib;..\..\lib\Debug\BulletCollision_Debug.lib;..\..\lib\Debug\LinearMath_Debug.lib;..\..\lib\Debug\BussIK_Debug.lib;openvr_api.lib;..\..\lib\Debug\OpenGLWindow_Debug.lib;opengl32.lib;glu32.lib;openvr_api.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>O:/Users/skibo_000/Desktop/bullet3-master/examples/ThirdPartyLibs/openvr/lib/win32;O:/Users/skibo_000/Desktop/bullet3-master/examples/ThirdPartyLibs/openvr/lib/win32/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/SharedMemory/Debug/App_PhysicsServer_SharedMemory_VR.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/SharedMemory/Debug/App_PhysicsServer_SharedMemory_VR.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\headers;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;BT_ENABLE_VR;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;B3_USE_STANDALONE_EXAMPLE;GLEW_STATIC;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;BT_ENABLE_VR;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;B3_USE_STANDALONE_EXAMPLE;GLEW_STATIC;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\headers;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\headers;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>	</Message>
+      <Command>setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -E copy_if_different O:/Users/skibo_000/Desktop/bullet3-master/examples/ThirdPartyLibs/openvr/bin/win32/openvr_api.dll C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/SharedMemory/openvr_api.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -E copy_directory O:/Users/skibo_000/Desktop/bullet3-master/data C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/data
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:X86</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\Release\Bullet3Common.lib;..\..\lib\Release\BulletWorldImporter.lib;..\..\lib\Release\BulletFileLoader.lib;..\..\lib\Release\BulletInverseDynamicsUtils.lib;..\..\lib\Release\BulletInverseDynamics.lib;..\..\lib\Release\BulletDynamics.lib;..\..\lib\Release\BulletCollision.lib;..\..\lib\Release\LinearMath.lib;..\..\lib\Release\BussIK.lib;..\..\lib\Release\Bullet3Common.lib;..\..\lib\Release\BulletWorldImporter.lib;..\..\lib\Release\BulletInverseDynamicsUtils.lib;..\..\lib\Release\BulletInverseDynamics.lib;..\..\lib\Release\BulletDynamics.lib;..\..\lib\Release\BulletCollision.lib;..\..\lib\Release\LinearMath.lib;..\..\lib\Release\BussIK.lib;..\..\lib\Release\OpenGLWindow.lib;opengl32.lib;glu32.lib;..\..\lib\Release\Bullet3Common.lib;..\..\lib\Release\BulletWorldImporter.lib;..\..\lib\Release\BulletInverseDynamicsUtils.lib;..\..\lib\Release\BulletInverseDynamics.lib;..\..\lib\Release\BulletDynamics.lib;..\..\lib\Release\BulletCollision.lib;..\..\lib\Release\LinearMath.lib;..\..\lib\Release\BussIK.lib;openvr_api.lib;..\..\lib\Release\OpenGLWindow.lib;opengl32.lib;glu32.lib;openvr_api.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>O:/Users/skibo_000/Desktop/bullet3-master/examples/ThirdPartyLibs/openvr/lib/win32;O:/Users/skibo_000/Desktop/bullet3-master/examples/ThirdPartyLibs/openvr/lib/win32/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/SharedMemory/Release/App_PhysicsServer_SharedMemory_VR.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/SharedMemory/Release/App_PhysicsServer_SharedMemory_VR.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\headers;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;BT_ENABLE_VR;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;B3_USE_STANDALONE_EXAMPLE;GLEW_STATIC;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;BT_ENABLE_VR;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;B3_USE_STANDALONE_EXAMPLE;GLEW_STATIC;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\headers;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\headers;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>	</Message>
+      <Command>setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -E copy_if_different O:/Users/skibo_000/Desktop/bullet3-master/examples/ThirdPartyLibs/openvr/bin/win32/openvr_api.dll C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/SharedMemory/openvr_api.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -E copy_directory O:/Users/skibo_000/Desktop/bullet3-master/data C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/data
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:X86</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\MinSizeRel\Bullet3Common_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletWorldImporter_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletFileLoader_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletInverseDynamicsUtils_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletInverseDynamics_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletDynamics_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletCollision_MinsizeRel.lib;..\..\lib\MinSizeRel\LinearMath_MinsizeRel.lib;..\..\lib\MinSizeRel\BussIK_MinsizeRel.lib;..\..\lib\MinSizeRel\Bullet3Common_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletWorldImporter_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletInverseDynamicsUtils_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletInverseDynamics_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletDynamics_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletCollision_MinsizeRel.lib;..\..\lib\MinSizeRel\LinearMath_MinsizeRel.lib;..\..\lib\MinSizeRel\BussIK_MinsizeRel.lib;..\..\lib\MinSizeRel\OpenGLWindow_MinsizeRel.lib;opengl32.lib;glu32.lib;..\..\lib\MinSizeRel\Bullet3Common_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletWorldImporter_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletInverseDynamicsUtils_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletInverseDynamics_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletDynamics_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletCollision_MinsizeRel.lib;..\..\lib\MinSizeRel\LinearMath_MinsizeRel.lib;..\..\lib\MinSizeRel\BussIK_MinsizeRel.lib;openvr_api.lib;..\..\lib\MinSizeRel\OpenGLWindow_MinsizeRel.lib;opengl32.lib;glu32.lib;openvr_api.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>O:/Users/skibo_000/Desktop/bullet3-master/examples/ThirdPartyLibs/openvr/lib/win32;O:/Users/skibo_000/Desktop/bullet3-master/examples/ThirdPartyLibs/openvr/lib/win32/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/SharedMemory/MinSizeRel/App_PhysicsServer_SharedMemory_VR.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/SharedMemory/MinSizeRel/App_PhysicsServer_SharedMemory_VR.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\headers;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;BT_ENABLE_VR;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;B3_USE_STANDALONE_EXAMPLE;GLEW_STATIC;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;BT_ENABLE_VR;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;B3_USE_STANDALONE_EXAMPLE;GLEW_STATIC;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\headers;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>O:\Users\skibo_000\Desktop\bullet3-master\src;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Glew;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\headers;O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>	</Message>
+      <Command>setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -E copy_if_different O:/Users/skibo_000/Desktop/bullet3-master/examples/ThirdPartyLibs/openvr/bin/win32/openvr_api.dll C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/SharedMemory/openvr_api.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -E copy_directory O:/Users/skibo_000/Desktop/bullet3-master/data C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/data
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:X86</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\RelWithDebInfo\Bullet3Common_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletWorldImporter_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletFileLoader_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletInverseDynamicsUtils_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletInverseDynamics_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletDynamics_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletCollision_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\LinearMath_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BussIK_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\Bullet3Common_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletWorldImporter_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletInverseDynamicsUtils_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletInverseDynamics_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletDynamics_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletCollision_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\LinearMath_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BussIK_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\OpenGLWindow_RelWithDebugInfo.lib;opengl32.lib;glu32.lib;..\..\lib\RelWithDebInfo\Bullet3Common_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletWorldImporter_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletInverseDynamicsUtils_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletInverseDynamics_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletDynamics_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletCollision_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\LinearMath_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BussIK_RelWithDebugInfo.lib;openvr_api.lib;..\..\lib\RelWithDebInfo\OpenGLWindow_RelWithDebugInfo.lib;opengl32.lib;glu32.lib;openvr_api.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>O:/Users/skibo_000/Desktop/bullet3-master/examples/ThirdPartyLibs/openvr/lib/win32;O:/Users/skibo_000/Desktop/bullet3-master/examples/ThirdPartyLibs/openvr/lib/win32/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/SharedMemory/RelWithDebInfo/App_PhysicsServer_SharedMemory_VR.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/SharedMemory/RelWithDebInfo/App_PhysicsServer_SharedMemory_VR.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule O:/Users/skibo_000/Desktop/bullet3-master/examples/SharedMemory/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -HO:/Users/skibo_000/Desktop/bullet3-master -BC:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build --check-stamp-file C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/SharedMemory/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">O:/Users/skibo_000/Desktop/bullet3-master/examples/SharedMemory/CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\SharedMemory\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule O:/Users/skibo_000/Desktop/bullet3-master/examples/SharedMemory/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -HO:/Users/skibo_000/Desktop/bullet3-master -BC:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build --check-stamp-file C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/SharedMemory/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">O:/Users/skibo_000/Desktop/bullet3-master/examples/SharedMemory/CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\SharedMemory\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule O:/Users/skibo_000/Desktop/bullet3-master/examples/SharedMemory/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -HO:/Users/skibo_000/Desktop/bullet3-master -BC:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build --check-stamp-file C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/SharedMemory/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">O:/Users/skibo_000/Desktop/bullet3-master/examples/SharedMemory/CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\SharedMemory\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule O:/Users/skibo_000/Desktop/bullet3-master/examples/SharedMemory/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"O:\Program Files\CMake\bin\cmake.exe" -HO:/Users/skibo_000/Desktop/bullet3-master -BC:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build --check-stamp-file C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/examples/SharedMemory/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">O:/Users/skibo_000/Desktop/bullet3-master/examples/SharedMemory/CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\CMakeLists.txt;O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\SharedMemory\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\IKTrajectoryHelper.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerSharedMemory.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsServer.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\SharedMemoryCommands.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\SharedMemoryPublic.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsDirect.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsDirectC_API.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsLoopBack.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsLoopBackC_API.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory_C_API.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory2_C_API.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory2.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\SharedMemoryCommandProcessor.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerCommandProcessor.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\TinyRendererVisualShapeConverter.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\OpenGLWindow\SimpleCamera.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\ConvertRigidBodies2MultiBody.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\MultiBodyCreationInterface.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\BulletUrdfImporter.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\URDF2Bullet.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Utils\RobotLoggingUtil.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Utils\ChromeTraceUtil.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\URDFImporterInterface.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\URDFJointTypes.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportSTLDemo\ImportSTLSetup.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportSTLDemo\LoadMeshFromSTL.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportColladaDemo\ColladaGraphicsInstance.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiThreading\b3ThreadSupportInterface.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiThreading\b3Win32ThreadSupport.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared\lodepng.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared\Matrices.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared\pathtools.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared\strtools.h" />
+    <ClInclude Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared\Vectors.h" />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\IKTrajectoryHelper.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsClient.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientExample.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerExample.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerExampleBullet2.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerSharedMemory.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsServer.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientC_API.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PosixSharedMemory.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\Win32SharedMemory.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\InProcessMemory.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsDirect.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsDirectC_API.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsLoopBack.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsLoopBackC_API.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory_C_API.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory2_C_API.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory2.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\SharedMemoryCommandProcessor.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerCommandProcessor.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\TinyRendererVisualShapeConverter.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\SharedMemory\b3PluginManager.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\TinyRenderer\geometry.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\TinyRenderer\model.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\TinyRenderer\tgaimage.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\TinyRenderer\our_gl.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\TinyRenderer\TinyRenderer.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\OpenGLWindow\SimpleCamera.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\BulletUrdfImporter.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\urdfStringSplit.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\URDF2Bullet.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Utils\b3ResourcePath.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Utils\b3Clock.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Utils\RobotLoggingUtil.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Utils\ChromeTraceUtil.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportObjDemo\LoadMeshFromObj.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportColladaDemo\LoadMeshFromCollada.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\Wavefront\tiny_obj_loader.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\tinyxml\tinystr.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\tinyxml\tinyxml.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\tinyxml\tinyxmlerror.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\tinyxml\tinyxmlparser.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\Importers\ImportMeshUtility\b3ImportMeshUtility.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\stb_image\stb_image.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiThreading\b3ThreadSupportInterface.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\MultiThreading\b3Win32ThreadSupport.cpp"  />
+    <ResourceCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\build3\bullet.rc"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\StandaloneMain\hellovr_opengl_main.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\OpenGLGuiHelper.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\GL_ShapeDrawer.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ExampleBrowser\CollisionShape2TriangleMesh.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\TinyVRGui.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\TimeSeriesCanvas.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\RenderingExamples\TimeSeriesFontData.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared\lodepng.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared\Matrices.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared\pathtools.cpp"  />
+    <ClCompile Include="O:\Users\skibo_000\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared\strtools.cpp"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\ZERO_CHECK.vcxproj">
+      <Project>90DFD1D1-281F-3322-9650-3F166924C974</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\Bullet3Common\Bullet3Common.vcxproj">
+      <Project>B801D66E-68A7-3D29-AC09-2540BF0315C7</Project>
+      <Name>Bullet3Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\BulletCollision\BulletCollision.vcxproj">
+      <Project>52EA6BEB-F7F9-3EFE-B7D8-E5BDC53A8AF9</Project>
+      <Name>BulletCollision</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\BulletDynamics\BulletDynamics.vcxproj">
+      <Project>DDB72483-B3D4-3AA4-93D7-0D1F3E5938AF</Project>
+      <Name>BulletDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\Extras\Serialize\BulletFileLoader\BulletFileLoader.vcxproj">
+      <Project>02B778AF-A660-360F-88DF-EAB8D4600304</Project>
+      <Name>BulletFileLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\BulletInverseDynamics\BulletInverseDynamics.vcxproj">
+      <Project>CF963A15-E654-379B-8231-FE88E412F156</Project>
+      <Name>BulletInverseDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\Extras\InverseDynamics\BulletInverseDynamicsUtils.vcxproj">
+      <Project>C671D773-90CF-3916-B9E6-016E4F08F108</Project>
+      <Name>BulletInverseDynamicsUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\Extras\Serialize\BulletWorldImporter\BulletWorldImporter.vcxproj">
+      <Project>CDBC7175-8633-3F8C-B5CC-AE8DBA909BFA</Project>
+      <Name>BulletWorldImporter</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\ThirdPartyLibs\BussIK\BussIK.vcxproj">
+      <Project>C81A01BB-12A8-3D12-A4AA-6E667B5BE6FC</Project>
+      <Name>BussIK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\src\LinearMath\LinearMath.vcxproj">
+      <Project>3E44C469-1376-3387-98E9-B35CFC06D381</Project>
+      <Name>LinearMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\skibo_000\Documents\GitHub\That80sGame\That80sGame\Bullet-Build\examples\OpenGLWindow\OpenGLWindow.vcxproj">
+      <Project>EA364919-148B-3357-AF68-EABBEC970EF2</Project>
+      <Name>OpenGLWindow</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

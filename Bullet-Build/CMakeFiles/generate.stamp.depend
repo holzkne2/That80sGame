@@ -1,0 +1,27 @@
+# CMake generation dependency list for this directory.
+O:/Users/skibo_000/Desktop/bullet3-master/CMakeLists.txt
+C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/CMakeFiles/3.8.0-rc4/CMakeSystem.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/CMakeFiles/3.8.0-rc4/CMakeCCompiler.cmake
+C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/CMakeFiles/3.8.0-rc4/CMakeCXXCompiler.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/CMakeSystemSpecificInformation.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/CMakeGenericSystem.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/Platform/Windows.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/Platform/WindowsPaths.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/CMakeCInformation.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/CMakeLanguageInformation.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/Platform/Windows-MSVC-C.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/Platform/Windows-MSVC.cmake
+C:/Users/skibo_000/Documents/GitHub/That80sGame/That80sGame/Bullet-Build/CMakeFiles/3.8.0-rc4/CMakeRCCompiler.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/CMakeRCInformation.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/CMakeCommonLanguageInclude.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/CMakeCXXInformation.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/CMakeLanguageInformation.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/Compiler/MSVC-CXX.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/Platform/Windows-MSVC-CXX.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/Platform/Windows-MSVC.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/CMakeCommonLanguageInclude.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/FindOpenGL.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageHandleStandardArgs.cmake
+O:/Program Files/CMake/share/cmake-3.8/Modules/FindPackageMessage.cmake
+O:/Users/skibo_000/Desktop/bullet3-master/BulletConfig.cmake.in
