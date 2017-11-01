@@ -19,7 +19,7 @@ public:
 	bool IsActive();
 
 	bool IsSelfActive() { return m_active; }
-	void SetActive(bool active) { m_active = active; }
+	virtual void SetActive(bool active) { m_active = active; }
 
 protected:
 	GameObject* m_gameObject;
