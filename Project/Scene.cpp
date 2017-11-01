@@ -8,6 +8,7 @@
 #include "ShipController.h"
 #include "CameraFollow.h"
 #include "TrackManager.h"
+#include "BoxCollider.h"
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -114,6 +115,7 @@ void Scene::LoadScene0()
 	gameObject = std::make_unique<GameObject>("Ship");
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ship01.cmo");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 1, 4));
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.5, 0.5, 0.5), 1);
 
 	AddGameObject(gameObject);
 
@@ -217,6 +219,7 @@ void Scene::LoadScene1()
 
 void Scene::UnloadCurrentScene()
 {
+	Game::Get()->GetPhysicsManager()->Clear();
 	m_gameObjects.clear();
 	m_modelRenderers.clear();
 	m_cameras.clear();
@@ -225,8 +228,6 @@ void Scene::UnloadCurrentScene()
 void Scene::Update()
 {
 	DX::DeviceResources* deviceResources = Game::Get()->GetDeviceResources();
-
-	Matrix temp = m_gameObjects[2]->GetTransform()->GetWorldToLocalMatrix();
 
 	for (unsigned int i = 0; i < m_gameObjects.size(); i++)
 	{

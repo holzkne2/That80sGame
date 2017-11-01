@@ -1,6 +1,8 @@
 #pragma once
 
+#include <vector>
 #include "btBulletDynamicsCommon.h"
+#include "Collider.h"
 
 class PhysicsManager
 {
@@ -9,6 +11,11 @@ public:
 	virtual ~PhysicsManager();
 
 	void Initialize();
+	void Clear();
+
+	void Tick(float);
+
+	void AddCollider(Collider*);
 
 private:
 	std::unique_ptr<btBroadphaseInterface> m_broadphase;
@@ -16,5 +23,7 @@ private:
 	std::unique_ptr<btCollisionDispatcher> m_dispatcher;
 	std::unique_ptr<btSequentialImpulseConstraintSolver> m_solver;
 	std::unique_ptr<btDiscreteDynamicsWorld> m_dynamicsWorld;
+
+	std::vector<Collider*> m_colliders;
 };
 

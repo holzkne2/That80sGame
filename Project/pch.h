@@ -61,6 +61,7 @@
 #include "VertexTypes.h"
 #include "WICTextureLoader.h"
 
+#include "btBulletDynamicsCommon.h"
 
 namespace DX
 {
@@ -89,4 +90,27 @@ namespace DX
             throw com_exception(hr);
         }
     }
+}
+
+namespace SimpleMath_LinearMath
+{
+	inline btQuaternion smQ_btQ(const DirectX::SimpleMath::Quaternion& quaternion)
+	{
+		return btQuaternion(quaternion.x, quaternion.y, quaternion.z, quaternion.w);
+	}
+
+	inline btVector3 smV3_btV3(const DirectX::SimpleMath::Vector3& vector3)
+	{
+		return btVector3(vector3.x, vector3.y, vector3.z);
+	}
+
+	inline DirectX::SimpleMath::Quaternion btQ_smQ(const btQuaternion& quaternion)
+	{
+		return DirectX::SimpleMath::Quaternion(quaternion.getX(), quaternion.getY(), quaternion.getZ(), quaternion.getW());
+	}
+
+	inline DirectX::SimpleMath::Vector3 btV3_smV3(const btVector3& vector3)
+	{
+		return DirectX::SimpleMath::Vector3(vector3.getX(), vector3.getY(), vector3.getZ());
+	}
 }

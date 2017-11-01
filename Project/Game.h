@@ -47,6 +47,8 @@ public:
 
 	DX::StepTimer* GetTimer() { return &m_timer; }
 
+	PhysicsManager* GetPhysicsManager() { return m_physicsManager.get(); }
+
 private:
 
 	void Update(DX::StepTimer const& timer);
