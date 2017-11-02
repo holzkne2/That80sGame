@@ -24,6 +24,8 @@ public:
 	void AddCamera(Camera*);
 
 private:
+	void Init();
+
 	void LoadScene0();
 	void LoadScene1();
 
@@ -39,7 +41,8 @@ private:
 
 	std::vector<Camera*> m_cameras;
 
-	DirectX::SimpleMath::Matrix m_view;
-	DirectX::SimpleMath::Matrix m_proj;
+	std::unique_ptr<DirectX::BasicEffect> m_debugEffect;
+	std::unique_ptr<DirectX::PrimitiveBatch<DirectX::VertexPositionColor>> m_debugBatch;
+	Microsoft::WRL::ComPtr<ID3D11InputLayout> m_debugInputLayout;
 };
 

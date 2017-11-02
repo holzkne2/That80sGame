@@ -42,6 +42,9 @@ void PhysicsManager::Initialize()
 		m_solver.get(), m_collisionConfiguration.get());
 	m_dynamicsWorld->setGravity(btVector3(0, -10, 0));
 
+	m_debugDraw = std::make_unique<DebugDraw>();
+	m_dynamicsWorld->setDebugDrawer(m_debugDraw.get());
+
 	// Ex
 	//GameObject* groundObj = new GameObject("Ground Object");
 	//groundObj->GetTransform()->SetPosition(Vector3(0, 0, 0));
@@ -97,6 +100,8 @@ void PhysicsManager::Tick(float deltaTime)
 		collider->GetGameObject()->GetTransform()->SetPosition(btV3_smV3(transform.getOrigin()));
 		collider->GetGameObject()->GetTransform()->SetRotation(btQ_smQ(transform.getRotation()));
 	}
+	
+	m_dynamicsWorld->debugDrawWorld();
 }
 
 void PhysicsManager::AddCollider(Collider* collider)

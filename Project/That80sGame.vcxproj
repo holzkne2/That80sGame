@@ -184,6 +184,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraFollow.h" />
     <ClInclude Include="Collider.h" />
+    <ClInclude Include="DebugDraw.h" />
     <ClInclude Include="ModelRenderer.h" />
     <ClInclude Include="PhysicsManager.h" />
     <ClInclude Include="Scene.h" />
@@ -205,6 +206,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraFollow.cpp" />
     <ClCompile Include="Collider.cpp" />
+    <ClCompile Include="DebugDraw.cpp" />
     <ClCompile Include="ModelRenderer.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>

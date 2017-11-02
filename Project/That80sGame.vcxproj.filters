@@ -33,6 +33,7 @@
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="BoxCollider.h" />
+    <ClInclude Include="DebugDraw.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -56,6 +57,7 @@
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="BoxCollider.cpp" />
+    <ClCompile Include="DebugDraw.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />

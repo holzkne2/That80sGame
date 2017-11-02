@@ -9,6 +9,7 @@
 #include "CameraFollow.h"
 #include "TrackManager.h"
 #include "BoxCollider.h"
+#include "DebugDraw.h"
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -37,12 +38,35 @@ void Scene::LoadScene(int sceneIndex)
 		LoadScene1();
 }
 
-void Scene::LoadScene0()
+void Scene::Init()
 {
 	DX::DeviceResources* deviceResources = Game::Get()->GetDeviceResources();
 
 	m_states = std::make_unique<CommonStates>(deviceResources->GetD3DDevice());
 	m_spriteBatch = std::make_unique<SpriteBatch>(deviceResources->GetD3DDeviceContext());
+
+	m_debugEffect = std::make_unique<BasicEffect>(deviceResources->GetD3DDevice());
+	m_debugEffect->SetVertexColorEnabled(true);
+
+	void const* shaderByteCode;
+	size_t byteCodeLength;
+
+	m_debugEffect->GetVertexShaderBytecode(&shaderByteCode, &byteCodeLength);
+
+	DX::ThrowIfFailed(
+		deviceResources->GetD3DDevice()->CreateInputLayout(VertexPositionColor::InputElements,
+		VertexPositionColor::InputElementCount,
+		shaderByteCode, byteCodeLength,
+		m_debugInputLayout.ReleaseAndGetAddressOf()));
+
+	m_debugBatch = std::make_unique<PrimitiveBatch<VertexPositionColor>>(deviceResources->GetD3DDeviceContext());
+}
+
+void Scene::LoadScene0()
+{
+	DX::DeviceResources* deviceResources = Game::Get()->GetDeviceResources();
+
+	Init();
 
 	///
 	/// Title
@@ -135,8 +159,7 @@ void Scene::LoadScene1()
 {
 	DX::DeviceResources* deviceResources = Game::Get()->GetDeviceResources();
 
-	m_states = std::make_unique<CommonStates>(deviceResources->GetD3DDevice());
-	m_spriteBatch = std::make_unique<SpriteBatch>(deviceResources->GetD3DDeviceContext());
+	Init();
 
 	///
 	/// Track Manager
@@ -200,6 +223,7 @@ void Scene::LoadScene1()
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ship01.cmo");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 2, 0));
 	gameObject->AddComponent<ShipController>();
+	//gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.5, 0.5, 0.5), 0);
 
 	AddGameObject(gameObject);
 	GameObject* player = m_gameObjects[m_gameObjects.size() - 1].get();
@@ -267,6 +291,7 @@ void Scene::Render()
 	// TODO: Add your rendering code here.
 	context;
 
+
 	GameObject* gameObject;
 	ModelRenderer* modelRenderer;
 	Camera* camera;
@@ -304,6 +329,33 @@ void Scene::Render()
 
 	m_spriteBatch->End();
 
+	// Debug Lines
+	m_debugEffect->SetWorld(Matrix::Identity);
+	m_debugEffect->Apply(context);
+	context->IASetInputLayout(m_debugInputLayout.Get());
+	m_debugBatch->Begin();
+
+	std::vector<DebugDraw::Line>* lines = Game::Get()->GetPhysicsManager()->GetDebugDraw()->GetLines();
+	VertexPositionColor from;
+	VertexPositionColor to;
+	for (unsigned int c = 0; c < m_cameras.size(); c++)
+	{
+		camera = m_cameras[c];
+		if (camera == nullptr || !camera->IsActive())
+			continue;
+		Matrix view = camera->GetViewMatrix();
+		Matrix projection = camera->GetProjectionMatrix(deviceResources->GetOutputSize());
+		m_debugEffect->SetView(view);
+		m_debugEffect->SetProjection(projection);
+		
+		for (unsigned int l = 0; l < lines->size(); l++)
+		{
+			lines->at(l).GetAsVertexPositionColors(from, to);
+			m_debugBatch->DrawLine(from, to);
+		}
+	}
+	m_debugBatch->End();
+
 	deviceResources->PIXEndEvent();
 }
 
@@ -322,6 +374,9 @@ void Scene::OnDeviceLost()
 	}
 	m_spriteBatch.reset();
 	m_states.reset();
+	m_debugEffect.reset();
+	m_debugBatch.reset();
+	m_debugInputLayout.Reset();
 }
 
 void Scene::AddGameObject(std::unique_ptr<GameObject>& gameObject)

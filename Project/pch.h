@@ -113,4 +113,9 @@ namespace SimpleMath_LinearMath
 	{
 		return DirectX::SimpleMath::Vector3(vector3.getX(), vector3.getY(), vector3.getZ());
 	}
+
+	inline DirectX::SimpleMath::Color btV3_smC(const btVector3& color)
+	{
+		return DirectX::SimpleMath::Color(color.getX(), color.getY(), color.getZ());
+	}
 }

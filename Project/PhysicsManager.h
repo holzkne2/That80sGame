@@ -3,6 +3,7 @@
 #include <vector>
 #include "btBulletDynamicsCommon.h"
 #include "Collider.h"
+#include "DebugDraw.h"
 
 class PhysicsManager
 {
@@ -17,6 +18,8 @@ public:
 
 	void AddCollider(Collider*);
 
+	DebugDraw* GetDebugDraw() { return m_debugDraw.get(); }
+
 private:
 	std::unique_ptr<btBroadphaseInterface> m_broadphase;
 	std::unique_ptr<btDefaultCollisionConfiguration> m_collisionConfiguration;
@@ -25,5 +28,7 @@ private:
 	std::unique_ptr<btDiscreteDynamicsWorld> m_dynamicsWorld;
 
 	std::vector<Collider*> m_colliders;
+
+	std::unique_ptr<DebugDraw> m_debugDraw;
 };
 
