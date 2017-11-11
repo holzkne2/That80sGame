@@ -23,6 +23,9 @@ ShipController::~ShipController()
 
 void ShipController::Update()
 {
+	//Stop Rotation
+	m_gameObject->GetComponent<Collider>()->GetRigidBody()->setAngularFactor(btVector3(0, 0, 0));
+	
 	Vector3 v = Vector3::Zero;
 	float deltaTime = Game::Get()->GetTimer()->GetElapsedSeconds();
 	auto state = GamePad::Get().GetState(0, GamePad::DEAD_ZONE_CIRCULAR);
@@ -35,13 +38,12 @@ void ShipController::Update()
 		//position += (offset * deltaTime * m_slideSpeed);
 	}
 	
+	m_gameObject->GetComponent<Collider>()->SetVelocity(v);
 	//Vector3 original_position = m_gameObject->GetTransform()->GetPosition();
 	//Vector3 limited_position = Vector3(
 	//	XMMin<float>(m_maxPosition.x, XMMax<float>(m_minPosition.x, predicted_position.x)),
 	//	XMMin<float>(m_maxPosition.y, XMMax<float>(m_minPosition.y, predicted_position.y)),
 	//	0);
-
-	m_gameObject->GetComponent<Collider>()->SetVelocity(v);
 
 	//m_gameObject->GetTransform()->SetPosition(position);
 }
