@@ -139,7 +139,7 @@ void Scene::LoadScene0()
 	gameObject = std::make_unique<GameObject>("Ship");
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ship01.cmo");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 1, 4));
-	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.5, 0.5, 0.5), 1, false);
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.5, 0.5, 0.5), 1, false, collisiontypes::COL_NOTHING, collisiontypes::COL_NOTHING);
 
 	AddGameObject(gameObject);
 
@@ -198,7 +198,7 @@ void Scene::LoadScene1()
 	gameObject = std::make_unique<GameObject>("Tower Collider");
 	gameObject->GetTransform()->SetParent(last->GetTransform());
 	gameObject->GetTransform()->SetLocalPosition(Vector3(0, 2.25, 0));
-	gameObject->AddComponent<BoxCollider>()->Init(Vector3(2, 2.25, 2), 0, true);
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(2, 2.25, 2), 0, true, collisiontypes::COL_WALL, collisiontypes::COL_SHIP);
 
 	AddGameObject(gameObject);
 
@@ -210,10 +210,10 @@ void Scene::LoadScene1()
 
 	AddGameObject(gameObject);
 
-	gameObject = std::make_unique<GameObject>("Tower 1 Collider");
+	gameObject = std::make_unique<GameObject>("Tower Collider");
 	gameObject->GetTransform()->SetParent(last->GetTransform());
 	gameObject->GetTransform()->SetLocalPosition(Vector3(0, 2.25, 0));
-	gameObject->AddComponent<BoxCollider>()->Init(Vector3(2, 2.25, 2), 0, true);
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(2, 2.25, 2), 0, true, collisiontypes::COL_WALL, collisiontypes::COL_SHIP);
 
 	AddGameObject(gameObject);
 
@@ -225,10 +225,10 @@ void Scene::LoadScene1()
 
 	AddGameObject(gameObject);
 
-	gameObject = std::make_unique<GameObject>("Tower 2 Collider");
+	gameObject = std::make_unique<GameObject>("Tower Collider");
 	gameObject->GetTransform()->SetParent(last->GetTransform());
 	gameObject->GetTransform()->SetLocalPosition(Vector3(0, 2.25, 0));
-	gameObject->AddComponent<BoxCollider>()->Init(Vector3(2, 2.25, 2), 0, true);
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(2, 2.25, 2), 0, true, collisiontypes::COL_WALL, collisiontypes::COL_SHIP);
 
 	AddGameObject(gameObject);
 
@@ -249,7 +249,7 @@ void Scene::LoadScene1()
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ship01.cmo");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 2, 0));
 	gameObject->AddComponent<ShipController>();
-	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.5, 0.25, 0.5), 1, false);
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.5, 0.25, 0.5), 1, false, collisiontypes::COL_SHIP, collisiontypes::COL_WALL | collisiontypes::COL_CONTRAINT);
 
 	AddGameObject(gameObject);
 	GameObject* player = m_gameObjects[m_gameObjects.size() - 1].get();
@@ -259,25 +259,25 @@ void Scene::LoadScene1()
 	///
 	gameObject = std::make_unique<GameObject>("Top");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 5, 0));
-	gameObject->AddComponent<BoxCollider>()->Init(Vector3(3, 0.25, 1), 0, true);
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(3, 0.25, 1), 0, true, collisiontypes::COL_CONTRAINT, collisiontypes::COL_SHIP);
 
 	AddGameObject(gameObject);
 
 	gameObject = std::make_unique<GameObject>("Bottom");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 1.25, 0));
-	gameObject->AddComponent<BoxCollider>()->Init(Vector3(3, 0.25, 1), 0, true);
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(3, 0.25, 1), 0, true, collisiontypes::COL_CONTRAINT, collisiontypes::COL_SHIP);
 
 	AddGameObject(gameObject);
 
 	gameObject = std::make_unique<GameObject>("Left");
 	gameObject->GetTransform()->SetPosition(Vector3(3, 2.25, 0));
-	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.25, 3, 1), 0, true);
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.25, 3, 1), 0, true, collisiontypes::COL_CONTRAINT, collisiontypes::COL_SHIP);
 
 	AddGameObject(gameObject);
 
 	gameObject = std::make_unique<GameObject>("Right");
 	gameObject->GetTransform()->SetPosition(Vector3(-3, 2.25, 0));
-	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.25, 3, 1), 0, true);
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.25, 3, 1), 0, true, collisiontypes::COL_CONTRAINT, collisiontypes::COL_SHIP);
 
 	AddGameObject(gameObject);
 

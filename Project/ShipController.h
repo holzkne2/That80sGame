@@ -9,6 +9,8 @@ public:
 
 	void Update() override;
 
+	void CollisionStay(const Collider*) const override;
+
 private:	
 	float m_slideSpeed;
 

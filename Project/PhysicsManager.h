@@ -16,7 +16,7 @@ public:
 
 	void Tick(float);
 
-	void AddCollider(Collider*);
+	void AddCollider(Collider*, int, int);
 
 	DebugDraw* GetDebugDraw() { return m_debugDraw.get(); }
 

@@ -26,6 +26,10 @@ public:
 	bool IsActive();
 	void SetActive(bool active) { m_active = active; }
 
+	std::string GetName() const { return m_name; }
+
+	void CollisionStay(const Collider*) const;
+
 private:
 	std::unique_ptr<Transform> m_transform;
 	std::vector<std::unique_ptr<Component>> m_components;

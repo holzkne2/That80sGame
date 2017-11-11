@@ -21,7 +21,7 @@ void Collider::GetWorldTransform(btTransform& transform)
 	return m_rigidBody->getMotionState()->getWorldTransform(transform);
 }
 
-void Collider::Init(float mass, bool kinematic)
+void Collider::Init(float mass, bool kinematic, int group, int mask)
 {
 	m_collisionShape->setLocalScaling(m_gameObject->GetTransform()->GetScale() * btVector3(1, 1, 1));
 
@@ -33,6 +33,8 @@ void Collider::Init(float mass, bool kinematic)
 	btScalar btmass = mass;
 	btVector3 inertia(0, 0, 0);
 	m_collisionShape->calculateLocalInertia(mass, inertia);
+	
+	m_collisionShape->setUserPointer(this);
 
 	btRigidBody::btRigidBodyConstructionInfo
 		rigidBodyCI(btmass, m_motionState.get(), m_collisionShape.get(), inertia);
@@ -40,15 +42,18 @@ void Collider::Init(float mass, bool kinematic)
 
 	if (kinematic || mass <= 0)
 	{
-		m_rigidBody->setCollisionFlags(m_rigidBody->getCollisionFlags() | btCollisionObject::CF_KINEMATIC_OBJECT);
+		m_rigidBody->setCollisionFlags(m_rigidBody->getCollisionFlags() |
+			btCollisionObject::CF_KINEMATIC_OBJECT);
 	}
 	else
 	{
-		m_rigidBody->setCollisionFlags(btCollisionObject::CF_CHARACTER_OBJECT);
+		m_rigidBody->setCollisionFlags(m_rigidBody->getCollisionFlags() |
+			btCollisionObject::CF_CHARACTER_OBJECT);
 	}
 	m_rigidBody->setActivationState(DISABLE_DEACTIVATION);
+	m_rigidBody->setUserPointer(this);
 
-	Game::Get()->GetPhysicsManager()->AddCollider(this);
+	Game::Get()->GetPhysicsManager()->AddCollider(this, group, mask);
 }
 
 void Collider::SetWorldTransform(Vector3 position, Quaternion rotation = Quaternion::Identity)

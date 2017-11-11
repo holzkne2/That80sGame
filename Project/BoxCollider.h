@@ -7,6 +7,6 @@ public:
 	BoxCollider(GameObject*);
 	virtual ~BoxCollider();
 
-	void Init(DirectX::SimpleMath::Vector3, float, bool);
+	void Init(DirectX::SimpleMath::Vector3, float, bool, int, int);
 };
 

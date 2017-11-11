@@ -46,47 +46,6 @@ void PhysicsManager::Initialize()
 
 	m_debugDraw = std::make_unique<DebugDraw>();
 	m_dynamicsWorld->setDebugDrawer(m_debugDraw.get());
-
-	// Ex
-	//GameObject* groundObj = new GameObject("Ground Object");
-	//groundObj->GetTransform()->SetPosition(Vector3(0, 0, 0));
-	//groundObj->AddComponent<BoxCollider>()->Init(Vector3(5, 0.5, 5), 0);
-	//
-	//GameObject* fallObj = new GameObject("Fall Object");
-	//fallObj->GetTransform()->SetPosition(Vector3(0, 50, 0));
-	//fallObj->AddComponent<BoxCollider>()->Init(Vector3(0.5, 0.5, 0.5), 1);
-	//
-	//AddCollider(groundObj->GetComponent<BoxCollider>());
-	//AddCollider(fallObj->GetComponent<BoxCollider>());
-
-	//for (int i = 0; i < 300; i++)
-	//{
-	//	m_dynamicsWorld->stepSimulation(1 / 60.0, 5);
-
-	//	btTransform trans;
-	//	fallObj->GetComponent<Collider>()->GetWorldTransform(trans);
-
-	//	fallObj->GetTransform()->SetPosition(Vector3(
-	//		trans.getOrigin().getX(),
-	//		trans.getOrigin().getY(),
-	//		trans.getOrigin().getZ()
-	//		));
-
-	//	fallObj->GetTransform()->SetRotation(Quaternion(
-	//		trans.getRotation().getX(),
-	//		trans.getRotation().getY(),
-	//		trans.getRotation().getZ(),
-	//		trans.getRotation().getW()
-	//		));
-
-	//}
-	//
-	//m_dynamicsWorld->getCollisionObjectArray().clear();
-	////m_dynamicsWorld->removeRigidBody(fallRigidBody.get());
-	////m_dynamicsWorld->removeRigidBody(groundRigidBody.get());
-
-	//delete fallObj;
-	//delete groundObj;
 }
 
 void PhysicsManager::Tick(float deltaTime)
@@ -107,13 +66,20 @@ void PhysicsManager::Tick(float deltaTime)
 	int numManifolds = m_dynamicsWorld->getDispatcher()->getNumManifolds();
 	for (unsigned int i = 0; i < numManifolds; i++)
 	{
+		btPersistentManifold* contactManifold = m_dynamicsWorld->getDispatcher()->getManifoldByIndexInternal(i);
+		const btCollisionShape* csA = contactManifold->getBody0()->getCollisionShape();
+		const btCollisionShape* csB = contactManifold->getBody1()->getCollisionShape();
+		const Collider* cA = static_cast<Collider*>(csA->getUserPointer());
+		const Collider* cB = static_cast<Collider*>(csB->getUserPointer());
+		cA->GetGameObject()->CollisionStay(cB);
+		cB->GetGameObject()->CollisionStay(cA);
 	}
 
 	m_dynamicsWorld->debugDrawWorld();
 }
 
-void PhysicsManager::AddCollider(Collider* collider)
+void PhysicsManager::AddCollider(Collider* collider, int group, int mask)
 {
-	m_dynamicsWorld->addRigidBody(collider->GetRigidBody());
+	m_dynamicsWorld->addRigidBody(collider->GetRigidBody(), group, mask);
 	m_colliders.push_back(collider);
 }

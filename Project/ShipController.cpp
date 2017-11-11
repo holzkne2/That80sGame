@@ -48,3 +48,11 @@ void ShipController::Update()
 
 	//m_gameObject->GetTransform()->SetPosition(position);
 }
+void ShipController::CollisionStay(const Collider* other) const
+{
+	if (other->GetGameObject()->GetName() == "Tower Collider")
+	{
+		std::string game = "game";
+		game += " over!";
+	}
+}
