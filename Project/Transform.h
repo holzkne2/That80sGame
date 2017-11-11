@@ -51,6 +51,8 @@ private:
 	void RemoveChild(Transform*);
 	void AddChild(Transform*);
 
+	void UpdateCollider();
+
 protected:
 	GameObject* m_gameObject;
 

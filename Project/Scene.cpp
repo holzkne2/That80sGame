@@ -139,7 +139,7 @@ void Scene::LoadScene0()
 	gameObject = std::make_unique<GameObject>("Ship");
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ship01.cmo");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 1, 4));
-	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.5, 0.5, 0.5), 1);
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.5, 0.5, 0.5), 1, false);
 
 	AddGameObject(gameObject);
 
@@ -183,12 +183,22 @@ void Scene::LoadScene1()
 	AddGameObject(gameObject);
 
 	///
-	/// Tower2
+	/// Tower
 	///
+	GameObject* last;
+
 	gameObject = std::make_unique<GameObject>("Tower");
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Tower01.cmo");
 	gameObject->GetTransform()->SetParent(tempParent->GetTransform());
 	gameObject->GetTransform()->SetPosition(Vector3(3, 0, 120));
+	last = gameObject.get();
+
+	AddGameObject(gameObject);
+
+	gameObject = std::make_unique<GameObject>("Tower Collider");
+	gameObject->GetTransform()->SetParent(last->GetTransform());
+	gameObject->GetTransform()->SetLocalPosition(Vector3(0, 2.25, 0));
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(2, 2.25, 2), 0, true);
 
 	AddGameObject(gameObject);
 
@@ -196,6 +206,14 @@ void Scene::LoadScene1()
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Tower01.cmo");
 	gameObject->GetTransform()->SetParent(tempParent->GetTransform());
 	gameObject->GetTransform()->SetPosition(Vector3(-2.5, 0, 90));
+	last = gameObject.get();
+
+	AddGameObject(gameObject);
+
+	gameObject = std::make_unique<GameObject>("Tower 1 Collider");
+	gameObject->GetTransform()->SetParent(last->GetTransform());
+	gameObject->GetTransform()->SetLocalPosition(Vector3(0, 2.25, 0));
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(2, 2.25, 2), 0, true);
 
 	AddGameObject(gameObject);
 
@@ -203,6 +221,14 @@ void Scene::LoadScene1()
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Tower01.cmo");
 	gameObject->GetTransform()->SetParent(tempParent->GetTransform());
 	gameObject->GetTransform()->SetPosition(Vector3(0.1, -1.5, 175));
+	last = gameObject.get();
+
+	AddGameObject(gameObject);
+
+	gameObject = std::make_unique<GameObject>("Tower 2 Collider");
+	gameObject->GetTransform()->SetParent(last->GetTransform());
+	gameObject->GetTransform()->SetLocalPosition(Vector3(0, 2.25, 0));
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(2, 2.25, 2), 0, true);
 
 	AddGameObject(gameObject);
 
@@ -223,7 +249,7 @@ void Scene::LoadScene1()
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ship01.cmo");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 2, 0));
 	gameObject->AddComponent<ShipController>();
-	//gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.5, 0.5, 0.5), 0);
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.5, 0.5, 0.5), 1, false);
 
 	AddGameObject(gameObject);
 	GameObject* player = m_gameObjects[m_gameObjects.size() - 1].get();
@@ -278,8 +304,6 @@ void Scene::Update()
 			LoadScene(0);
 		}
 	}
-
-	//m_view = Matrix::CreateLookAt(Vector3(-3.3, 1.57, 0), Vector3(-2.31, 1.57, 4.9), Vector3::UnitY);
 }
 
 void Scene::Render()

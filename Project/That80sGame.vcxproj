@@ -186,6 +186,7 @@
     <ClInclude Include="Collider.h" />
     <ClInclude Include="DebugDraw.h" />
     <ClInclude Include="ModelRenderer.h" />
+    <ClInclude Include="MyMotionState.h" />
     <ClInclude Include="PhysicsManager.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="ShipController.h" />
@@ -213,6 +214,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="MyMotionState.cpp" />
     <ClCompile Include="PhysicsManager.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="ShipController.cpp" />

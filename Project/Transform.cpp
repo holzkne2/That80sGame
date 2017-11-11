@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Transform.h"
 #include "GameObject.h"
+#include "Collider.h"
 
 using namespace std;
 using namespace DirectX::SimpleMath;
@@ -103,11 +104,13 @@ void Transform::AddChild(Transform* child)
 void Transform::Translate(Vector3 translate)
 {
 	m_position += (Matrix::CreateTranslation(translate) * GetWorldToLocalMatrix()).Translation();
+	UpdateCollider();
 }
 
 void Transform::SetPosition(Vector3 position)
 {
 	m_position = (Matrix::CreateTranslation(position) * GetWorldToLocalMatrix()).Translation();
+	UpdateCollider();
 }
 
 Vector3 Transform::GetPosition()
@@ -125,6 +128,8 @@ void Transform::SetRotation(Quaternion rotation)
 	tempMatrix = (Matrix::CreateFromQuaternion(rotation) * GetWorldToLocalMatrix());
 	tempMatrix.Decompose(tempScale, tempRotation, tempPosition);
 	m_rotation = tempRotation;
+
+	UpdateCollider();
 }
 
 // Not Tested
@@ -137,4 +142,14 @@ Quaternion Transform::GetRotation()
 	tempMatrix = (Matrix::CreateFromQuaternion(m_rotation) * GetLocalToWorldMatrix());
 	tempMatrix.Decompose(tempScale, tempRotation, tempPosition);
 	return tempRotation;
+}
+
+void Transform::UpdateCollider()
+{
+	for (unsigned int i = 0; i < m_childern.size(); i++)
+	{
+		m_childern[i]->UpdateCollider();
+	}
+	if (m_gameObject->GetComponent<Collider>() != nullptr)
+		m_gameObject->GetComponent<Collider>()->SetWorldTransform(GetPosition(), GetRotation());
 }

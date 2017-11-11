@@ -12,9 +12,9 @@ BoxCollider::~BoxCollider()
 {
 }
 
-void BoxCollider::Init(Vector3 halfExtern, float mass)
+void BoxCollider::Init(Vector3 halfExtern, float mass, bool kinematic)
 {
 	m_collisionShape = std::make_unique<btBoxShape>(smV3_btV3(halfExtern));
 	
-	Collider::Init(mass);
+	Collider::Init(mass, kinematic);
 }

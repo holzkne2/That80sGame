@@ -38,7 +38,7 @@ public:
 
 	virtual void drawContactPoint(const btVector3&, const btVector3&, btScalar, int, const btVector3&) {}
 	virtual void setDebugMode(int) {}
-	virtual int getDebugMode() const { return DebugDrawModes::DBG_DrawWireframe | DebugDrawModes::DBG_DrawAabb; }
+	virtual int getDebugMode() const { return DebugDrawModes::DBG_DrawWireframe; }
 	virtual void reportErrorWarning(const char *) {}
 	virtual void draw3dText(const btVector3 &, const char *) {}
 

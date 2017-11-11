@@ -3,6 +3,8 @@
 #include "GameObject.h"
 #include "BoxCollider.h"
 
+#include <iostream>
+
 using namespace DirectX::SimpleMath;
 using namespace SimpleMath_LinearMath;
 
@@ -40,7 +42,7 @@ void PhysicsManager::Initialize()
 	m_dynamicsWorld = std::make_unique<btDiscreteDynamicsWorld>
 		(m_dispatcher.get(), m_broadphase.get(),
 		m_solver.get(), m_collisionConfiguration.get());
-	m_dynamicsWorld->setGravity(btVector3(0, -10, 0));
+	m_dynamicsWorld->setGravity(btVector3(0, 0, 0));
 
 	m_debugDraw = std::make_unique<DebugDraw>();
 	m_dynamicsWorld->setDebugDrawer(m_debugDraw.get());
@@ -89,10 +91,11 @@ void PhysicsManager::Initialize()
 
 void PhysicsManager::Tick(float deltaTime)
 {
-	m_dynamicsWorld->stepSimulation(deltaTime, 5);
-
 	btTransform transform;
 	Collider* collider;
+
+	m_dynamicsWorld->stepSimulation(deltaTime, 5);
+
 	for (unsigned int i = 0; i < m_colliders.size(); i++)
 	{
 		collider = m_colliders[i];
@@ -100,7 +103,12 @@ void PhysicsManager::Tick(float deltaTime)
 		collider->GetGameObject()->GetTransform()->SetPosition(btV3_smV3(transform.getOrigin()));
 		collider->GetGameObject()->GetTransform()->SetRotation(btQ_smQ(transform.getRotation()));
 	}
-	
+
+	int numManifolds = m_dynamicsWorld->getDispatcher()->getNumManifolds();
+	for (unsigned int i = 0; i < numManifolds; i++)
+	{
+	}
+
 	m_dynamicsWorld->debugDrawWorld();
 }
 
