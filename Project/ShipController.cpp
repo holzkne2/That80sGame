@@ -25,7 +25,8 @@ void ShipController::Update()
 {
 	//Stop Rotation
 	m_gameObject->GetComponent<Collider>()->GetRigidBody()->setAngularFactor(btVector3(0, 0, 0));
-	
+	m_gameObject->GetComponent<Collider>()->GetRigidBody()->setLinearFactor(btVector3(1, 1, 0));
+
 	Vector3 v = Vector3::Zero;
 	float deltaTime = Game::Get()->GetTimer()->GetElapsedSeconds();
 	auto state = GamePad::Get().GetState(0, GamePad::DEAD_ZONE_CIRCULAR);
