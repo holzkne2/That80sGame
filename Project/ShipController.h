@@ -11,10 +11,10 @@ public:
 
 	void CollisionStay(const Collider*) const override;
 
+	void SetGameOverUI(GameObject* gameoverUI) { m_gameOverUI = gameoverUI; }
+
 private:	
 	float m_slideSpeed;
-
-	DirectX::SimpleMath::Vector2 m_minPosition;
-	DirectX::SimpleMath::Vector2 m_maxPosition;
+	GameObject* m_gameOverUI;
 };
 

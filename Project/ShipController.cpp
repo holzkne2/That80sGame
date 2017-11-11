@@ -11,9 +11,6 @@ using namespace SimpleMath_LinearMath;
 ShipController::ShipController(GameObject* gameObject) : Component(gameObject)
 {
 	m_slideSpeed = 500;
-
-	m_minPosition = Vector2(-2.5, 1.75);
-	m_maxPosition = Vector2(2.5, 4.75);
 }
 
 
@@ -25,7 +22,7 @@ void ShipController::Update()
 {
 	//Stop Rotation
 	m_gameObject->GetComponent<Collider>()->GetRigidBody()->setAngularFactor(btVector3(0, 0, 0));
-	m_gameObject->GetComponent<Collider>()->GetRigidBody()->setLinearFactor(btVector3(1, 1, 0));
+	m_gameObject->GetComponent<Collider>()->GetRigidBody()->setLinearFactor(btVector3(1, 1, 1));
 
 	Vector3 v = Vector3::Zero;
 	float deltaTime = Game::Get()->GetTimer()->GetElapsedSeconds();
@@ -35,24 +32,14 @@ void ShipController::Update()
 	{
 		Vector3 offset = Vector3(0 - state.thumbSticks.leftX, state.thumbSticks.leftY, 0);
 		v = (offset * deltaTime * m_slideSpeed);
-
-		//position += (offset * deltaTime * m_slideSpeed);
 	}
 	
 	m_gameObject->GetComponent<Collider>()->SetVelocity(v);
-	//Vector3 original_position = m_gameObject->GetTransform()->GetPosition();
-	//Vector3 limited_position = Vector3(
-	//	XMMin<float>(m_maxPosition.x, XMMax<float>(m_minPosition.x, predicted_position.x)),
-	//	XMMin<float>(m_maxPosition.y, XMMax<float>(m_minPosition.y, predicted_position.y)),
-	//	0);
-
-	//m_gameObject->GetTransform()->SetPosition(position);
 }
 void ShipController::CollisionStay(const Collider* other) const
 {
 	if (other->GetGameObject()->GetName() == "Tower Collider")
 	{
-		std::string game = "game";
-		game += " over!";
+		m_gameOverUI->SetActive(true);
 	}
 }

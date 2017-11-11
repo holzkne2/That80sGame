@@ -243,6 +243,7 @@
     <Image Include="..\..\..\That 80%27s Game\That80sGame\Project\GridThin.png" />
     <Image Include="..\..\..\That 80%27s Game\That80sGame\Project\Sun.dds" />
     <Image Include="Arrow.png" />
+    <Image Include="GameOver.png" />
     <Image Include="GameTitle.png" />
     <Image Include="directx.ico" />
   </ItemGroup>

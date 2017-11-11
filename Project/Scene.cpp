@@ -243,6 +243,21 @@ void Scene::LoadScene1()
 	AddGameObject(gameObject);
 
 	///
+	/// GameOver
+	///
+	gameObject = std::make_unique<GameObject>("Game Over");
+	UIImageRenderer* uiImageRenderer = gameObject->AddComponent<UIImageRenderer>();
+	uiImageRenderer->SetImage(deviceResources->GetD3DDevice(), L"GameOver.png");
+	RectTransform* rectTransform = dynamic_cast<RectTransform*>(gameObject->GetTransform());
+	rectTransform->SetPivot(Vector2(uiImageRenderer->GetWidth() / 2.0, uiImageRenderer->GetHeight() / 2.0));
+	rectTransform->SetScale(0.33);
+	rectTransform->SetAnchors(Vector2(0.5, 0.5));
+	last = gameObject.get();
+	gameObject->SetActive(false);
+
+	AddGameObject(gameObject);
+
+	///
 	/// Ship
 	///
 	gameObject = std::make_unique<GameObject>("Ship");
@@ -250,6 +265,7 @@ void Scene::LoadScene1()
 	gameObject->GetTransform()->SetPosition(Vector3(0, 2, 0));
 	gameObject->AddComponent<ShipController>();
 	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.5, 0.25, 0.5), 1, false, collisiontypes::COL_SHIP, collisiontypes::COL_WALL | collisiontypes::COL_CONTRAINT);
+	gameObject->GetComponent<ShipController>()->SetGameOverUI(last);
 
 	AddGameObject(gameObject);
 	GameObject* player = m_gameObjects[m_gameObjects.size() - 1].get();
@@ -259,25 +275,25 @@ void Scene::LoadScene1()
 	///
 	gameObject = std::make_unique<GameObject>("Top");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 5, 0));
-	gameObject->AddComponent<BoxCollider>()->Init(Vector3(3, 0.25, 1), 0, true, collisiontypes::COL_CONTRAINT, collisiontypes::COL_SHIP);
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(3, 0.25, 0.5), 0, true, collisiontypes::COL_CONTRAINT, collisiontypes::COL_SHIP);
 
 	AddGameObject(gameObject);
 
 	gameObject = std::make_unique<GameObject>("Bottom");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 1.25, 0));
-	gameObject->AddComponent<BoxCollider>()->Init(Vector3(3, 0.25, 1), 0, true, collisiontypes::COL_CONTRAINT, collisiontypes::COL_SHIP);
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(3, 0.25, 0.5), 0, true, collisiontypes::COL_CONTRAINT, collisiontypes::COL_SHIP);
 
 	AddGameObject(gameObject);
 
 	gameObject = std::make_unique<GameObject>("Left");
-	gameObject->GetTransform()->SetPosition(Vector3(3, 2.25, 0));
-	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.25, 3, 1), 0, true, collisiontypes::COL_CONTRAINT, collisiontypes::COL_SHIP);
+	gameObject->GetTransform()->SetPosition(Vector3(3, 2.5, 0));
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.25, 3, 0.5), 0, true, collisiontypes::COL_CONTRAINT, collisiontypes::COL_SHIP);
 
 	AddGameObject(gameObject);
 
 	gameObject = std::make_unique<GameObject>("Right");
-	gameObject->GetTransform()->SetPosition(Vector3(-3, 2.25, 0));
-	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.25, 3, 1), 0, true, collisiontypes::COL_CONTRAINT, collisiontypes::COL_SHIP);
+	gameObject->GetTransform()->SetPosition(Vector3(-3, 2.5, 0));
+	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.25, 3, 0.5), 0, true, collisiontypes::COL_CONTRAINT, collisiontypes::COL_SHIP);
 
 	AddGameObject(gameObject);
 
