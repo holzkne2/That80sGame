@@ -35,6 +35,7 @@
     <ClInclude Include="BoxCollider.h" />
     <ClInclude Include="DebugDraw.h" />
     <ClInclude Include="MyMotionState.h" />
+    <ClInclude Include="AssetHelper.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -60,6 +61,7 @@
     <ClCompile Include="BoxCollider.cpp" />
     <ClCompile Include="DebugDraw.cpp" />
     <ClCompile Include="MyMotionState.cpp" />
+    <ClCompile Include="AssetHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />

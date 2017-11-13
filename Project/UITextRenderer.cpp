@@ -2,6 +2,7 @@
 #include "UITextRenderer.h"
 #include "RectTransform.h"
 #include "GameObject.h"
+#include "AssetHelper.h"
 
 using namespace DirectX;
 
@@ -37,5 +38,5 @@ void UITextRenderer::OnDeviceLost()
 
 void UITextRenderer::SetFont(ID3D11Device* device, const wchar_t* filename)
 {
-	m_font = std::make_unique<SpriteFont>(device, filename);
+	m_font = std::make_unique<SpriteFont>(device, AssetHelper::GetFontPath(filename).c_str());
 }

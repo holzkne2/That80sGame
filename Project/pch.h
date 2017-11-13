@@ -119,3 +119,5 @@ namespace SimpleMath_LinearMath
 		return DirectX::SimpleMath::Color(color.getX(), color.getY(), color.getZ());
 	}
 }
+
+std::string wc_s(const wchar_t* wcp);

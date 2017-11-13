@@ -2,6 +2,7 @@
 #include "UIImageRenderer.h"
 #include "RectTransform.h"
 #include "GameObject.h"
+#include "AssetHelper.h"
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -38,7 +39,7 @@ void UIImageRenderer::SetImage(ID3D11Device* device, const wchar_t* filename)
 {
 	ComPtr<ID3D11Resource> resource;
 	DX::ThrowIfFailed(
-		CreateWICTextureFromFile(device, filename,
+		CreateWICTextureFromFile(device, AssetHelper::GetSpritePath(filename).c_str(),
 		resource.GetAddressOf(), m_image.ReleaseAndGetAddressOf())
 		);
 

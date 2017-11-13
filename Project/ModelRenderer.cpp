@@ -1,6 +1,7 @@
 #include "ModelRenderer.h"
 #include "GameObject.h"
 #include "Game.h"
+#include "AssetHelper.h"
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -18,7 +19,8 @@ ModelRenderer::~ModelRenderer()
 void ModelRenderer::SetModel(ID3D11Device* device, const wchar_t* fileName, bool isAlpha)
 {
 	m_fxFactory = std::make_unique<EffectFactory>(device);
-	m_model = Model::CreateFromCMO(device, fileName, *m_fxFactory);
+	m_model = Model::CreateFromCMO(device,
+		AssetHelper::GetModelPath(fileName).c_str(), *m_fxFactory);
 
 	if (isAlpha)
 	{
