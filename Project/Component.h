@@ -6,10 +6,13 @@
 class GameObject;
 class Transform;
 class Collider;
+class PrefabLoader;
 
-class Component : Object
+class Component : public Object
 {
 public:
+	friend PrefabLoader;
+
 	Component(GameObject*);
 	virtual ~Component();
 
@@ -26,9 +29,13 @@ public:
 	virtual void CollisionStay(const Collider*) const {}
 
 	virtual void Save(std::map<std::string, std::string>& data) override;
+	virtual void Load(std::map<std::string, std::string>& data) override;
 
 protected:
 	GameObject* m_gameObject;
 	bool m_active;
+
+private:
+	void SetGameObject(GameObject*);
 };
 

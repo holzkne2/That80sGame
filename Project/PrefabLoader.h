@@ -10,13 +10,14 @@ private:
 	class ObjectData
 	{
 	public:
-		ObjectData() {}
+		ObjectData() { object = nullptr; }
 		~ObjectData() {}
 
 		void Reset() { type = ""; member_value.clear(); }
 
 		std::string type;
 		std::map<std::string, std::string> member_value;
+		Object* object;
 
 		std::string to_string()
 		{

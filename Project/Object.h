@@ -8,5 +8,6 @@ public:
 	virtual ~Object();
 
 	virtual void Save(std::map<std::string, std::string>& data) {}
+	virtual void Load(std::map<std::string, std::string>& data) {}
 };
 

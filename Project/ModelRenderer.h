@@ -19,6 +19,8 @@ public:
 
 	virtual void Save(std::map<std::string, std::string>& data) override;
 
+	bool GetAlpha() { return m_alpha; }
+
 private:
 	std::unique_ptr<DirectX::IEffectFactory> m_fxFactory;
 	std::unique_ptr<DirectX::Model> m_model;

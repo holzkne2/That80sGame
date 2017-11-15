@@ -26,3 +26,16 @@ void Component::Save(std::map<std::string, std::string>& data)
 	data.insert(std::pair<std::string, std::string>("GameObject", std::to_string((int)m_gameObject)));
 	data.insert(std::pair<std::string, std::string>("Active", m_active ? "True" : "False"));
 }
+
+void Component::Load(std::map<std::string, std::string>& data)
+{
+	Object::Load(data);
+
+	m_active = (data["Active"] == "True");
+}
+
+void Component::SetGameObject(GameObject* gameObject)
+{
+	m_gameObject = gameObject;
+	m_gameObject->AddPrebuiltComponent(this);
+}

@@ -1,20 +1,20 @@
-class GameObject:65683040
+class BoxCollider:62418056
 Active:True
-Name:Top
-Transform:65683232
-
-class Transform:65683232
-Parent:0
-Position:(0.000000,5.000000,0.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class BoxCollider:65683424
-Active:True
-GameObject:65683040
+GameObject:62425544
 Group:2
 Half Extern:(3.000000,0.250000,0.500000)
 Kinematic:True
 Mask:1
 Mass:0.000000
+
+class Transform:62424064
+Parent:0
+Position:(0.000000,5.000000,0.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class GameObject:62425544
+Active:True
+Name:Top
+Transform:62424064
 

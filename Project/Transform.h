@@ -6,9 +6,11 @@
 
 class GameObject;
 
-class Transform : Object
+class Transform : public Object
 {
 public:
+	friend GameObject;
+
 	Transform(GameObject*);
 	virtual ~Transform();
 
@@ -49,6 +51,7 @@ public:
 	Transform* GetChild(int index) { return m_childern[index]; }
 
 	virtual void Save(std::map<std::string, std::string>& data) override;
+	virtual void Load(std::map<std::string, std::string>& data) override;
 
 private:
 	void RemoveChild(Transform*);

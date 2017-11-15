@@ -66,3 +66,10 @@ void GameObject::Save(std::map<std::string, std::string>& data)
 	data.insert(std::pair<std::string, std::string>("Active", m_active ? "True" : "False"));
 	data.insert(std::pair<std::string, std::string>("Transform", std::to_string((int)m_transform.get())));
 }
+
+void GameObject::Load(std::map<std::string, std::string>& data)
+{
+	Object::Load(data);
+
+	m_active = (data["Active"] == "True");
+}

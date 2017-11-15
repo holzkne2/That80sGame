@@ -164,3 +164,12 @@ void Transform::Save(std::map<std::string, std::string>& data)
 
 	data.insert(std::pair<std::string, std::string>("Parent", std::to_string((int)m_parent)));
 }
+
+void Transform::Load(std::map<std::string, std::string>& data)
+{
+	Object::Load(data);
+
+	m_position = stov3(data["Position"]);
+	m_rotation = stoq(data["Rotation"]);
+	m_scale = stof(data["Scale"]);
+}

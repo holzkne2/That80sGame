@@ -1,18 +1,18 @@
-class GameObject:67407680
-Active:True
-Name:Track Manager
-Transform:67540328
-
-class Transform:67540328
+class Transform:62075432
 Parent:0
 Position:(0.000000,0.000000,0.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:1.000000
 
-class TrackManager:87307336
+class GameObject:81425336
+Active:True
+Name:Track Manager
+Transform:62075432
+
+class TrackManager:81863872
 Active:True
 Dead Objects:
-GameObject:67407680
+GameObject:81425336
 Live Objects:
 Live Threshold:1
 Speed:10.000000

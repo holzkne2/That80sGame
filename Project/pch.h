@@ -151,3 +151,21 @@ inline std::string to_string(DirectX::SimpleMath::Color& color)
 		std::to_string(color.B()) + "," +
 		std::to_string(color.A()) + ")";
 }
+
+void GetTokens(const std::string&, const char&, std::vector<std::string>&);
+
+void GetTokens(std::ifstream&, const char&, std::vector<std::string>&);
+
+inline DirectX::SimpleMath::Vector3 stov3(std::string str)
+{
+	std::vector<std::string> tokens;
+	GetTokens(str.substr(1, str.size() - 1), ',', tokens);
+	return DirectX::SimpleMath::Vector3(std::stoi(tokens[0]), std::stoi(tokens[1]), std::stoi(tokens[2]));
+}
+
+inline DirectX::SimpleMath::Quaternion stoq(std::string str)
+{
+	std::vector<std::string> tokens;
+	GetTokens(str.substr(1, str.size() - 1), ',', tokens);
+	return DirectX::SimpleMath::Quaternion(std::stoi(tokens[0]), std::stoi(tokens[1]), std::stoi(tokens[2]), std::stoi(tokens[3]));
+}

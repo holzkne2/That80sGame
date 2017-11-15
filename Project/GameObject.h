@@ -8,9 +8,14 @@
 #include "Component.h"
 #include "Object.h"
 
+class PrefabLoader;
+
 class GameObject : public Object
 {
 public:
+	friend PrefabLoader;
+	friend Component;
+
 	GameObject();
 	GameObject(std::string);
 	virtual ~GameObject();
@@ -34,6 +39,11 @@ public:
 	void CollisionStay(const Collider*) const;
 
 	virtual void Save(std::map<std::string, std::string>& data) override;
+	virtual void Load(std::map<std::string, std::string>& data) override;
+
+private:
+	void SetTransform(Transform* transform) { m_transform.reset(transform); transform->m_gameObject = this; }
+	void AddPrebuiltComponent(Component* component) { m_components.push_back(std::unique_ptr<Component>(component)); }
 
 private:
 	std::unique_ptr<Transform> m_transform;
