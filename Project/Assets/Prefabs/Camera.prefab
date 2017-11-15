@@ -1,24 +1,24 @@
-class Camera:62062112
-Active:True
-FOV:1.047198
-GameObject:62419768
-Z Far:1000.000000
-Z Near:0.100000
-
-class GameObject:62419768
-Active:True
-Name:Camera
-Transform:62420032
-
-class Transform:62420032
+class Transform:7319696
 Parent:0
 Position:(0.000000,3.330000,-3.000000)
 Rotation:(0.000000,1.000000,0.000000,-0.000000)
 Scale:1.000000
 
-class CameraFollow:62420288
+class GameObject:7320840
 Active:True
-GameObject:62419768
+Name:Camera
+Transform:7319696
+
+class Camera:77754720
+Active:True
+FOV:1.047198
+GameObject:7320840
+Z Far:1000.000000
+Z Near:0.100000
+
+class CameraFollow:77755152
+Active:True
+GameObject:7320840
 Offset:(0.000000,1.330000,-3.000000)
-Target Transform:62425352
+Target Transform:7321568
 

@@ -10,6 +10,8 @@
 #include <string>
 #include <sstream>
 #include "Game.h"
+#include "BoxCollider.h"
+#include "ShipController.h"
 
 PrefabLoader::PrefabLoader()
 {
@@ -122,13 +124,19 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 			}
 			else if (tokens[0] == "class Transform")
 			{
-				Transform* transform = new Transform(nullptr);
-				data.object = transform;
+				data.object = new Transform(nullptr);
 			}
 			else if (tokens[0] == "class ModelRenderer")
 			{
-				ModelRenderer* modelRenderer = new ModelRenderer(nullptr);
-				data.object = modelRenderer;
+				data.object = new ModelRenderer(nullptr);
+			}
+			else if (tokens[0] == "class BoxCollider")
+			{
+				data.object = new BoxCollider(nullptr);
+			}
+			else if (tokens[0] == "class ShipController")
+			{
+				data.object = new ShipController(nullptr);
 			}
 
 			if (data.object != nullptr)
@@ -138,7 +146,13 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 		}
 	}
 
-	// Link IDs
+	// Link GameObjects to Transforms
+	for (auto itr = objects.begin(); itr != objects.end(); ++itr)
+	{
+
+	}
+
+	// Link Transforms to Parents
 	for (auto itr = objects.begin(); itr != objects.end(); ++itr)
 	{
 		if (itr->second.type == "class GameObject")
@@ -147,7 +161,12 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 				dynamic_cast<Transform*>(objects[
 					stoi(itr->second.member_value["Transform"])].object));
 		}
-		else if (itr->second.type == "class Transform")
+	}
+
+	// Link Componets
+	for (auto itr = objects.begin(); itr != objects.end(); ++itr)
+	{
+		if (itr->second.type == "class Transform")
 		{
 			int parentID = stoi(itr->second.member_value["Parent"]);
 			if (objects.find(parentID) == objects.end())
@@ -155,7 +174,12 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 			Transform* transform = dynamic_cast<Transform*>(itr->second.object);
 			transform->SetParent(dynamic_cast<Transform*>(objects[parentID].object));
 		}
-		else // Componets
+	}
+
+	// Link IDs
+	for (auto itr = objects.begin(); itr != objects.end(); ++itr)
+	{
+		if (itr->second.type != "class Transform" && itr->second.type != "class GameObject")
 		{
 			Component* component = dynamic_cast<Component*>(itr->second.object);
 			if (component == nullptr)
@@ -165,6 +189,7 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 				dynamic_cast<GameObject*>(objects[
 					stoi(itr->second.member_value["GameObject"])].object));
 
+			// TODO: Move to Load?
 			if (itr->second.type == "class ModelRenderer")
 			{
 				ModelRenderer* modelRenderer = dynamic_cast<ModelRenderer*>(component);
@@ -175,6 +200,24 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 					Game::Get()->GetDeviceResources()->GetD3DDevice(),
 					wfileName.c_str(),
 					modelRenderer->GetAlpha());
+			}
+			if (itr->second.type == "class BoxCollider")
+			{
+				dynamic_cast<BoxCollider*>(component)->Init(
+					stov3(itr->second.member_value["Half Extern"]),
+					std::stof(itr->second.member_value["Mass"]),
+					(itr->second.member_value["Kinematic"] == "True"),
+					std::stoi(itr->second.member_value["Group"]),
+					std::stoi(itr->second.member_value["Mask"])
+					);
+			}
+			if (itr->second.type == "class ShipController")
+			{
+				ShipController* ship = dynamic_cast<ShipController*>(component);
+				int gameoverUI = stoi(itr->second.member_value["Game Over"]);
+				if (objects.find(gameoverUI) == objects.end())
+					continue;
+				ship->SetGameOverUI(dynamic_cast<GameObject*>(objects[gameoverUI].object));
 			}
 		}
 	}

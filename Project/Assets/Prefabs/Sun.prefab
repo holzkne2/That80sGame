@@ -1,17 +1,17 @@
-class GameObject:62064344
+class GameObject:63336904
 Active:True
 Name:Sun
-Transform:62064608
+Transform:63337008
 
-class Transform:62064608
+class Transform:63337008
 Parent:0
 Position:(0.000000,0.000000,500.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:5.000000
 
-class ModelRenderer:62085296
+class ModelRenderer:77752560
 Active:True
-GameObject:62064344
+GameObject:63336904
 Is Alpha:True
 file Name:.\Assets\Models\Sun.cmo
 

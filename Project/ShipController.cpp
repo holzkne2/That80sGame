@@ -51,3 +51,10 @@ void ShipController::Save(std::map<std::string, std::string>& data)
 	data.insert(std::pair<std::string, std::string>("Slide Speed", std::to_string(m_slideSpeed)));
 	data.insert(std::pair<std::string, std::string>("Game Over", std::to_string((int)m_gameOverUI)));
 }
+
+void ShipController::Load(std::map<std::string, std::string>& data)
+{
+	Component::Load(data);
+
+	m_slideSpeed = std::stof(data["Slide Speed"]);
+}

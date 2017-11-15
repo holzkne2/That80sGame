@@ -1,128 +1,128 @@
-class Transform:61948752
+class BoxCollider:7650520
+Active:True
+GameObject:63335656
+Group:4
+Half Extern:(2.000000,2.250000,2.000000)
+Kinematic:True
+Mask:1
+Mass:0.000000
+
+class BoxCollider:7652536
+Active:True
+GameObject:63337840
+Group:4
+Half Extern:(2.000000,2.250000,2.000000)
+Kinematic:True
+Mask:1
+Mass:0.000000
+
+class BoxCollider:7652920
+Active:True
+GameObject:63336488
+Group:4
+Half Extern:(2.000000,2.250000,2.000000)
+Kinematic:True
+Mask:1
+Mass:0.000000
+
+class GameObject:63335448
+Active:False
+Name:Grid
+Transform:63337216
+
+class GameObject:63335656
+Active:True
+Name:Tower Collider
+Transform:63337112
+
+class Transform:63335864
+Parent:63337216
+Position:(3.000000,0.000000,-130.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class Transform:63335968
+Parent:63337216
+Position:(0.100000,-1.500000,-75.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class Transform:63336280
+Parent:63336800
+Position:(0.000000,2.250000,0.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class GameObject:63336488
+Active:True
+Name:Tower Collider
+Transform:63336592
+
+class Transform:63336592
+Parent:63335968
+Position:(0.000000,2.250000,0.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class Transform:63336800
+Parent:63337216
+Position:(-2.500000,0.000000,-160.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class Transform:63337112
+Parent:63335864
+Position:(0.000000,2.250000,0.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class Transform:63337216
 Parent:0
 Position:(0.000000,0.000000,250.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:1.000000
 
-class Transform:61986448
-Parent:81850416
-Position:(0.000000,2.250000,0.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class GameObject:62036904
-Active:True
-Name:Tower Collider
-Transform:81436392
-
-class ModelRenderer:62047472
-Active:True
-GameObject:62049000
-Is Alpha:False
-file Name:.\Assets\Models\Tower01.cmo
-
-class Transform:62047752
-Parent:62049336
-Position:(0.000000,2.250000,0.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class GameObject:62049000
+class GameObject:63337632
 Active:True
 Name:Tower 1
-Transform:62049336
+Transform:63336800
 
-class Transform:62049336
-Parent:61948752
-Position:(-2.500000,0.000000,-160.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class BoxCollider:62056032
-Active:True
-GameObject:81853576
-Group:4
-Half Extern:(2.000000,2.250000,2.000000)
-Kinematic:True
-Mask:1
-Mass:0.000000
-
-class ModelRenderer:62056680
-Active:True
-GameObject:81850152
-Is Alpha:False
-file Name:.\Assets\Models\Tower01.cmo
-
-class BoxCollider:62061632
-Active:True
-GameObject:81838104
-Group:4
-Half Extern:(2.000000,2.250000,2.000000)
-Kinematic:True
-Mask:1
-Mass:0.000000
-
-class Transform:81436392
-Parent:81521952
-Position:(0.000000,2.250000,0.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class BoxCollider:81436512
-Active:True
-GameObject:62036904
-Group:4
-Half Extern:(2.000000,2.250000,2.000000)
-Kinematic:True
-Mask:1
-Mass:0.000000
-
-class ModelRenderer:81497776
-Active:True
-GameObject:81499424
-Is Alpha:False
-file Name:.\Assets\Models\TestGrid500.cmo
-
-class GameObject:81498048
-Active:True
-Name:Tower
-Transform:81521952
-
-class GameObject:81499424
-Active:False
-Name:Grid
-Transform:61948752
-
-class Transform:81521952
-Parent:61948752
-Position:(3.000000,0.000000,-130.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class GameObject:81838104
+class GameObject:63337840
 Active:True
 Name:Tower Collider
-Transform:61986448
+Transform:63336280
 
-class GameObject:81850152
+class GameObject:63337944
 Active:True
 Name:Tower 2
-Transform:81850416
+Transform:63335968
 
-class Transform:81850416
-Parent:61948752
-Position:(0.100000,-1.500000,-75.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class GameObject:81853576
+class GameObject:63338152
 Active:True
-Name:Tower Collider
-Transform:62047752
+Name:Tower
+Transform:63335864
 
-class ModelRenderer:81878824
+class ModelRenderer:77745648
 Active:True
-GameObject:81498048
+GameObject:63337944
 Is Alpha:False
 file Name:.\Assets\Models\Tower01.cmo
+
+class ModelRenderer:77752200
+Active:True
+GameObject:63337632
+Is Alpha:False
+file Name:.\Assets\Models\Tower01.cmo
+
+class ModelRenderer:77753496
+Active:True
+GameObject:63338152
+Is Alpha:False
+file Name:.\Assets\Models\Tower01.cmo
+
+class ModelRenderer:77753712
+Active:True
+GameObject:63335448
+Is Alpha:False
+file Name:.\Assets\Models\TestGrid500.cmo
 

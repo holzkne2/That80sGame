@@ -14,6 +14,7 @@ public:
 	void SetGameOverUI(GameObject* gameoverUI) { m_gameOverUI = gameoverUI; }
 
 	virtual void Save(std::map<std::string, std::string>& data) override;
+	virtual void Load(std::map<std::string, std::string>& data) override;
 
 private:	
 	float m_slideSpeed;

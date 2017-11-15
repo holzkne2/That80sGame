@@ -272,11 +272,11 @@ void Scene::LoadScene1()
 	//gameObject->GetTransform()->SetPosition(Vector3(0, 2, 0));
 	//gameObject->AddComponent<ShipController>();
 	//gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.5, 0.25, 0.5), 1, false, collisiontypes::COL_SHIP, collisiontypes::COL_WALL | collisiontypes::COL_CONTRAINT);
-	//gameObject->GetComponent<ShipController>()->SetGameOverUI(last);
 
 	//PrefabLoader::SavePrefab(gameObject.get());
 	
 	GameObject* player = PrefabLoader::LoadPrefab("Ship");
+	player->GetComponent<ShipController>()->SetGameOverUI(last);
 	//AddGameObject(player);
 
 	///

@@ -160,12 +160,12 @@ inline DirectX::SimpleMath::Vector3 stov3(std::string str)
 {
 	std::vector<std::string> tokens;
 	GetTokens(str.substr(1, str.size() - 1), ',', tokens);
-	return DirectX::SimpleMath::Vector3(std::stoi(tokens[0]), std::stoi(tokens[1]), std::stoi(tokens[2]));
+	return DirectX::SimpleMath::Vector3(std::stof(tokens[0]), std::stof(tokens[1]), std::stof(tokens[2]));
 }
 
 inline DirectX::SimpleMath::Quaternion stoq(std::string str)
 {
 	std::vector<std::string> tokens;
 	GetTokens(str.substr(1, str.size() - 1), ',', tokens);
-	return DirectX::SimpleMath::Quaternion(std::stoi(tokens[0]), std::stoi(tokens[1]), std::stoi(tokens[2]), std::stoi(tokens[3]));
+	return DirectX::SimpleMath::Quaternion(std::stof(tokens[0]), std::stof(tokens[1]), std::stof(tokens[2]), std::stof(tokens[3]));
 }

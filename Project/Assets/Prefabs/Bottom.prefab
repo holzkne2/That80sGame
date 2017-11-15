@@ -1,20 +1,20 @@
-class GameObject:62417072
+class GameObject:7320528
 Active:True
 Name:Bottom
-Transform:62426568
+Transform:7321984
 
-class BoxCollider:62418312
+class Transform:7321984
+Parent:0
+Position:(0.000000,1.250000,0.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class BoxCollider:79382896
 Active:True
-GameObject:62417072
+GameObject:7320528
 Group:2
 Half Extern:(3.000000,0.250000,0.500000)
 Kinematic:True
 Mask:1
 Mass:0.000000
-
-class Transform:62426568
-Parent:0
-Position:(0.000000,1.250000,0.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
 
