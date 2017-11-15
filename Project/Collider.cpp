@@ -23,6 +23,11 @@ void Collider::GetWorldTransform(btTransform& transform)
 
 void Collider::Init(float mass, bool kinematic, int group, int mask)
 {
+	m_mass = mass;
+	m_kinematic = kinematic;
+	m_group = group;
+	m_mask = mask;
+
 	m_collisionShape->setLocalScaling(m_gameObject->GetTransform()->GetScale() * btVector3(1, 1, 1));
 
 	m_motionState = std::make_unique<MyMotionState>(btTransform(
@@ -67,4 +72,14 @@ void Collider::SetWorldTransform(Vector3 position, Quaternion rotation = Quatern
 void Collider::SetVelocity(Vector3 v)
 {
 	m_rigidBody->setLinearVelocity(smV3_btV3(v));
+}
+
+void Collider::Save(std::map<std::string, std::string>& data)
+{
+	Component::Save(data);
+
+	data.insert(std::pair<std::string, std::string>("Mass", std::to_string(m_mass)));
+	data.insert(std::pair<std::string, std::string>("Kinematic", m_kinematic ? "True" : "False"));
+	data.insert(std::pair<std::string, std::string>("Group", std::to_string(m_group)));
+	data.insert(std::pair<std::string, std::string>("Mask", std::to_string(m_mask)));
 }

@@ -6,8 +6,9 @@
 #include "pch.h"
 #include "RectTransform.h"
 #include "Component.h"
+#include "Object.h"
 
-class GameObject
+class GameObject : public Object
 {
 public:
 	GameObject();
@@ -17,7 +18,9 @@ public:
 	template<typename T> T* AddComponent();
 	template<typename T> T* GetComponent();
 
-	Transform* GetTransform() { return m_transform.get(); }
+	std::vector<std::unique_ptr<Component>>* GetComponents() { return &m_components; }
+
+	Transform* GetTransform() const { return m_transform.get(); }
 	void MakeRectTransform();
 
 	void UpdateComponents();
@@ -29,6 +32,8 @@ public:
 	std::string GetName() const { return m_name; }
 
 	void CollisionStay(const Collider*) const;
+
+	virtual void Save(std::map<std::string, std::string>& data) override;
 
 private:
 	std::unique_ptr<Transform> m_transform;

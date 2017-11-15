@@ -153,3 +153,14 @@ void Transform::UpdateCollider()
 	if (m_gameObject->GetComponent<Collider>() != nullptr)
 		m_gameObject->GetComponent<Collider>()->SetWorldTransform(GetPosition(), GetRotation());
 }
+
+void Transform::Save(std::map<std::string, std::string>& data)
+{
+	Object::Save(data);
+
+	data.insert(std::pair<std::string, std::string>("Position", to_string(m_position)));
+	data.insert(std::pair<std::string, std::string>("Rotation", to_string(m_rotation)));
+	data.insert(std::pair<std::string, std::string>("Scale", std::to_string(m_scale)));
+
+	data.insert(std::pair<std::string, std::string>("Parent", std::to_string((int)m_parent)));
+}

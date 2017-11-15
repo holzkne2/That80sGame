@@ -12,6 +12,8 @@ public:
 	DirectX::SimpleMath::Matrix GetProjectionMatrix(const RECT&);
 	DirectX::SimpleMath::Matrix GetViewMatrix();
 
+	virtual void Save(std::map<std::string, std::string>& data) override;
+
 private:
 	float m_zFar;
 	float m_zNear;

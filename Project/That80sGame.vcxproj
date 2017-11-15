@@ -188,7 +188,9 @@
     <ClInclude Include="DebugDraw.h" />
     <ClInclude Include="ModelRenderer.h" />
     <ClInclude Include="MyMotionState.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="PhysicsManager.h" />
+    <ClInclude Include="PrefabLoader.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="ShipController.h" />
     <ClInclude Include="TrackManager.h" />
@@ -217,7 +219,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="MyMotionState.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="PhysicsManager.cpp" />
+    <ClCompile Include="PrefabLoader.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="ShipController.cpp" />
     <ClCompile Include="TrackManager.cpp" />
@@ -253,11 +257,11 @@
     <Manifest Include="settings.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\That 80%27s Game\That80sGame\Project\MenuTerrain.cmo" />
-    <None Include="..\..\..\That 80%27s Game\That80sGame\Project\Ship01.cmo" />
-    <None Include="..\..\..\That 80%27s Game\That80sGame\Project\Sun.cmo" />
-    <None Include="..\..\..\That 80%27s Game\That80sGame\Project\TestGrid500.cmo" />
-    <None Include="..\..\..\That 80%27s Game\That80sGame\Project\Tower01.cmo" />
+    <None Include="Assets\Models\MenuTerrain.cmo" />
+    <None Include="Assets\Models\Ship01.cmo" />
+    <None Include="Assets\Models\Sun.cmo" />
+    <None Include="Assets\Models\TestGrid500.cmo" />
+    <None Include="Assets\Models\Tower01.cmo" />
     <None Include="packages.config" />
     <None Include="StillTime64.spritefont" />
   </ItemGroup>

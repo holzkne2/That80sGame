@@ -24,3 +24,11 @@ void CameraFollow::SetTarget(Transform* target)
 	m_targetTransform = target;
 	m_offset = m_gameObject->GetTransform()->GetPosition() - m_targetTransform->GetPosition();
 }
+
+void CameraFollow::Save(std::map<std::string, std::string>& data)
+{
+	Component::Save(data);
+
+	data.insert(std::pair<std::string, std::string>("Target Transform", std::to_string((int)m_targetTransform)));
+	data.insert(std::pair<std::string, std::string>("Offset", to_string(m_offset)));
+}

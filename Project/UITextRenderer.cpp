@@ -38,5 +38,16 @@ void UITextRenderer::OnDeviceLost()
 
 void UITextRenderer::SetFont(ID3D11Device* device, const wchar_t* filename)
 {
+	m_fileName = wc_s(filename);
+
 	m_font = std::make_unique<SpriteFont>(device, AssetHelper::GetFontPath(filename).c_str());
+}
+
+void UITextRenderer::Save(std::map<std::string, std::string>& data)
+{
+	Component::Save(data);
+
+	data.insert(std::pair<std::string, std::string>("Font", m_fileName));
+	data.insert(std::pair<std::string, std::string>("Text", wc_s(m_text.c_str())));
+	data.insert(std::pair<std::string, std::string>("Color", to_string(m_color)));
 }

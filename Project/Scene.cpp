@@ -10,6 +10,7 @@
 #include "TrackManager.h"
 #include "BoxCollider.h"
 #include "DebugDraw.h"
+#include "PrefabLoader.h"
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -90,7 +91,7 @@ void Scene::LoadScene0()
 	uiImageRenderer = gameObject->AddComponent<UIImageRenderer>();
 	rectTransform = dynamic_cast<RectTransform*>(gameObject->GetTransform());
 	uiImageRenderer->SetImage(deviceResources->GetD3DDevice(), L"Arrow.png");
-	uiImageRenderer->SetColor(Colors::Red);
+	uiImageRenderer->SetColor(Color(Colors::Red));
 
 	rectTransform->SetPivot(Vector2(uiImageRenderer->GetWidth() / 2.0, uiImageRenderer->GetHeight() / 2.0));
 	rectTransform->SetPosition(Vector3(0, 0, 0));
@@ -106,7 +107,7 @@ void Scene::LoadScene0()
 	UITextRenderer* uiTextRenderer = gameObject->AddComponent<UITextRenderer>();
 	rectTransform = dynamic_cast<RectTransform*>(gameObject->GetTransform());
 	uiTextRenderer->SetFont(deviceResources->GetD3DDevice(), L"StillTime64.spritefont");
-	uiTextRenderer->SetColor(Colors::Cyan);
+	uiTextRenderer->SetColor(Color(Colors::Cyan));
 	uiTextRenderer->SetText(L"Play");
 
 	rectTransform->SetPivot(uiTextRenderer->GetFont()->MeasureString(uiTextRenderer->GetText().c_str()) / 2.0);
@@ -167,6 +168,7 @@ void Scene::LoadScene1()
 	std::unique_ptr<GameObject> gameObject = std::make_unique<GameObject>("Track Manager");
 	TrackManager* trackManager = gameObject->AddComponent<TrackManager>();
 
+	PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 
 	GameObject* tempParent;
@@ -180,6 +182,7 @@ void Scene::LoadScene1()
 
 	tempParent = gameObject.get();
 	trackManager->AddObject(gameObject.get());
+
 	AddGameObject(gameObject);
 
 	///
@@ -232,6 +235,8 @@ void Scene::LoadScene1()
 
 	AddGameObject(gameObject);
 
+	PrefabLoader::SavePrefab(tempParent);
+
 	///
 	/// Sun
 	///
@@ -240,6 +245,7 @@ void Scene::LoadScene1()
 	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 500));
 	gameObject->GetTransform()->SetScale(5);
 
+	PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 
 	///
@@ -255,6 +261,7 @@ void Scene::LoadScene1()
 	last = gameObject.get();
 	gameObject->SetActive(false);
 
+	PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 
 	///
@@ -267,6 +274,7 @@ void Scene::LoadScene1()
 	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.5, 0.25, 0.5), 1, false, collisiontypes::COL_SHIP, collisiontypes::COL_WALL | collisiontypes::COL_CONTRAINT);
 	gameObject->GetComponent<ShipController>()->SetGameOverUI(last);
 
+	PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 	GameObject* player = m_gameObjects[m_gameObjects.size() - 1].get();
 
@@ -277,24 +285,28 @@ void Scene::LoadScene1()
 	gameObject->GetTransform()->SetPosition(Vector3(0, 5, 0));
 	gameObject->AddComponent<BoxCollider>()->Init(Vector3(3, 0.25, 0.5), 0, true, collisiontypes::COL_CONTRAINT, collisiontypes::COL_SHIP);
 
+	PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 
 	gameObject = std::make_unique<GameObject>("Bottom");
 	gameObject->GetTransform()->SetPosition(Vector3(0, 1.25, 0));
 	gameObject->AddComponent<BoxCollider>()->Init(Vector3(3, 0.25, 0.5), 0, true, collisiontypes::COL_CONTRAINT, collisiontypes::COL_SHIP);
 
+	PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 
 	gameObject = std::make_unique<GameObject>("Left");
 	gameObject->GetTransform()->SetPosition(Vector3(3, 2.5, 0));
 	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.25, 3, 0.5), 0, true, collisiontypes::COL_CONTRAINT, collisiontypes::COL_SHIP);
 
+	PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 
 	gameObject = std::make_unique<GameObject>("Right");
 	gameObject->GetTransform()->SetPosition(Vector3(-3, 2.5, 0));
 	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.25, 3, 0.5), 0, true, collisiontypes::COL_CONTRAINT, collisiontypes::COL_SHIP);
 
+	PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 
 	///
@@ -307,6 +319,7 @@ void Scene::LoadScene1()
 		Quaternion::Euler(Vector3(0, 180, 0)));
 	gameObject->AddComponent<CameraFollow>()->SetTarget(player->GetTransform());
 
+	PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 }
 

@@ -31,3 +31,12 @@ Matrix Camera::GetViewMatrix()
 	//return  Matrix::CreateLookAt(Vector3(-3.3, 0, 0), Vector3(-2.31, 0, 4.9), Vector3::UnitY);
 	return m_gameObject->GetTransform()->GetWorldMatrix().Invert();
 }
+
+void Camera::Save(std::map<std::string, std::string>& data)
+{
+	Component::Save(data);
+
+	data.insert(std::pair<std::string, std::string>("Z Far", std::to_string(m_zFar)));
+	data.insert(std::pair<std::string, std::string>("Z Near", std::to_string(m_zNear)));
+	data.insert(std::pair<std::string, std::string>("FOV", std::to_string(m_fov)));
+}

@@ -17,8 +17,12 @@ public:
 
 	void SetModel(ID3D11Device* device, const wchar_t* fileName, bool isAlpha = false);
 
+	virtual void Save(std::map<std::string, std::string>& data) override;
+
 private:
 	std::unique_ptr<DirectX::IEffectFactory> m_fxFactory;
 	std::unique_ptr<DirectX::Model> m_model;
+
+	bool m_alpha;
 };
 

@@ -28,6 +28,8 @@ public:
 
 	void SetVelocity(DirectX::SimpleMath::Vector3);
 
+	virtual void Save(std::map<std::string, std::string>& data) override;
+
 protected:
 	void Init(float, bool, int, int);
 
@@ -35,5 +37,11 @@ protected:
 	std::unique_ptr<btCollisionShape> m_collisionShape;
 	std::unique_ptr<btRigidBody> m_rigidBody;
 	std::unique_ptr<MyMotionState> m_motionState;
+
+private:
+	float m_mass;
+	bool m_kinematic;
+	int m_group;
+	int m_mask;
 };
 

@@ -2,10 +2,11 @@
 
 #include "pch.h"
 #include <vector>
+#include "Object.h"
 
 class GameObject;
 
-class Transform
+class Transform : Object
 {
 public:
 	Transform(GameObject*);
@@ -46,6 +47,8 @@ public:
 
 	int ChildCount() { return m_childern.size(); }
 	Transform* GetChild(int index) { return m_childern[index]; }
+
+	virtual void Save(std::map<std::string, std::string>& data) override;
 
 private:
 	void RemoveChild(Transform*);

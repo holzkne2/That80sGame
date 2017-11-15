@@ -43,3 +43,11 @@ void ShipController::CollisionStay(const Collider* other) const
 		m_gameOverUI->SetActive(true);
 	}
 }
+
+void ShipController::Save(std::map<std::string, std::string>& data)
+{
+	Component::Save(data);
+
+	data.insert(std::pair<std::string, std::string>("Slide Speed", std::to_string(m_slideSpeed)));
+	data.insert(std::pair<std::string, std::string>("Game Over", std::to_string((int)m_gameOverUI)));
+}

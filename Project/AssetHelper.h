@@ -13,7 +13,6 @@ public:
 
 	static std::wstring GetFontPath(const wchar_t*);
 
-private:
 	static bool FileExists(const std::string&);
 };
 

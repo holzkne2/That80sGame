@@ -21,13 +21,16 @@ public:
 	void SetText(std::wstring text) { m_text = text; }
 	const std::wstring& GetText() { return m_text; }
 
-	void SetColor(DirectX::XMVECTOR color) { m_color = color; }
-	DirectX::XMVECTOR GetColor() { return m_color; }
+	void SetColor(DirectX::SimpleMath::Color color) { m_color = color; }
+	DirectX::SimpleMath::Color GetColor() { return m_color; }
+
+	virtual void Save(std::map<std::string, std::string>& data) override;
 
 private:
 	std::unique_ptr<DirectX::SpriteFont> m_font;
 	std::wstring m_text;
 
-	DirectX::XMVECTOR m_color;
+	std::string m_fileName;
+	DirectX::SimpleMath::Color m_color;
 };
 

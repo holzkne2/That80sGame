@@ -21,6 +21,8 @@ public:
 	void SetPivot(DirectX::SimpleMath::Vector2 pivot) { m_pivot = pivot; }
 	DirectX::SimpleMath::Vector2 GetPivot() { return m_pivot; }
 
+	virtual void Save(std::map<std::string, std::string>& data) override;
+
 private:
 	DirectX::SimpleMath::Vector2 m_anchors;
 	DirectX::SimpleMath::Vector2 m_pivot;

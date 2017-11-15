@@ -20,13 +20,16 @@ AssetHelper::~AssetHelper()
 std::wstring AssetHelper::GetModelPath(const wchar_t* file)
 {
 	std::wstring file_name = file;
+	if (FileExists(wc_s(file_name.c_str())))
+		return file_name;
+
 	std::wstring path = L".\\Assets\\Models\\" + file_name;;
 
 	if (!FileExists(wc_s(path.c_str())))
 	{
 		path = L"..\\Assets\\Models\\" + file_name;
 		if (!FileExists(wc_s(path.c_str())))
-			return false;
+			return L"ERROR";
 	}
 	return path;
 }

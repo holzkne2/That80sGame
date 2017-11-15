@@ -121,3 +121,33 @@ namespace SimpleMath_LinearMath
 }
 
 std::string wc_s(const wchar_t* wcp);
+
+inline std::string to_string(DirectX::SimpleMath::Vector3& vector3)
+{
+	return "(" + std::to_string(vector3.x) + "," +
+		std::to_string(vector3.y) + "," +
+		std::to_string(vector3.z) + ")";
+}
+
+inline std::string to_string(DirectX::SimpleMath::Quaternion& quaternion)
+{
+	return "(" + std::to_string(quaternion.x) + "," +
+		std::to_string(quaternion.y) + "," +
+		std::to_string(quaternion.z) + "," +
+		std::to_string(quaternion.w) + ")";
+}
+
+inline std::string to_string(DirectX::SimpleMath::Vector2& vector2)
+{
+	return "(" + std::to_string(vector2.x) + "," +
+		std::to_string(vector2.y) + ")";
+}
+
+
+inline std::string to_string(DirectX::SimpleMath::Color& color)
+{
+	return "(" + std::to_string(color.R()) + "," +
+		std::to_string(color.G()) + "," +
+		std::to_string(color.B()) + "," +
+		std::to_string(color.A()) + ")";
+}

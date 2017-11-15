@@ -22,7 +22,7 @@ void ModelRenderer::SetModel(ID3D11Device* device, const wchar_t* fileName, bool
 	m_model = Model::CreateFromCMO(device,
 		AssetHelper::GetModelPath(fileName).c_str(), *m_fxFactory);
 
-	if (isAlpha)
+	if (m_alpha = isAlpha)
 	{
 		for (unsigned int m = 0; m < m_model->meshes.size(); ++m)
 			for (unsigned int p = 0; p < m_model->meshes[m]->meshParts.size(); ++p)
@@ -41,4 +41,12 @@ void ModelRenderer::OnDeviceLost()
 {
 	m_fxFactory.reset();
 	m_model.reset();
+}
+
+void ModelRenderer::Save(std::map<std::string, std::string>& data)
+{
+	Component::Save(data);
+
+	data.insert(std::pair<std::string, std::string>("file Name", wc_s(m_model->name.c_str())));
+	data.insert(std::pair<std::string, std::string>("Is Alpha", m_alpha ? "True" : "False"));
 }

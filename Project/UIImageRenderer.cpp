@@ -37,6 +37,8 @@ void UIImageRenderer::OnDeviceLost()
 
 void UIImageRenderer::SetImage(ID3D11Device* device, const wchar_t* filename)
 {
+	m_fileName = wc_s(filename);
+
 	ComPtr<ID3D11Resource> resource;
 	DX::ThrowIfFailed(
 		CreateWICTextureFromFile(device, AssetHelper::GetSpritePath(filename).c_str(),
@@ -46,4 +48,12 @@ void UIImageRenderer::SetImage(ID3D11Device* device, const wchar_t* filename)
 	ComPtr<ID3D11Texture2D> image;
 	DX::ThrowIfFailed(resource.As(&image));
 	image->GetDesc(&m_imageDesc);
+}
+
+void UIImageRenderer::Save(std::map<std::string, std::string>& data)
+{
+	Component::Save(data);
+
+	data.insert(std::pair<std::string, std::string>("File Name", m_fileName));
+	data.insert(std::pair<std::string, std::string>("Color", to_string(m_color)));
 }

@@ -1,0 +1,20 @@
+class BoxCollider:92977312
+Active:True
+GameObject:93194848
+Group:2
+Half Extern:(3.000000,0.250000,0.500000)
+Kinematic:True
+Mask:1
+Mass:0.000000
+
+class GameObject:93194848
+Active:True
+Name:Bottom
+Transform:93195888
+
+class Transform:93195888
+Parent:0
+Position:(0.000000,1.250000,0.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+

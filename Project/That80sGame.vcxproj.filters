@@ -36,6 +36,8 @@
     <ClInclude Include="DebugDraw.h" />
     <ClInclude Include="MyMotionState.h" />
     <ClInclude Include="AssetHelper.h" />
+    <ClInclude Include="PrefabLoader.h" />
+    <ClInclude Include="Object.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -62,6 +64,8 @@
     <ClCompile Include="DebugDraw.cpp" />
     <ClCompile Include="MyMotionState.cpp" />
     <ClCompile Include="AssetHelper.cpp" />
+    <ClCompile Include="PrefabLoader.cpp" />
+    <ClCompile Include="Object.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />
@@ -98,21 +102,21 @@
     <None Include="StillTime64.spritefont">
       <Filter>Assets</Filter>
     </None>
-    <None Include="..\..\..\That 80%27s Game\That80sGame\Project\MenuTerrain.cmo">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="..\..\..\That 80%27s Game\That80sGame\Project\Sun.cmo">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="..\..\..\That 80%27s Game\That80sGame\Project\Ship01.cmo">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="..\..\..\That 80%27s Game\That80sGame\Project\TestGrid500.cmo">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="..\..\..\That 80%27s Game\That80sGame\Project\Tower01.cmo">
-      <Filter>Assets</Filter>
-    </None>
     <None Include="packages.config" />
+    <None Include="Assets\Models\MenuTerrain.cmo">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\Models\Ship01.cmo">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\Models\Sun.cmo">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\Models\TestGrid500.cmo">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\Models\Tower01.cmo">
+      <Filter>Assets</Filter>
+    </None>
   </ItemGroup>
 </Project>

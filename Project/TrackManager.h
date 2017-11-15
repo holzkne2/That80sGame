@@ -13,7 +13,7 @@ public:
 
 	void AddObject(GameObject*);
 
-private:
+	virtual void Save(std::map<std::string, std::string>& data) override;
 
 private:
 	float m_speed;

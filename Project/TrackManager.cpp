@@ -46,3 +46,29 @@ void TrackManager::AddObject(GameObject* gameObject)
 	gameObject->SetActive(false);
 	m_deadObjects.push_back(gameObject);
 }
+
+void TrackManager::Save(std::map<std::string, std::string>& data)
+{
+	Component::Save(data);
+
+	data.insert(std::pair<std::string, std::string>("Speed", std::to_string(m_speed)));
+	data.insert(std::pair<std::string, std::string>("Live Threshold", std::to_string(m_liveThreshold)));
+	
+	std::string buffer = "";
+	for (unsigned int i = 0; i < m_deadObjects.size(); i++)
+	{
+		buffer += std::to_string((int)m_deadObjects[i]);
+		if (i != m_deadObjects.size() - 1)
+			buffer += ",";
+	}
+	data.insert(std::pair<std::string, std::string>("Dead Objects", buffer));
+
+	buffer = "";
+	for (unsigned int i = 0; i < m_liveObjects.size(); i++)
+	{
+		buffer += std::to_string((int)m_liveObjects[i]);
+		if (i != m_liveObjects.size() - 1)
+			buffer += ",";
+	}
+	data.insert(std::pair<std::string, std::string>("Live Objects", buffer));
+}

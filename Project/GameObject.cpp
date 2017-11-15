@@ -57,3 +57,12 @@ void GameObject::CollisionStay(const Collider* other) const
 		m_components[i]->CollisionStay(other);
 	}
 }
+
+void GameObject::Save(std::map<std::string, std::string>& data)
+{
+	Object::Save(data);
+
+	data.insert(std::pair<std::string, std::string>("Name", m_name));
+	data.insert(std::pair<std::string, std::string>("Active", m_active ? "True" : "False"));
+	data.insert(std::pair<std::string, std::string>("Transform", std::to_string((int)m_transform.get())));
+}

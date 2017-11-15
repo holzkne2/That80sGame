@@ -1,12 +1,13 @@
 #pragma once
 
 #include "pch.h"
+#include "Object.h"
 
 class GameObject;
 class Transform;
 class Collider;
 
-class Component
+class Component : Object
 {
 public:
 	Component(GameObject*);
@@ -23,6 +24,8 @@ public:
 	virtual void SetActive(bool active) { m_active = active; }
 
 	virtual void CollisionStay(const Collider*) const {}
+
+	virtual void Save(std::map<std::string, std::string>& data) override;
 
 protected:
 	GameObject* m_gameObject;
