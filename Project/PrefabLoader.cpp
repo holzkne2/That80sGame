@@ -6,6 +6,9 @@
 #include "GameObject.h"
 #include <fstream>
 #include <iostream>
+#include <algorithm>
+#include <string>
+#include <sstream>
 
 PrefabLoader::PrefabLoader()
 {
@@ -23,7 +26,8 @@ void PrefabLoader::SavePrefab(GameObject* gameObject)
 	SavePrefab(gameObject, objects);
 
 	std::filebuf file;
-	file.open(".\\Assets\\Prefabs\\" + gameObject->GetName() + ".file", std::ios::out);
+	// TODO: Create Folder, ..\ option 
+	file.open(".\\Assets\\Prefabs\\" + gameObject->GetName() + ".prefab", std::ios::out);
 	std::ostream os(&file);
 
 	for (auto itr = objects.begin(); itr != objects.end(); ++itr)
@@ -65,16 +69,26 @@ void PrefabLoader::SavePrefab(GameObject* gameObject, std::map<int, ObjectData>&
 	}
 }
 
-GameObject* PrefabLoader::LoadPrefab(const std::string& str)
+GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 {
-	if (!AssetHelper::FileExists(str))
+	std::string path = ".\\Assets\\Prefabs\\" + name + ".prefab";
+	if (!AssetHelper::FileExists(path))
 		return nullptr;
 
+	GameObject* returnObject = 0;
 	std::map<int, ObjectData> objects = std::map<int, ObjectData>();
-
+	
+	std::ifstream file(path);
+	std::string stringData = "";
+	std::getline(file, stringData, '_');
+	int i = 0;
+	i++;
+	
 	// Get ID and other data
 
 	// Link IDs
+
+	return returnObject;
 }
 
 void PrefabLoader::SaveToPrefab(Object*, std::map<int, ObjectData>&)

@@ -20,6 +20,7 @@ public:
 	void OnDeviceLost();
 
 	void AddGameObject(std::unique_ptr<GameObject>&);
+	void AddGameObject(GameObject*);
 	void AddModelRenderer(ModelRenderer*);
 	void AddCamera(Camera*);
 

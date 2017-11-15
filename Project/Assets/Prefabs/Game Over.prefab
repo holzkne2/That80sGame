@@ -1,0 +1,19 @@
+class GameObject:67727416
+Active:False
+Name:Game Over
+Transform:67727896
+
+class UIImageRenderer:67727728
+Active:True
+Color:(1.000000,1.000000,1.000000,1.000000)
+File Name:GameOver.png
+GameObject:67727416
+
+class RectTransform:67727896
+Anchors:(0.500000,0.500000)
+Parent:0
+Pivot:(1024.000000,1024.000000)
+Position:(0.000000,0.000000,0.000000)
+Rotation:(-0.000000,0.000000,-0.000000,1.000000)
+Scale:0.330000
+

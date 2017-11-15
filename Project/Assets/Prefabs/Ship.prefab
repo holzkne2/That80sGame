@@ -1,0 +1,32 @@
+class BoxCollider:16498200
+Active:True
+GameObject:90443272
+Group:1
+Half Extern:(0.500000,0.250000,0.500000)
+Kinematic:False
+Mask:6
+Mass:1.000000
+
+class ModelRenderer:89891472
+Active:True
+GameObject:90443272
+Is Alpha:False
+file Name:.\Assets\Models\Ship01.cmo
+
+class ShipController:90150552
+Active:True
+Game Over:90442752
+GameObject:90443272
+Slide Speed:500.000000
+
+class Transform:90442648
+Parent:0
+Position:(0.000000,2.000000,0.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class GameObject:90443272
+Active:True
+Name:Ship
+Transform:90442648
+

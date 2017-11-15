@@ -267,16 +267,17 @@ void Scene::LoadScene1()
 	///
 	/// Ship
 	///
-	gameObject = std::make_unique<GameObject>("Ship");
-	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ship01.cmo");
-	gameObject->GetTransform()->SetPosition(Vector3(0, 2, 0));
-	gameObject->AddComponent<ShipController>();
-	gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.5, 0.25, 0.5), 1, false, collisiontypes::COL_SHIP, collisiontypes::COL_WALL | collisiontypes::COL_CONTRAINT);
-	gameObject->GetComponent<ShipController>()->SetGameOverUI(last);
+	//gameObject = std::make_unique<GameObject>("Ship");
+	//gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ship01.cmo");
+	//gameObject->GetTransform()->SetPosition(Vector3(0, 2, 0));
+	//gameObject->AddComponent<ShipController>();
+	//gameObject->AddComponent<BoxCollider>()->Init(Vector3(0.5, 0.25, 0.5), 1, false, collisiontypes::COL_SHIP, collisiontypes::COL_WALL | collisiontypes::COL_CONTRAINT);
+	//gameObject->GetComponent<ShipController>()->SetGameOverUI(last);
 
-	PrefabLoader::SavePrefab(gameObject.get());
-	AddGameObject(gameObject);
-	GameObject* player = m_gameObjects[m_gameObjects.size() - 1].get();
+	//PrefabLoader::SavePrefab(gameObject.get());
+	
+	GameObject* player = PrefabLoader::LoadPrefab("Ship");
+	//AddGameObject(player);
 
 	///
 	/// Constraint Box
@@ -462,6 +463,11 @@ void Scene::OnDeviceLost()
 void Scene::AddGameObject(std::unique_ptr<GameObject>& gameObject)
 {
 	m_gameObjects.push_back(std::move(gameObject));
+}
+
+void Scene::AddGameObject(GameObject* gameObject)
+{
+	m_gameObjects.push_back(std::unique_ptr<GameObject>(gameObject));
 }
 
 void Scene::AddModelRenderer(ModelRenderer* modelRenderer)
