@@ -187,6 +187,17 @@ void Scene::LoadScene1()
 
 		AddGameObject(gameObject);
 
+
+		std::vector<Vector3> collisionPoints;
+		collisionPoints.push_back(Vector3(2, -2.3465, 2));
+		collisionPoints.push_back(Vector3(2, -2.3465, -2));
+		collisionPoints.push_back(Vector3(-2, -2.3465, -2));
+		collisionPoints.push_back(Vector3(-2, -2.3465, 2));
+		collisionPoints.push_back(Vector3(1.249, 2.3465, 1.249));
+		collisionPoints.push_back(Vector3(1.249, 2.3465, -1.249));
+		collisionPoints.push_back(Vector3(-1.249, 2.3465, -1.249));
+		collisionPoints.push_back(Vector3(-1.249, 2.3465, 1.249));
+
 		///
 		/// Tower
 		///
@@ -203,7 +214,7 @@ void Scene::LoadScene1()
 		gameObject = std::make_unique<GameObject>("Tower Collider");
 		gameObject->GetTransform()->SetParent(last->GetTransform());
 		gameObject->GetTransform()->SetLocalPosition(Vector3(0, 2.25, 0));
-		gameObject->AddComponent<BoxCollider>()->Init(Vector3(2, 2.25, 2), 0, true, collisiontypes::COL_WALL, collisiontypes::COL_SHIP);
+		gameObject->AddComponent<MeshCollider>()->Init(collisionPoints, 0, true, collisiontypes::COL_WALL, collisiontypes::COL_SHIP);
 
 		AddGameObject(gameObject);
 
@@ -218,7 +229,7 @@ void Scene::LoadScene1()
 		gameObject = std::make_unique<GameObject>("Tower Collider");
 		gameObject->GetTransform()->SetParent(last->GetTransform());
 		gameObject->GetTransform()->SetLocalPosition(Vector3(0, 2.25, 0));
-		gameObject->AddComponent<BoxCollider>()->Init(Vector3(2, 2.25, 2), 0, true, collisiontypes::COL_WALL, collisiontypes::COL_SHIP);
+		gameObject->AddComponent<MeshCollider>()->Init(collisionPoints, 0, true, collisiontypes::COL_WALL, collisiontypes::COL_SHIP);
 
 		AddGameObject(gameObject);
 
@@ -233,7 +244,7 @@ void Scene::LoadScene1()
 		gameObject = std::make_unique<GameObject>("Tower Collider");
 		gameObject->GetTransform()->SetParent(last->GetTransform());
 		gameObject->GetTransform()->SetLocalPosition(Vector3(0, 2.25, 0));
-		gameObject->AddComponent<BoxCollider>()->Init(Vector3(2, 2.25, 2), 0, true, collisiontypes::COL_WALL, collisiontypes::COL_SHIP);
+		gameObject->AddComponent<MeshCollider>()->Init(collisionPoints, 0, true, collisiontypes::COL_WALL, collisiontypes::COL_SHIP);
 
 		AddGameObject(gameObject);
 

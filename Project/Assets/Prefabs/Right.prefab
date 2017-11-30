@@ -1,17 +1,17 @@
-class GameObject:135453016
-Active:True
-Name:Right
-Transform:135453328
-
-class Transform:135453328
+class Transform:61552400
 Parent:0
 Position:(-3.500000,2.500000,0.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:1.000000
 
-class BoxCollider:135674632
+class GameObject:61554064
 Active:True
-GameObject:135453016
+Name:Right
+Transform:61552400
+
+class BoxCollider:135682520
+Active:True
+GameObject:61554064
 Group:2
 Half Extern:(0.250000,3.000000,0.500000)
 Kinematic:True

@@ -1,128 +1,128 @@
-class GameObject:1030016
+class ModelRenderer:60905480
+Active:True
+GameObject:136324816
+Is Alpha:False
+file Name:.\Assets\Models\TestGrid500.cmo
+
+class ModelRenderer:135300120
+Active:True
+GameObject:136323672
+Is Alpha:False
+file Name:.\Assets\Models\Tower01.cmo
+
+class ModelRenderer:135300840
+Active:True
+GameObject:136324088
+Is Alpha:False
+file Name:.\Assets\Models\Tower01.cmo
+
+class ModelRenderer:135302784
+Active:True
+GameObject:136326376
+Is Alpha:False
+file Name:.\Assets\Models\Tower01.cmo
+
+class MeshCollider:135657480
+Active:True
+GameObject:136325856
+Group:4
+Kinematic:True
+Mask:1
+Mass:0.000000
+Points:(-2.000000,-2.346500,-2.000000);(-2.000000,-2.346500,2.000000);(-1.248630,2.346500,-1.248630);(2.000000,-2.346500,-2.000000);(2.000000,-2.346500,2.000000);(-1.248630,2.346500,1.248630);(1.248630,2.346500,-1.248630);(1.248630,2.346500,1.248630)
+
+class MeshCollider:135658360
+Active:True
+GameObject:136323568
+Group:4
+Kinematic:True
+Mask:1
+Mass:0.000000
+Points:(-2.000000,-2.346500,-2.000000);(-2.000000,-2.346500,2.000000);(-1.248630,2.346500,-1.248630);(2.000000,-2.346500,-2.000000);(2.000000,-2.346500,2.000000);(-1.248630,2.346500,1.248630);(1.248630,2.346500,-1.248630);(1.248630,2.346500,1.248630)
+
+class MeshCollider:135658536
+Active:True
+GameObject:136325232
+Group:4
+Kinematic:True
+Mask:1
+Mass:0.000000
+Points:(-2.000000,-2.346500,-2.000000);(-2.000000,-2.346500,2.000000);(-1.248630,2.346500,-1.248630);(2.000000,-2.346500,-2.000000);(2.000000,-2.346500,2.000000);(-1.248630,2.346500,1.248630);(1.248630,2.346500,-1.248630);(1.248630,2.346500,1.248630)
+
+class Transform:136323256
+Parent:136323360
+Position:(0.000000,2.250000,0.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class Transform:136323360
+Parent:136325024
+Position:(-1.000000,0.000000,-220.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class Transform:136323464
+Parent:136325024
+Position:(0.100000,-1.500000,-190.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class GameObject:136323568
 Active:True
 Name:Tower Collider
-Transform:1030120
+Transform:136323256
 
-class Transform:1030120
-Parent:1032720
-Position:(0.000000,2.250000,0.000000)
+class GameObject:136323672
+Active:True
+Name:Tower 1
+Transform:136323776
+
+class Transform:136323776
+Parent:136325024
+Position:(1.500000,0.000000,-205.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:1.000000
 
-class Transform:1030328
-Parent:1032304
-Position:(0.000000,2.250000,0.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class GameObject:1030536
+class GameObject:136324088
 Active:True
 Name:Tower 2
-Transform:135454368
+Transform:136323464
 
-class GameObject:1030848
-Active:True
-Name:Tower Collider
-Transform:1030328
+class Transform:136324504
+Parent:136323464
+Position:(0.000000,2.250000,0.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
 
-class Transform:1031160
+class GameObject:136324816
+Active:False
+Name:Part 1
+Transform:136325024
+
+class Transform:136325024
 Parent:0
 Position:(0.000000,0.000000,250.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:1.000000
 
-class GameObject:1031264
-Active:False
-Name:Part 1
-Transform:1031160
-
-class GameObject:1031576
-Active:True
-Name:Tower
-Transform:1032304
-
-class Transform:1032304
-Parent:1031160
-Position:(-1.000000,0.000000,-220.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class GameObject:1032512
-Active:True
-Name:Tower 1
-Transform:1032720
-
-class Transform:1032720
-Parent:1031160
-Position:(1.500000,0.000000,-205.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class GameObject:135452288
+class GameObject:136325232
 Active:True
 Name:Tower Collider
-Transform:135454576
+Transform:136325336
 
-class Transform:135454368
-Parent:1031160
-Position:(0.100000,-1.500000,-190.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class Transform:135454576
-Parent:135454368
+class Transform:136325336
+Parent:136323776
 Position:(0.000000,2.250000,0.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:1.000000
 
-class BoxCollider:135674920
+class GameObject:136325856
 Active:True
-GameObject:1030016
-Group:4
-Half Extern:(2.000000,2.250000,2.000000)
-Kinematic:True
-Mask:1
-Mass:0.000000
+Name:Tower Collider
+Transform:136324504
 
-class BoxCollider:135675976
+class GameObject:136326376
 Active:True
-GameObject:135452288
-Group:4
-Half Extern:(2.000000,2.250000,2.000000)
-Kinematic:True
-Mask:1
-Mass:0.000000
-
-class BoxCollider:135677032
-Active:True
-GameObject:1030848
-Group:4
-Half Extern:(2.000000,2.250000,2.000000)
-Kinematic:True
-Mask:1
-Mass:0.000000
-
-class ModelRenderer:135720376
-Active:True
-GameObject:1032512
-Is Alpha:False
-file Name:.\Assets\Models\Tower01.cmo
-
-class ModelRenderer:135720952
-Active:True
-GameObject:1030536
-Is Alpha:False
-file Name:.\Assets\Models\Tower01.cmo
-
-class ModelRenderer:135721024
-Active:True
-GameObject:1031264
-Is Alpha:False
-file Name:.\Assets\Models\TestGrid500.cmo
-
-class ModelRenderer:135721240
-Active:True
-GameObject:1031576
-Is Alpha:False
-file Name:.\Assets\Models\Tower01.cmo
+Name:Tower
+Transform:136323360
 
