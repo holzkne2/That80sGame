@@ -1,31 +1,32 @@
-class GameObject:90443272
+class GameObject:67449592
 Active:True
 Name:Ship
-Transform:90442648
+Transform:67450944
 
-class Transform:90442648
+class Transform:67450944
 Parent:0
 Position:(0.000000,2.000000,0.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:1.000000
 
-class BoxCollider:16498200
+class ModelRenderer:142412032
 Active:True
-GameObject:90443272
-Group:1
-Half Extern:(0.500000,0.250000,0.500000)
-Kinematic:False
-Mask:6
-Mass:1.000000
-
-class ModelRenderer:89891472
-Active:True
-GameObject:90443272
+GameObject:67449592
 Is Alpha:False
 file Name:.\Assets\Models\Ship01.cmo
 
-class ShipController:90150552
+class ShipController:142488144
 Active:True
-Game Over:90442752
-GameObject:90443272
+Game Over:67449384
+GameObject:67449592
 Slide Speed:500.000000
+
+class MeshCollider:142725624
+Active:True
+GameObject:67449592
+Group:1
+Kinematic:False
+Mask:6
+Mass:1.000000
+Points:(0.000000,0.000000,-0.199834);(-1.000000,0.000000,0.000019);(0.000000,0.400000,0.000019);(1.000000,0.000000,0.000019);(0.000000,0.000000,1.500000)
+

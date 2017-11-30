@@ -38,6 +38,7 @@
     <ClInclude Include="AssetHelper.h" />
     <ClInclude Include="PrefabLoader.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="MeshCollider.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -66,6 +67,7 @@
     <ClCompile Include="AssetHelper.cpp" />
     <ClCompile Include="PrefabLoader.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="MeshCollider.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />

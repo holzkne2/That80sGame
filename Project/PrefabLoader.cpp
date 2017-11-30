@@ -12,6 +12,7 @@
 #include "Game.h"
 #include "BoxCollider.h"
 #include "ShipController.h"
+#include "MeshCollider.h"
 
 PrefabLoader::PrefabLoader()
 {
@@ -21,6 +22,8 @@ PrefabLoader::PrefabLoader()
 PrefabLoader::~PrefabLoader()
 {
 }
+
+// TODO: GameObject Controls Component
 
 void PrefabLoader::SavePrefab(GameObject* gameObject)
 {
@@ -138,6 +141,10 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 			{
 				data.object = new ShipController(nullptr);
 			}
+			else if (tokens[0] == "class MeshCollider")
+			{
+				data.object = new MeshCollider(nullptr);
+			}
 
 			if (data.object != nullptr)
 				data.object->Load(data.member_value);
@@ -218,6 +225,23 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 				if (objects.find(gameoverUI) == objects.end())
 					continue;
 				ship->SetGameOverUI(dynamic_cast<GameObject*>(objects[gameoverUI].object));
+			}
+			if (itr->second.type == "class MeshCollider")
+			{
+				std::vector<DirectX::SimpleMath::Vector3> points;
+				std::vector<std::string> stringPoints;
+				GetTokens(itr->second.member_value["Points"], ';', stringPoints);
+				for (unsigned int j = 0; j < stringPoints.size(); ++j) {
+					points.push_back(stov3(stringPoints[j]));
+				}
+
+				dynamic_cast<MeshCollider*>(component)->Init(
+					points,
+					std::stof(itr->second.member_value["Mass"]),
+					(itr->second.member_value["Kinematic"] == "True"),
+					std::stoi(itr->second.member_value["Group"]),
+					std::stoi(itr->second.member_value["Mask"])
+					);
 			}
 		}
 	}

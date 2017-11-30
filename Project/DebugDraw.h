@@ -29,6 +29,7 @@ public:
 		DirectX::SimpleMath::Color m_color;
 	};
 
+
 public:
 	DebugDraw();
 	virtual ~DebugDraw();
@@ -38,7 +39,7 @@ public:
 
 	virtual void drawContactPoint(const btVector3&, const btVector3&, btScalar, int, const btVector3&) {}
 	virtual void setDebugMode(int) {}
-	virtual int getDebugMode() const { return DebugDrawModes::DBG_DrawWireframe; }
+	virtual int getDebugMode() const { return DebugDrawModes::DBG_DrawWireframe /*| DebugDrawModes::DBG_DrawAabb*/; }
 	virtual void reportErrorWarning(const char *) {}
 	virtual void draw3dText(const btVector3 &, const char *) {}
 

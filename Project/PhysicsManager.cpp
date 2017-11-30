@@ -67,12 +67,14 @@ void PhysicsManager::Tick(float deltaTime)
 	for (unsigned int i = 0; i < numManifolds; i++)
 	{
 		btPersistentManifold* contactManifold = m_dynamicsWorld->getDispatcher()->getManifoldByIndexInternal(i);
-		const btCollisionShape* csA = contactManifold->getBody0()->getCollisionShape();
-		const btCollisionShape* csB = contactManifold->getBody1()->getCollisionShape();
-		const Collider* cA = static_cast<Collider*>(csA->getUserPointer());
-		const Collider* cB = static_cast<Collider*>(csB->getUserPointer());
-		cA->GetGameObject()->CollisionStay(cB);
-		cB->GetGameObject()->CollisionStay(cA);
+		if (contactManifold->getNumContacts() > 0) {
+			const btCollisionShape* csA = contactManifold->getBody0()->getCollisionShape();
+			const btCollisionShape* csB = contactManifold->getBody1()->getCollisionShape();
+			const Collider* cA = static_cast<Collider*>(csA->getUserPointer());
+			const Collider* cB = static_cast<Collider*>(csB->getUserPointer());
+			cA->GetGameObject()->CollisionStay(cB);
+			cB->GetGameObject()->CollisionStay(cA);
+		}
 	}
 
 	m_dynamicsWorld->debugDrawWorld();

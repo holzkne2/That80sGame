@@ -186,6 +186,7 @@
     <ClInclude Include="CameraFollow.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="DebugDraw.h" />
+    <ClInclude Include="MeshCollider.h" />
     <ClInclude Include="ModelRenderer.h" />
     <ClInclude Include="MyMotionState.h" />
     <ClInclude Include="Object.h" />
@@ -212,6 +213,7 @@
     <ClCompile Include="CameraFollow.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="DebugDraw.cpp" />
+    <ClCompile Include="MeshCollider.cpp" />
     <ClCompile Include="ModelRenderer.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>

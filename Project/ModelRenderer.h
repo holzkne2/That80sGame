@@ -21,6 +21,8 @@ public:
 
 	bool GetAlpha() { return m_alpha; }
 
+	std::vector<DirectX::SimpleMath::Vector3> GetVertices() {}
+
 private:
 	std::unique_ptr<DirectX::IEffectFactory> m_fxFactory;
 	std::unique_ptr<DirectX::Model> m_model;
