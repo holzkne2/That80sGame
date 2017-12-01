@@ -181,15 +181,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AssetHelper.h" />
-    <ClInclude Include="BoxCollider.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraFollow.h" />
-    <ClInclude Include="Collider.h" />
     <ClInclude Include="DebugDraw.h" />
-    <ClInclude Include="MeshCollider.h" />
     <ClInclude Include="ModelRenderer.h" />
     <ClInclude Include="MyMotionState.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="PhysicsComponent.h" />
     <ClInclude Include="PhysicsManager.h" />
     <ClInclude Include="PrefabLoader.h" />
     <ClInclude Include="Scene.h" />
@@ -208,12 +206,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssetHelper.cpp" />
-    <ClCompile Include="BoxCollider.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraFollow.cpp" />
-    <ClCompile Include="Collider.cpp" />
     <ClCompile Include="DebugDraw.cpp" />
-    <ClCompile Include="MeshCollider.cpp" />
     <ClCompile Include="ModelRenderer.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
@@ -222,6 +217,7 @@
     </ClCompile>
     <ClCompile Include="MyMotionState.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="PhysicsComponent.cpp" />
     <ClCompile Include="PhysicsManager.cpp" />
     <ClCompile Include="PrefabLoader.cpp" />
     <ClCompile Include="Scene.cpp" />

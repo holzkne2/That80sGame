@@ -5,7 +5,7 @@
 
 class GameObject;
 class Transform;
-class Collider;
+class PhysicsComponent;
 class PrefabLoader;
 
 class Component : public Object
@@ -26,7 +26,7 @@ public:
 	bool IsSelfActive() { return m_active; }
 	virtual void SetActive(bool active) { m_active = active; }
 
-	virtual void CollisionStay(const Collider*) const {}
+	virtual void CollisionStay(const PhysicsComponent*) const {}
 
 	virtual void Save(std::map<std::string, std::string>& data) override;
 	virtual void Load(std::map<std::string, std::string>& data) override;

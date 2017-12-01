@@ -7,6 +7,7 @@
 #include "RectTransform.h"
 #include "Component.h"
 #include "Object.h"
+#include "PhysicsComponent.h"
 
 class PrefabLoader;
 
@@ -22,6 +23,7 @@ public:
 
 	template<typename T> T* AddComponent();
 	template<typename T> T* GetComponent();
+	template<typename T> std::vector<T*> GetComponents();
 
 	std::vector<std::unique_ptr<Component>>* GetComponents() { return &m_components; }
 
@@ -36,7 +38,7 @@ public:
 
 	std::string GetName() const { return m_name; }
 
-	void CollisionStay(const Collider*) const;
+	void CollisionStay(const PhysicsComponent*) const;
 
 	virtual void Save(std::map<std::string, std::string>& data) override;
 	virtual void Load(std::map<std::string, std::string>& data) override;
@@ -77,3 +79,18 @@ template<typename T> T* GameObject::GetComponent()
 	return nullptr;
 }
 
+template<typename T> std::vector<T*> GameObject::GetComponents()
+{
+	std::vector<T*> result;
+	if (!std::is_base_of<Component, T>::value)
+		return result;
+
+	T* temp;
+	for (unsigned int i = 0; i < m_components.size(); i++)
+	{
+		temp = dynamic_cast<T*>(m_components[i].get());
+		if (temp != NULL)
+			result.push_back(temp);
+	}
+	return result;
+}

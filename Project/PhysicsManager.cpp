@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "PhysicsManager.h"
 #include "GameObject.h"
-#include "BoxCollider.h"
 
 #include <iostream>
 
@@ -51,7 +50,7 @@ void PhysicsManager::Initialize()
 void PhysicsManager::Tick(float deltaTime)
 {
 	btTransform transform;
-	Collider* collider;
+	PhysicsComponent* collider;
 
 	m_dynamicsWorld->stepSimulation(deltaTime, 5);
 
@@ -70,8 +69,8 @@ void PhysicsManager::Tick(float deltaTime)
 		if (contactManifold->getNumContacts() > 0) {
 			const btCollisionShape* csA = contactManifold->getBody0()->getCollisionShape();
 			const btCollisionShape* csB = contactManifold->getBody1()->getCollisionShape();
-			const Collider* cA = static_cast<Collider*>(csA->getUserPointer());
-			const Collider* cB = static_cast<Collider*>(csB->getUserPointer());
+			const PhysicsComponent* cA = static_cast<PhysicsComponent*>(csA->getUserPointer());
+			const PhysicsComponent* cB = static_cast<PhysicsComponent*>(csB->getUserPointer());
 			cA->GetGameObject()->CollisionStay(cB);
 			cB->GetGameObject()->CollisionStay(cA);
 		}
@@ -80,7 +79,7 @@ void PhysicsManager::Tick(float deltaTime)
 	m_dynamicsWorld->debugDrawWorld();
 }
 
-void PhysicsManager::AddCollider(Collider* collider, int group, int mask)
+void PhysicsManager::AddCollider(PhysicsComponent* collider, int group, int mask)
 {
 	m_dynamicsWorld->addRigidBody(collider->GetRigidBody(), group, mask);
 	m_colliders.push_back(collider);

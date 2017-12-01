@@ -10,9 +10,8 @@
 #include <string>
 #include <sstream>
 #include "Game.h"
-#include "BoxCollider.h"
 #include "ShipController.h"
-#include "MeshCollider.h"
+#include "PhysicsComponent.h"
 
 PrefabLoader::PrefabLoader()
 {
@@ -133,17 +132,9 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 			{
 				data.object = new ModelRenderer(nullptr);
 			}
-			else if (tokens[0] == "class BoxCollider")
-			{
-				data.object = new BoxCollider(nullptr);
-			}
 			else if (tokens[0] == "class ShipController")
 			{
 				data.object = new ShipController(nullptr);
-			}
-			else if (tokens[0] == "class MeshCollider")
-			{
-				data.object = new MeshCollider(nullptr);
 			}
 
 			if (data.object != nullptr)
@@ -208,7 +199,7 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 					wfileName.c_str(),
 					modelRenderer->GetAlpha());
 			}
-			if (itr->second.type == "class BoxCollider")
+			/*if (itr->second.type == "class BoxCollider")
 			{
 				dynamic_cast<BoxCollider*>(component)->Init(
 					stov3(itr->second.member_value["Half Extern"]),
@@ -217,7 +208,7 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 					std::stoi(itr->second.member_value["Group"]),
 					std::stoi(itr->second.member_value["Mask"])
 					);
-			}
+			}*/
 			if (itr->second.type == "class ShipController")
 			{
 				ShipController* ship = dynamic_cast<ShipController*>(component);
@@ -226,7 +217,7 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 					continue;
 				ship->SetGameOverUI(dynamic_cast<GameObject*>(objects[gameoverUI].object));
 			}
-			if (itr->second.type == "class MeshCollider")
+			/*if (itr->second.type == "class MeshCollider")
 			{
 				std::vector<DirectX::SimpleMath::Vector3> points;
 				std::vector<std::string> stringPoints;
@@ -242,7 +233,7 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 					std::stoi(itr->second.member_value["Group"]),
 					std::stoi(itr->second.member_value["Mask"])
 					);
-			}
+			}*/
 		}
 	}
 

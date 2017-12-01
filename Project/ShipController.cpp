@@ -2,7 +2,7 @@
 #include "ShipController.h"
 #include "GameObject.h"
 #include "Game.h"
-#include "BoxCollider.h"
+#include "PhysicsComponent.h"
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -21,8 +21,8 @@ ShipController::~ShipController()
 void ShipController::Update()
 {
 	//Stop Rotation
-	m_gameObject->GetComponent<Collider>()->GetRigidBody()->setAngularFactor(btVector3(0, 0, 0));
-	m_gameObject->GetComponent<Collider>()->GetRigidBody()->setLinearFactor(btVector3(1, 1, 1));
+	m_gameObject->GetComponent<PhysicsComponent>()->GetRigidBody()->setAngularFactor(btVector3(0, 0, 0));
+	m_gameObject->GetComponent<PhysicsComponent>()->GetRigidBody()->setLinearFactor(btVector3(1, 1, 1));
 
 	Vector3 v = Vector3::Zero;
 	float deltaTime = Game::Get()->GetTimer()->GetElapsedSeconds();
@@ -34,9 +34,9 @@ void ShipController::Update()
 		v = (offset * deltaTime * m_slideSpeed);
 	}
 	
-	m_gameObject->GetComponent<Collider>()->SetVelocity(v);
+	m_gameObject->GetComponent<PhysicsComponent>()->SetVelocity(v);
 }
-void ShipController::CollisionStay(const Collider* other) const
+void ShipController::CollisionStay(const PhysicsComponent* other) const
 {
 	if (other->GetGameObject()->GetName() == "Tower Collider")
 	{

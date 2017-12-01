@@ -31,14 +31,12 @@
     <ClInclude Include="ShipController.h" />
     <ClInclude Include="TrackManager.h" />
     <ClInclude Include="Transform.h" />
-    <ClInclude Include="Collider.h" />
-    <ClInclude Include="BoxCollider.h" />
     <ClInclude Include="DebugDraw.h" />
     <ClInclude Include="MyMotionState.h" />
     <ClInclude Include="AssetHelper.h" />
     <ClInclude Include="PrefabLoader.h" />
     <ClInclude Include="Object.h" />
-    <ClInclude Include="MeshCollider.h" />
+    <ClInclude Include="PhysicsComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -60,14 +58,12 @@
     <ClCompile Include="ShipController.cpp" />
     <ClCompile Include="TrackManager.cpp" />
     <ClCompile Include="Transform.cpp" />
-    <ClCompile Include="Collider.cpp" />
-    <ClCompile Include="BoxCollider.cpp" />
     <ClCompile Include="DebugDraw.cpp" />
     <ClCompile Include="MyMotionState.cpp" />
     <ClCompile Include="AssetHelper.cpp" />
     <ClCompile Include="PrefabLoader.cpp" />
     <ClCompile Include="Object.cpp" />
-    <ClCompile Include="MeshCollider.cpp" />
+    <ClCompile Include="PhysicsComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />

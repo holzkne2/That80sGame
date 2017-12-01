@@ -1,5 +1,6 @@
 #pragma once
 #include "Component.h"
+
 class ShipController :
 	public Component
 {
@@ -9,7 +10,7 @@ public:
 
 	void Update() override;
 
-	void CollisionStay(const Collider*) const override;
+	void CollisionStay(const PhysicsComponent*) const override;
 
 	void SetGameOverUI(GameObject* gameoverUI) { m_gameOverUI = gameoverUI; }
 

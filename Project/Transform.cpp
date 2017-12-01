@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Transform.h"
 #include "GameObject.h"
-#include "Collider.h"
+#include "PhysicsComponent.h"
 
 using namespace std;
 using namespace DirectX::SimpleMath;
@@ -150,8 +150,10 @@ void Transform::UpdateCollider()
 	{
 		m_childern[i]->UpdateCollider();
 	}
-	if (m_gameObject->GetComponent<Collider>() != nullptr)
-		m_gameObject->GetComponent<Collider>()->SetWorldTransform(GetPosition(), GetRotation());
+	auto colliders = m_gameObject->GetComponents<PhysicsComponent>();
+	for (unsigned int i = 0; i < colliders.size(); i++) {
+		colliders[i]->SetWorldTransform(GetPosition(), GetRotation());
+	}
 }
 
 void Transform::Save(std::map<std::string, std::string>& data)

@@ -4,6 +4,7 @@
 #include "btBulletDynamicsCommon.h"
 #include "Collider.h"
 #include "DebugDraw.h"
+#include "PhysicsComponent.h"
 
 class PhysicsManager
 {
@@ -16,7 +17,7 @@ public:
 
 	void Tick(float);
 
-	void AddCollider(Collider*, int, int);
+	void AddCollider(PhysicsComponent*, int, int);
 
 	DebugDraw* GetDebugDraw() { return m_debugDraw.get(); }
 
@@ -27,7 +28,7 @@ private:
 	std::unique_ptr<btSequentialImpulseConstraintSolver> m_solver;
 	std::unique_ptr<btDiscreteDynamicsWorld> m_dynamicsWorld;
 
-	std::vector<Collider*> m_colliders;
+	std::vector<PhysicsComponent*> m_colliders;
 
 	std::unique_ptr<DebugDraw> m_debugDraw;
 };

@@ -50,7 +50,7 @@ bool GameObject::IsActive()
 		return m_active && m_transform->GetParent()->GetGameObject()->IsActive();
 }
 
-void GameObject::CollisionStay(const Collider* other) const
+void GameObject::CollisionStay(const PhysicsComponent* other) const
 {
 	for (unsigned int i = 0; i < m_components.size(); i++)
 	{

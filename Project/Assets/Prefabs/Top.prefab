@@ -1,20 +1,15 @@
-class BoxCollider:135684344
-Active:True
-GameObject:136327104
-Group:2
-Half Extern:(3.000000,0.250000,0.500000)
-Kinematic:True
-Mask:1
-Mass:0.000000
-
-class Transform:136327000
+class Transform:137494136
 Parent:0
 Position:(0.000000,5.500000,0.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:1.000000
 
-class GameObject:136327104
+class PhysicsComponent:137494256
+Active:True
+GameObject:137495088
+
+class GameObject:137495088
 Active:True
 Name:Top
-Transform:136327000
+Transform:137494136
 
