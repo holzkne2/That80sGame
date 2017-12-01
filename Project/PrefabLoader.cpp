@@ -136,6 +136,10 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 			{
 				data.object = new ShipController(nullptr);
 			}
+			else if (tokens[0] == "class PhysicsComponent")
+			{
+				data.object = new PhysicsComponent(nullptr);
+			}
 
 			if (data.object != nullptr)
 				data.object->Load(data.member_value);
@@ -199,16 +203,6 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 					wfileName.c_str(),
 					modelRenderer->GetAlpha());
 			}
-			/*if (itr->second.type == "class BoxCollider")
-			{
-				dynamic_cast<BoxCollider*>(component)->Init(
-					stov3(itr->second.member_value["Half Extern"]),
-					std::stof(itr->second.member_value["Mass"]),
-					(itr->second.member_value["Kinematic"] == "True"),
-					std::stoi(itr->second.member_value["Group"]),
-					std::stoi(itr->second.member_value["Mask"])
-					);
-			}*/
 			if (itr->second.type == "class ShipController")
 			{
 				ShipController* ship = dynamic_cast<ShipController*>(component);
@@ -217,23 +211,34 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 					continue;
 				ship->SetGameOverUI(dynamic_cast<GameObject*>(objects[gameoverUI].object));
 			}
-			/*if (itr->second.type == "class MeshCollider")
+			if (itr->second.type == "class PhysicsComponent")
 			{
-				std::vector<DirectX::SimpleMath::Vector3> points;
-				std::vector<std::string> stringPoints;
-				GetTokens(itr->second.member_value["Points"], ';', stringPoints);
-				for (unsigned int j = 0; j < stringPoints.size(); ++j) {
-					points.push_back(stov3(stringPoints[j]));
+				PhysicsComponent* physicObj = dynamic_cast<PhysicsComponent*>(component);
+				physicObj->SetMass(std::stof(itr->second.member_value["Mass"]));
+				physicObj->SetKinematic(itr->second.member_value["Kinematic"] == "True");
+				physicObj->SetGroup(std::stoi(itr->second.member_value["Group"]));
+				physicObj->SetMask(std::stoi(itr->second.member_value["Mask"]));
+
+				std::vector<std::string> outterTokens;
+				GetTokens(itr->second.member_value["Boxes"], '|', outterTokens);
+				for (unsigned int i = 0; i < outterTokens.size(); i++) {
+					physicObj->AddBoxCollider(stov3(outterTokens[i]));
 				}
 
-				dynamic_cast<MeshCollider*>(component)->Init(
-					points,
-					std::stof(itr->second.member_value["Mass"]),
-					(itr->second.member_value["Kinematic"] == "True"),
-					std::stoi(itr->second.member_value["Group"]),
-					std::stoi(itr->second.member_value["Mask"])
-					);
-			}*/
+				outterTokens.clear();
+				GetTokens(itr->second.member_value["Meshes"], '|', outterTokens);
+				for (unsigned int i = 0; i < outterTokens.size(); i++) {
+					std::vector<DirectX::SimpleMath::Vector3> points;
+					std::vector<std::string> innerTokens;
+					GetTokens(outterTokens[i], ';', innerTokens);
+					for (unsigned int j = 0; j < innerTokens.size(); ++j) {
+						points.push_back(stov3(innerTokens[j]));
+					}
+					physicObj->AddMeshCollider(points);
+				}
+
+				physicObj->init();
+			}
 		}
 	}
 

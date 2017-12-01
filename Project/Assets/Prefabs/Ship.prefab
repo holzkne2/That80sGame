@@ -1,27 +1,32 @@
-class ModelRenderer:136973816
+class PhysicsComponent:2077608
 Active:True
-GameObject:137492800
-Is Alpha:False
-file Name:.\Assets\Models\Ship01.cmo
+GameObject:129432128
+Group:1
+Kinematic:False
+Mask:6
+Mass:1.000000
+Meshes:(0.500000,0.000000,-0.070784);(0.000000,0.425000,0.029206);(0.000000,0.000000,2.135000);(0.000000,0.000000,-0.135000);(0.000000,0.224980,-0.135000);(-0.500000,0.000000,-0.070784)|(-1.326000,-0.089000,-0.095000);(0.000000,0.080994,0.842000);(0.000000,0.142000,0.842000);(1.326000,-0.089000,-0.095000)
 
-class PhysicsComponent:137492400
-Active:True
-GameObject:137492800
-
-class GameObject:137492800
+class GameObject:129432128
 Active:True
 Name:Ship
-Transform:137492992
+Transform:129432336
 
-class Transform:137492992
+class Transform:129432336
 Parent:0
 Position:(0.000000,2.000000,0.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:1.000000
 
-class ShipController:137504568
+class ShipController:136442968
 Active:True
-Game Over:136649272
-GameObject:137492800
+Game Over:129432752
+GameObject:129432128
 Slide Speed:500.000000
+
+class ModelRenderer:136595088
+Active:True
+GameObject:129432128
+Is Alpha:False
+file Name:.\Assets\Models\Ship01.cmo
 

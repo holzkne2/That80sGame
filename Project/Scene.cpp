@@ -172,6 +172,7 @@ void Scene::LoadScene1()
 
 	GameObject* tempParent;
 
+	if (false)
 	{
 		///
 		/// Grid
@@ -187,14 +188,14 @@ void Scene::LoadScene1()
 
 
 		std::vector<Vector3> collisionPoints;
-		collisionPoints.push_back(Vector3(2, -2.3465, 2));
-		collisionPoints.push_back(Vector3(2, -2.3465, -2));
-		collisionPoints.push_back(Vector3(-2, -2.3465, -2));
-		collisionPoints.push_back(Vector3(-2, -2.3465, 2));
-		collisionPoints.push_back(Vector3(1.249, 2.3465, 1.249));
-		collisionPoints.push_back(Vector3(1.249, 2.3465, -1.249));
-		collisionPoints.push_back(Vector3(-1.249, 2.3465, -1.249));
-		collisionPoints.push_back(Vector3(-1.249, 2.3465, 1.249));
+		collisionPoints.push_back(Vector3(2, 0, 2));
+		collisionPoints.push_back(Vector3(2, 0, -2));
+		collisionPoints.push_back(Vector3(-2, 0, -2));
+		collisionPoints.push_back(Vector3(-2, 0, 2));
+		collisionPoints.push_back(Vector3(1.249, 4.693, 1.249));
+		collisionPoints.push_back(Vector3(1.249, 4.693, -1.249));
+		collisionPoints.push_back(Vector3(-1.249, 4.693, -1.249));
+		collisionPoints.push_back(Vector3(-1.249, 4.693, 1.249));
 
 		///
 		/// Tower
@@ -204,14 +205,14 @@ void Scene::LoadScene1()
 		gameObject = std::make_unique<GameObject>("Tower");
 		gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Tower01.cmo");
 		gameObject->GetTransform()->SetParent(tempParent->GetTransform());
-		gameObject->GetTransform()->SetPosition(Vector3(-1, 0, 30));
+		gameObject->GetTransform()->SetPosition(Vector3(-1.5, 0, 30));
 		last = gameObject.get();
 
 		AddGameObject(gameObject);
 
 		gameObject = std::make_unique<GameObject>("Tower Collider");
 		gameObject->GetTransform()->SetParent(last->GetTransform());
-		gameObject->GetTransform()->SetLocalPosition(Vector3(0, 2.25, 0));
+		gameObject->GetTransform()->SetLocalPosition(Vector3(0, 0, 0));
 		PhysicsComponent* physics = gameObject->AddComponent<PhysicsComponent>();
 		physics->AddMeshCollider(collisionPoints);
 		physics->SetMass(0);
@@ -232,7 +233,7 @@ void Scene::LoadScene1()
 
 		gameObject = std::make_unique<GameObject>("Tower Collider");
 		gameObject->GetTransform()->SetParent(last->GetTransform());
-		gameObject->GetTransform()->SetLocalPosition(Vector3(0, 2.25, 0));
+		gameObject->GetTransform()->SetLocalPosition(Vector3(0, 0, 0));
 		physics = gameObject->AddComponent<PhysicsComponent>();
 		physics->AddMeshCollider(collisionPoints);
 		physics->SetMass(0);
@@ -253,7 +254,7 @@ void Scene::LoadScene1()
 
 		gameObject = std::make_unique<GameObject>("Tower Collider");
 		gameObject->GetTransform()->SetParent(last->GetTransform());
-		gameObject->GetTransform()->SetLocalPosition(Vector3(0, 2.25, 0));
+		gameObject->GetTransform()->SetLocalPosition(Vector3(0, 0, 0));
 		physics = gameObject->AddComponent<PhysicsComponent>();
 		physics->AddMeshCollider(collisionPoints);
 		physics->SetMass(0);
@@ -265,8 +266,11 @@ void Scene::LoadScene1()
 
 		PrefabLoader::SavePrefab(tempParent);
 	}
-	//GameObject* part = PrefabLoader::LoadPrefab("Part 1");
-	//trackManager->AddObject(part);
+	else
+	{
+		GameObject* part = PrefabLoader::LoadPrefab("Part 1");
+		trackManager->AddObject(part);
+	}
 
 	///
 	/// Sun
@@ -295,60 +299,53 @@ void Scene::LoadScene1()
 	PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 
+	PhysicsComponent* physics;
+
 	///
 	/// Ship
 	///
-	gameObject = std::make_unique<GameObject>("Ship");
-	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ship01.cmo");
-	gameObject->GetTransform()->SetPosition(Vector3(0, 2, 0));
-	gameObject->AddComponent<ShipController>();
+	//gameObject = std::make_unique<GameObject>("Ship");
+	//gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ship01.cmo");
+	//gameObject->GetTransform()->SetPosition(Vector3(0, 2, 0));
+	//gameObject->AddComponent<ShipController>();
 
-	std::vector<Vector3> collisionPoints;
-	collisionPoints.push_back(Vector3(0, 0, 2.135));
-	collisionPoints.push_back(Vector3(0, 0, -0.135));
-	collisionPoints.push_back(Vector3(0, 0.225, -0.135));
-	collisionPoints.push_back(Vector3(0, 0.425, 0.029));
-	collisionPoints.push_back(Vector3(0.5, 0, -0.071));
-	collisionPoints.push_back(Vector3(-0.5, 0, -0.071));
-	
-	PhysicsComponent* physics = gameObject->AddComponent<PhysicsComponent>();
-	physics->AddMeshCollider(collisionPoints);
-	
-	collisionPoints.clear();
-	collisionPoints.push_back(Vector3(1.326, -0.089, -0.095));
-	collisionPoints.push_back(Vector3(-1.326, -0.089, -0.095));
-	collisionPoints.push_back(Vector3(0, 0.081, 0.842));
-	collisionPoints.push_back(Vector3(0, 0.142, 0.842));
-	physics->AddMeshCollider(collisionPoints);
-	
-	physics->SetMass(1);
-	physics->SetGroup(collisiontypes::COL_SHIP);
-	physics->SetMask(collisiontypes::COL_WALL | collisiontypes::COL_CONTRAINT);
-	physics->init();
-
-	gameObject->GetComponent<ShipController>()->SetGameOverUI(last);
-
+	//std::vector<Vector3> collisionPoints;
+	//collisionPoints.push_back(Vector3(0, 0, 2.135));
+	//collisionPoints.push_back(Vector3(0, 0, -0.135));
+	//collisionPoints.push_back(Vector3(0, 0.225, -0.135));
+	//collisionPoints.push_back(Vector3(0, 0.425, 0.029));
+	//collisionPoints.push_back(Vector3(0.5, 0, -0.071));
+	//collisionPoints.push_back(Vector3(-0.5, 0, -0.071));
+	//
+	//physics = gameObject->AddComponent<PhysicsComponent>();
+	//physics->AddMeshCollider(collisionPoints);
+	//
 	//collisionPoints.clear();
-	//collisionPoints.push_back(Vector3(0, 0, 0.5));
-	//collisionPoints.push_back(Vector3(-1, 0, 0));
-	//collisionPoints.push_back(Vector3(1, 0, 0));
-	//gameObject->AddComponent<MeshCollider>()->Init(collisionPoints,
-	//	1, false,
-	//	collisiontypes::COL_SHIP,
-	//	collisiontypes::COL_WALL | collisiontypes::COL_CONTRAINT);
+	//collisionPoints.push_back(Vector3(1.326, -0.089, -0.095));
+	//collisionPoints.push_back(Vector3(-1.326, -0.089, -0.095));
+	//collisionPoints.push_back(Vector3(0, 0.081, 0.842));
+	//collisionPoints.push_back(Vector3(0, 0.142, 0.842));
+	//physics->AddMeshCollider(collisionPoints);
+	//
+	//physics->SetMass(1);
+	//physics->SetGroup(collisiontypes::COL_SHIP);
+	//physics->SetMask(collisiontypes::COL_WALL | collisiontypes::COL_CONTRAINT);
+	//physics->init();
 
-	GameObject* player = gameObject.get();
-	PrefabLoader::SavePrefab(gameObject.get());
-	AddGameObject(gameObject);
+	//gameObject->GetComponent<ShipController>()->SetGameOverUI(last);
+
+	//GameObject* player = gameObject.get();
+	//PrefabLoader::SavePrefab(gameObject.get());
+	//AddGameObject(gameObject);
 	
-	//GameObject* player = PrefabLoader::LoadPrefab("Ship");
-	//player->GetComponent<ShipController>()->SetGameOverUI(last);
+	GameObject* player = PrefabLoader::LoadPrefab("Ship");
+	player->GetComponent<ShipController>()->SetGameOverUI(last);
 
 	///
 	/// Constraint Box
 	///
 	gameObject = std::make_unique<GameObject>("Top");
-	gameObject->GetTransform()->SetPosition(Vector3(0, 5.5, 0));
+	gameObject->GetTransform()->SetPosition(Vector3(0, 5.75, 0));
 	physics = gameObject->AddComponent<PhysicsComponent>();
 	physics->AddBoxCollider(Vector3(3, 0.25, 0.5));
 	physics->SetMass(0);

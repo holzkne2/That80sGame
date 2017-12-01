@@ -2,14 +2,14 @@
 #include "Component.h"
 #include "MyMotionState.h"
 
-//#define BIT(x) (1<<(x))
-//enum collisiontypes {
-//	COL_NOTHING = 0, //<Collide with nothing
-//	COL_SHIP = BIT(0), //<Collide with ships
-//	COL_CONTRAINT = BIT(1), //<Collide with contraints
-//	COL_WALL = BIT(2), //<Collide with walls
-//	COL_POWERUP = BIT(3) //<Collide with powerups
-//};
+#define BIT(x) (1<<(x))
+enum collisiontypes {
+	COL_NOTHING = 0, //<Collide with nothing
+	COL_SHIP = BIT(0), //<Collide with ships
+	COL_CONTRAINT = BIT(1), //<Collide with contraints
+	COL_WALL = BIT(2), //<Collide with walls
+	COL_POWERUP = BIT(3) //<Collide with powerups
+};
 
 class PhysicsComponent :
 	public Component
@@ -36,6 +36,8 @@ public:
 
 	// Call after all colliders are in
 	void init();
+
+	virtual void Save(std::map<std::string, std::string>& data) override;
 
 private:
 	std::vector<std::unique_ptr<btBoxShape>> m_boxColliders;

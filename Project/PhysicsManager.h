@@ -2,7 +2,6 @@
 
 #include <vector>
 #include "btBulletDynamicsCommon.h"
-#include "Collider.h"
 #include "DebugDraw.h"
 #include "PhysicsComponent.h"
 

@@ -127,3 +127,40 @@ void PhysicsComponent::init()
 
 	Game::Get()->GetPhysicsManager()->AddCollider(this, m_group, m_mask);
 }
+
+void PhysicsComponent::Save(std::map<std::string, std::string>& data)
+{
+	Component::Save(data);
+
+	data.insert(std::pair<std::string, std::string>("Mass", std::to_string(m_mass)));
+	data.insert(std::pair<std::string, std::string>("Kinematic", m_kinematic ? "True" : "False"));
+	data.insert(std::pair<std::string, std::string>("Group", std::to_string(m_group)));
+	data.insert(std::pair<std::string, std::string>("Mask", std::to_string(m_mask)));
+
+	std::string buffer = "";
+	if (m_boxColliders.size() > 0)
+	{
+		for (unsigned int i = 0; i < m_boxColliders.size(); ++i) {
+			buffer += to_string(btV3_smV3(m_boxColliders[i]->getHalfExtentsWithoutMargin()));
+			if (i != m_boxColliders.size() - 1)
+				buffer += '|';
+		}
+		data.insert(std::pair<std::string, std::string>("Boxes", buffer));
+	}
+
+	buffer = "";
+	if (m_meshColliders.size() > 0)
+	{
+		for (unsigned int i = 0; i < m_meshColliders.size(); ++i) {
+			for (unsigned int j = 0; j < m_meshColliders[i]->getNumPoints(); ++j) {
+				buffer += to_string(btV3_smV3(m_meshColliders[i]->getPoints()[j]));
+				if (j != m_meshColliders[i]->getNumPoints() - 1)
+					buffer += ';';
+
+			}
+			if (i != m_meshColliders.size() - 1)
+				buffer += '|';
+		}
+		data.insert(std::pair<std::string, std::string>("Meshes", buffer));
+	}
+}
