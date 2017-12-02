@@ -512,16 +512,26 @@ void Scene::Update()
 	}
 
 	auto state = GamePad::Get().GetState(0, GamePad::DEAD_ZONE_CIRCULAR);
+	GamePad::ButtonStateTracker* buttons = Game::Get()->GetButtons();
 
 	if (state.IsConnected())
 	{
-		if (state.IsStartPressed())
+		// TODO: Move to GAME
+		buttons->Update(state);
+
+		if (buttons->start == GamePad::ButtonStateTracker::PRESSED)
 		{
 			LoadScene(1);
 		}
-		if (state.IsBackPressed())
+		if (buttons->view == GamePad::ButtonStateTracker::PRESSED)
 		{
 			LoadScene(0);
+		}
+
+		if (buttons->dpadDown == GamePad::ButtonStateTracker::PRESSED)
+		{
+			Game::Get()->GetPhysicsManager()->GetDebugDraw()->SetActive(
+				!Game::Get()->GetPhysicsManager()->GetDebugDraw()->IsActive());
 		}
 	}
 }
@@ -574,31 +584,34 @@ void Scene::Render()
 	m_spriteBatch->End();
 
 	// Debug Lines
-	m_debugEffect->SetWorld(Matrix::Identity);
-	m_debugEffect->Apply(context);
-	context->IASetInputLayout(m_debugInputLayout.Get());
-	m_debugBatch->Begin();
-
-	std::vector<DebugDraw::Line>* lines = Game::Get()->GetPhysicsManager()->GetDebugDraw()->GetLines();
-	VertexPositionColor from;
-	VertexPositionColor to;
-	for (unsigned int c = 0; c < m_cameras.size(); c++)
+	if (Game::Get()->GetPhysicsManager()->GetDebugDraw()->IsActive())
 	{
-		camera = m_cameras[c];
-		if (camera == nullptr || !camera->IsActive())
-			continue;
-		Matrix view = camera->GetViewMatrix();
-		Matrix projection = camera->GetProjectionMatrix(deviceResources->GetOutputSize());
-		m_debugEffect->SetView(view);
-		m_debugEffect->SetProjection(projection);
-		
-		for (unsigned int l = 0; l < lines->size(); l++)
+		m_debugEffect->SetWorld(Matrix::Identity);
+		m_debugEffect->Apply(context);
+		context->IASetInputLayout(m_debugInputLayout.Get());
+		m_debugBatch->Begin();
+
+		std::vector<DebugDraw::Line>* lines = Game::Get()->GetPhysicsManager()->GetDebugDraw()->GetLines();
+		VertexPositionColor from;
+		VertexPositionColor to;
+		for (unsigned int c = 0; c < m_cameras.size(); c++)
 		{
-			lines->at(l).GetAsVertexPositionColors(from, to);
-			m_debugBatch->DrawLine(from, to);
+			camera = m_cameras[c];
+			if (camera == nullptr || !camera->IsActive())
+				continue;
+			Matrix view = camera->GetViewMatrix();
+			Matrix projection = camera->GetProjectionMatrix(deviceResources->GetOutputSize());
+			m_debugEffect->SetView(view);
+			m_debugEffect->SetProjection(projection);
+
+			for (unsigned int l = 0; l < lines->size(); l++)
+			{
+				lines->at(l).GetAsVertexPositionColors(from, to);
+				m_debugBatch->DrawLine(from, to);
+			}
 		}
+		m_debugBatch->End();
 	}
-	m_debugBatch->End();
 
 	deviceResources->PIXEndEvent();
 }

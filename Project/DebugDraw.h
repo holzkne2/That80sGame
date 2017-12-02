@@ -45,7 +45,11 @@ public:
 
 	std::vector<Line>* GetLines() { return &m_lines; }
 
+	bool IsActive() { return m_active; }
+	void SetActive(bool active) { m_active = active; }
+
 private:
 	std::vector<Line> m_lines;
+	bool m_active;
 };
 

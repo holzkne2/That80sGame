@@ -49,6 +49,8 @@ public:
 
 	PhysicsManager* GetPhysicsManager() { return m_physicsManager.get(); }
 
+	DirectX::GamePad::ButtonStateTracker* GetButtons() { return &m_buttons; }
+
 private:
 
 	void Update(DX::StepTimer const& timer);
@@ -71,6 +73,7 @@ private:
 
 	std::unique_ptr<PhysicsManager> m_physicsManager;
 
+	DirectX::GamePad::ButtonStateTracker m_buttons;
 	// Singleton
 public:
 	static Game* Get()

@@ -122,6 +122,7 @@ void Game::OnActivated()
 {
     // TODO: Game is becoming active window.
 	m_gamePad->Resume();
+	m_buttons.Reset();
 }
 
 void Game::OnDeactivated()
@@ -140,6 +141,7 @@ void Game::OnResuming()
     m_timer.ResetElapsedTime();
 
     // TODO: Game is being power-resumed (or returning from minimize).
+	m_buttons.Reset();
 }
 
 void Game::OnWindowSizeChanged(int width, int height)
