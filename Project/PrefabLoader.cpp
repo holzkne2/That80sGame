@@ -12,6 +12,7 @@
 #include "Game.h"
 #include "ShipController.h"
 #include "PhysicsComponent.h"
+#include "TimerUI.h"
 
 PrefabLoader::PrefabLoader()
 {
@@ -139,6 +140,10 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 			else if (tokens[0] == "class PhysicsComponent")
 			{
 				data.object = new PhysicsComponent(nullptr);
+			} 
+			else if (tokens[0] == "class TimerUI")
+			{
+				data.object = new TimerUI(nullptr);
 			}
 
 			if (data.object != nullptr)
@@ -238,6 +243,14 @@ GameObject* PrefabLoader::LoadPrefab(const std::string& name)
 				}
 
 				physicObj->init();
+			}
+			if (itr->second.type == "class TimerUI")
+			{
+				int ui = stoi(itr->second.member_value["UI"]);
+				if (objects.find(ui) == objects.end())
+					continue;
+				dynamic_cast<TimerUI*>(component)->SetUI(
+					dynamic_cast<UITextRenderer*>(objects[ui].object));
 			}
 		}
 	}
