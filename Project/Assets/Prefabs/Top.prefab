@@ -1,20 +1,20 @@
-class GameObject:12948776
-Active:True
-Name:Top
-Transform:12948880
-
-class Transform:12948880
-Parent:0
-Position:(0.000000,5.750000,0.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class PhysicsComponent:12954648
+class PhysicsComponent:14589512
 Active:True
 Boxes:(2.990000,0.240000,0.490000)
-GameObject:12948776
+GameObject:139061400
 Group:2
 Kinematic:True
 Mask:1
 Mass:0.000000
+
+class GameObject:139061400
+Active:True
+Name:Top
+Transform:140232952
+
+class Transform:140232952
+Parent:0
+Position:(0.000000,5.750000,0.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
 

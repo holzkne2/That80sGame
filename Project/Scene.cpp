@@ -258,11 +258,12 @@ void Scene::LoadScene1()
 		gameObject = std::make_unique<GameObject>("Tower Collider");
 		gameObject->GetTransform()->SetParent(last->GetTransform());
 		gameObject->GetTransform()->SetLocalPosition(Vector3(0, 0, 0));
+		gameObject->SetTag("Obsticle");
 		PhysicsComponent* physics = gameObject->AddComponent<PhysicsComponent>();
 		physics->AddMeshCollider(collisionPointsTower);
 		physics->SetMass(0);
 		physics->SetKinematic(true);
-		physics->SetGroup(collisiontypes::COL_WALL);
+		physics->SetGroup(collisiontypes::COL_OBSTICLE);
 		physics->SetMask(collisiontypes::COL_SHIP);
 		physics->init();
 
@@ -279,11 +280,12 @@ void Scene::LoadScene1()
 		gameObject = std::make_unique<GameObject>("Tower Collider");
 		gameObject->GetTransform()->SetParent(last->GetTransform());
 		gameObject->GetTransform()->SetLocalPosition(Vector3(0, 0, 0));
+		gameObject->SetTag("Obsticle");
 		physics = gameObject->AddComponent<PhysicsComponent>();
 		physics->AddMeshCollider(collisionPointsTower);
 		physics->SetMass(0);
 		physics->SetKinematic(true);
-		physics->SetGroup(collisiontypes::COL_WALL);
+		physics->SetGroup(collisiontypes::COL_OBSTICLE);
 		physics->SetMask(collisiontypes::COL_SHIP);
 		physics->init();
 
@@ -298,9 +300,10 @@ void Scene::LoadScene1()
 		AddGameObject(gameObject);
 
 		// TODO: Add Tags/Layers
-		gameObject = std::make_unique<GameObject>("Tower Collider");
+		gameObject = std::make_unique<GameObject>("Tree Collider");
 		gameObject->GetTransform()->SetParent(last->GetTransform());
 		gameObject->GetTransform()->SetLocalPosition(Vector3(0, 0, 0));
+		gameObject->SetTag("Obsticle");
 		physics = gameObject->AddComponent<PhysicsComponent>();
 		physics->AddMeshCollider(collisionPointsTreeBase);
 		physics->AddMeshCollider(collisionPointsTreeTrunk1);
@@ -308,7 +311,7 @@ void Scene::LoadScene1()
 		physics->AddMeshCollider(collisionPointsTreeLeaves);
 		physics->SetMass(0);
 		physics->SetKinematic(true);
-		physics->SetGroup(collisiontypes::COL_WALL);
+		physics->SetGroup(collisiontypes::COL_OBSTICLE);
 		physics->SetMask(collisiontypes::COL_SHIP);
 		physics->init();
 		AddGameObject(gameObject);
@@ -381,7 +384,7 @@ void Scene::LoadScene1()
 		
 		physics->SetMass(1);
 		physics->SetGroup(collisiontypes::COL_SHIP);
-		physics->SetMask(collisiontypes::COL_WALL | collisiontypes::COL_CONTRAINT);
+		physics->SetMask(collisiontypes::COL_OBSTICLE | collisiontypes::COL_CONTRAINT);
 		physics->init();
 
 		gameObject->GetComponent<ShipController>()->SetGameOverUI(last);
@@ -619,4 +622,40 @@ void Scene::AddModelRenderer(ModelRenderer* modelRenderer)
 void Scene::AddCamera(Camera* camera)
 {
 	m_cameras.push_back(camera);
+}
+
+GameObject* Scene::GetGameObject(std::string name)
+{
+	for (unsigned int i = 0; i < m_gameObjects.size(); ++i) {
+		if (m_gameObjects[i]->GetName() == name)
+			return m_gameObjects[i].get();
+	}
+}
+
+std::vector<GameObject*> Scene::GetGameObjects(std::string name)
+{
+	std::vector<GameObject*> output;
+	for (unsigned int i = 0; i < m_gameObjects.size(); ++i) {
+		if (m_gameObjects[i]->GetName() == name)
+			output.push_back(m_gameObjects[i].get());
+	}
+	return output;
+}
+
+GameObject* Scene::GetGameObjectWithTag(std::string tag)
+{
+	for (unsigned int i = 0; i < m_gameObjects.size(); ++i) {
+		if (m_gameObjects[i]->GetTag() == tag)
+			return m_gameObjects[i].get();
+	}
+}
+
+std::vector<GameObject*> Scene::GetGameObjectsWithTag(std::string tag)
+{
+	std::vector<GameObject*> output;
+	for (unsigned int i = 0; i < m_gameObjects.size(); ++i) {
+		if (m_gameObjects[i]->GetTag() == tag)
+			output.push_back(m_gameObjects[i].get());
+	}
+	return output;
 }

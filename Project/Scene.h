@@ -24,6 +24,12 @@ public:
 	void AddModelRenderer(ModelRenderer*);
 	void AddCamera(Camera*);
 
+	GameObject* GetGameObject(std::string);
+	std::vector<GameObject*> GetGameObjects(std::string);
+
+	GameObject* GetGameObjectWithTag(std::string);
+	std::vector<GameObject*> GetGameObjectsWithTag(std::string);
+
 private:
 	void Init();
 

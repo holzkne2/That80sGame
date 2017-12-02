@@ -1,17 +1,17 @@
-class TrackManager:141183072
+class GameObject:139064088
+Active:True
+Name:Track Manager
+Transform:140233576
+
+class TrackManager:139446336
 Active:True
 Dead Objects:
-GameObject:141732160
+GameObject:139064088
 Live Objects:
 Live Threshold:1
 Speed:10.000000
 
-class GameObject:141732160
-Active:True
-Name:Track Manager
-Transform:141734344
-
-class Transform:141734344
+class Transform:140233576
 Parent:0
 Position:(0.000000,0.000000,0.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)

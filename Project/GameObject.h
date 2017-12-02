@@ -38,6 +38,9 @@ public:
 
 	std::string GetName() const { return m_name; }
 
+	std::string GetTag() const { return m_tag; }
+	void SetTag(std::string tag) { m_tag = tag; }
+
 	void CollisionStay(const PhysicsComponent*) const;
 
 	virtual void Save(std::map<std::string, std::string>& data) override;
@@ -52,6 +55,7 @@ private:
 	std::vector<std::unique_ptr<Component>> m_components;
 
 	std::string m_name;
+	std::string m_tag;
 	bool m_active;
 };
 

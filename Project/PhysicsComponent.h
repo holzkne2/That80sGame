@@ -7,7 +7,7 @@ enum collisiontypes {
 	COL_NOTHING = 0, //<Collide with nothing
 	COL_SHIP = BIT(0), //<Collide with ships
 	COL_CONTRAINT = BIT(1), //<Collide with contraints
-	COL_WALL = BIT(2), //<Collide with walls
+	COL_OBSTICLE = BIT(2), //<Collide with walls
 	COL_POWERUP = BIT(3) //<Collide with powerups
 };
 

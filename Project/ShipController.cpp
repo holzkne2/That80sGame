@@ -3,6 +3,7 @@
 #include "GameObject.h"
 #include "Game.h"
 #include "PhysicsComponent.h"
+#include "TrackManager.h"
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -38,9 +39,10 @@ void ShipController::Update()
 }
 void ShipController::CollisionStay(const PhysicsComponent* other) const
 {
-	if (other->GetGameObject()->GetName() == "Tower Collider")
+	if (other->GetGameObject()->GetTag() == "Obsticle")
 	{
 		m_gameOverUI->SetActive(true);
+		Game::Get()->GetScene()->GetGameObject("Track Manager")->GetComponent<TrackManager>()->SetSpeed(0);
 	}
 }
 

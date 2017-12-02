@@ -11,6 +11,8 @@ public:
 
 	void Update() override;
 
+	void SetSpeed(float speed) { m_speed = speed; }
+
 	void AddObject(GameObject*);
 
 	virtual void Save(std::map<std::string, std::string>& data) override;
