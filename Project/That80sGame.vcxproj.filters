@@ -90,6 +90,9 @@
     <Image Include="GameOver.png">
       <Filter>Assets</Filter>
     </Image>
+    <Image Include="TreeUVs.dds">
+      <Filter>Assets</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="settings.manifest">
@@ -114,6 +117,9 @@
       <Filter>Assets</Filter>
     </None>
     <None Include="Assets\Models\Tower01.cmo">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\Models\Tree.cmo">
       <Filter>Assets</Filter>
     </None>
   </ItemGroup>

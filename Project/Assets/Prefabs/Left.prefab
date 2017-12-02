@@ -1,20 +1,20 @@
-class PhysicsComponent:141758816
-Active:True
-Boxes:(0.240000,2.990000,0.490000)
-GameObject:143031928
-Group:2
-Kinematic:True
-Mask:1
-Mass:0.000000
-
-class Transform:143029432
+class Transform:12949296
 Parent:0
 Position:(3.500000,2.500000,0.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:1.000000
 
-class GameObject:143031928
+class GameObject:12950128
 Active:True
 Name:Left
-Transform:143029432
+Transform:12949296
+
+class PhysicsComponent:12953808
+Active:True
+Boxes:(0.240000,2.990000,0.490000)
+GameObject:12950128
+Group:2
+Kinematic:True
+Mask:1
+Mass:0.000000
 
