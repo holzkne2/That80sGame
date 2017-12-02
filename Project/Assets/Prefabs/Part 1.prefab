@@ -1,128 +1,128 @@
-class PhysicsComponent:14587112
+class PhysicsComponent:19249304
 Active:True
-GameObject:139066008
+GameObject:142866104
+Group:4
+Kinematic:True
+Mask:1
+Mass:0.000000
+Meshes:(-2.000000,0.000000,-2.000000);(-2.000000,0.000000,2.000000);(-1.248630,4.693000,-1.248630);(2.000000,0.000000,-2.000000);(2.000000,0.000000,2.000000);(-1.248630,4.693000,1.248630);(1.248630,4.693000,-1.248630);(1.248630,4.693000,1.248630)
+
+class PhysicsComponent:19249664
+Active:True
+GameObject:142867256
+Group:4
+Kinematic:True
+Mask:1
+Mass:0.000000
+Meshes:(-2.000000,0.000000,-2.000000);(-2.000000,0.000000,2.000000);(-1.248630,4.693000,-1.248630);(2.000000,0.000000,-2.000000);(2.000000,0.000000,2.000000);(-1.248630,4.693000,1.248630);(1.248630,4.693000,-1.248630);(1.248630,4.693000,1.248630)
+
+class PhysicsComponent:19249784
+Active:True
+GameObject:142866488
 Group:4
 Kinematic:True
 Mask:1
 Mass:0.000000
 Meshes:(-2.833915,0.000000,-1.740000);(-3.906000,0.000000,-1.499825);(-2.483690,1.036000,-0.127823);(-2.005763,0.996957,-0.197860);(0.288285,0.749924,-0.482964);(1.151612,0.000000,-1.377921);(-3.906000,0.000000,1.499881);(-2.307813,1.032958,0.286784);(-1.905590,0.996957,0.200889);(3.906000,0.000000,0.055859);(-2.919559,0.000000,1.635000);(1.083556,0.000000,0.732776)|(-2.484000,1.036075,-0.127975);(-2.307978,1.033196,0.287000);(-1.860028,3.096972,0.205961);(-1.925003,3.097795,-0.101959);(-2.006017,0.997000,-0.198000);(-1.906018,0.997000,0.200976);(-1.648000,2.964940,0.155970);(-1.684006,2.955891,-0.109982)|(-1.925000,3.098017,-0.101973);(-1.859921,3.097082,0.206000);(-0.649089,4.864813,0.049987);(-0.619063,4.821835,-0.167000);(-1.683975,2.956000,-0.109969);(-1.647971,2.965157,0.155979);(-0.570015,4.744846,0.118993);(-0.537136,4.705979,-0.048995)|(2.016739,5.012893,-1.829000);(2.677000,5.561877,-0.173897);(2.446949,4.660027,1.111950);(0.201022,4.309000,-1.704792);(-1.182753,4.742080,-1.540928);(0.863882,4.600050,1.993000);(-1.749000,5.068944,0.082000);(-0.889881,4.359042,1.548921);(-1.100870,4.447105,-0.817756)
 
-class PhysicsComponent:14588312
-Active:True
-GameObject:139066520
-Group:4
-Kinematic:True
-Mask:1
-Mass:0.000000
-Meshes:(-2.000000,0.000000,-2.000000);(-2.000000,0.000000,2.000000);(-1.248630,4.693000,-1.248630);(2.000000,0.000000,-2.000000);(2.000000,0.000000,2.000000);(-1.248630,4.693000,1.248630);(1.248630,4.693000,-1.248630);(1.248630,4.693000,1.248630)
-
-class PhysicsComponent:14589032
-Active:True
-GameObject:139065624
-Group:4
-Kinematic:True
-Mask:1
-Mass:0.000000
-Meshes:(-2.000000,0.000000,-2.000000);(-2.000000,0.000000,2.000000);(-1.248630,4.693000,-1.248630);(2.000000,0.000000,-2.000000);(2.000000,0.000000,2.000000);(-1.248630,4.693000,1.248630);(1.248630,4.693000,-1.248630);(1.248630,4.693000,1.248630)
-
-class GameObject:139064856
-Active:False
-Name:Part 1
-Transform:140233680
-
-class GameObject:139065112
-Active:True
-Name:Tower
-Transform:140233160
-
-class GameObject:139065624
+class GameObject:142866104
 Active:True
 Name:Tower Collider
-Transform:140231600
+Transform:143025248
 
-class GameObject:139065752
-Active:True
-Name:Tree
-Transform:140231392
-
-class GameObject:139066008
+class GameObject:142866488
 Active:True
 Name:Tree Collider
-Transform:140231704
+Transform:143023792
 
-class GameObject:139066264
-Active:True
-Name:Tower 1
-Transform:140232016
-
-class GameObject:139066520
+class GameObject:142867256
 Active:True
 Name:Tower Collider
-Transform:140231288
+Transform:143024520
 
-class ModelRenderer:139653312
+class GameObject:142867512
 Active:True
-GameObject:139064856
-Is Alpha:False
-file Name:.\Assets\Models\TestGrid500.cmo
+Name:Tower 1
+Transform:143026496
 
-class ModelRenderer:139653528
+class GameObject:142867640
 Active:True
-GameObject:139065112
-Is Alpha:False
-file Name:.\Assets\Models\Tower01.cmo
+Name:Tower
+Transform:143023688
 
-class ModelRenderer:139656624
+class GameObject:142869176
 Active:True
-GameObject:139065752
-Is Alpha:False
-file Name:.\Assets\Models\Tree.cmo
+Name:Tree
+Transform:143024624
 
-class ModelRenderer:139656696
-Active:True
-GameObject:139066264
-Is Alpha:False
-file Name:.\Assets\Models\Tower01.cmo
+class GameObject:142869432
+Active:False
+Name:Part 1
+Transform:143023584
 
-class Transform:140231288
-Parent:140232016
-Position:(0.000000,0.000000,0.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class Transform:140231392
-Parent:140233680
-Position:(0.100000,0.000000,-190.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class Transform:140231600
-Parent:140233160
-Position:(0.000000,0.000000,0.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class Transform:140231704
-Parent:140231392
-Position:(0.000000,0.000000,0.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class Transform:140232016
-Parent:140233680
-Position:(1.500000,0.000000,-205.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class Transform:140233160
-Parent:140233680
-Position:(-1.500000,0.000000,-220.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class Transform:140233680
+class Transform:143023584
 Parent:0
 Position:(0.000000,0.000000,250.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:1.000000
+
+class Transform:143023688
+Parent:143023584
+Position:(-1.500000,0.000000,-220.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class Transform:143023792
+Parent:143024624
+Position:(0.000000,0.000000,0.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class Transform:143024520
+Parent:143026496
+Position:(0.000000,0.000000,0.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class Transform:143024624
+Parent:143023584
+Position:(0.100000,0.000000,-190.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class Transform:143025248
+Parent:143023688
+Position:(0.000000,0.000000,0.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class Transform:143026496
+Parent:143023584
+Position:(1.500000,0.000000,-205.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class ModelRenderer:144022072
+Active:True
+GameObject:142869176
+Is Alpha:False
+file Name:.\Assets\Models\Tree.cmo
+
+class ModelRenderer:144022648
+Active:True
+GameObject:142867512
+Is Alpha:False
+file Name:.\Assets\Models\Tower01.cmo
+
+class ModelRenderer:144024232
+Active:True
+GameObject:142867640
+Is Alpha:False
+file Name:.\Assets\Models\Tower01.cmo
+
+class ModelRenderer:144025384
+Active:True
+GameObject:142869432
+Is Alpha:False
+file Name:.\Assets\Models\TestGrid500.cmo
 

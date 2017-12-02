@@ -4,6 +4,7 @@
 #include "Game.h"
 #include "PhysicsComponent.h"
 #include "TrackManager.h"
+#include "TimerUI.h"
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -37,12 +38,14 @@ void ShipController::Update()
 	
 	m_gameObject->GetComponent<PhysicsComponent>()->SetVelocity(v);
 }
-void ShipController::CollisionStay(const PhysicsComponent* other) const
+void ShipController::CollisionStay(const PhysicsComponent* other)
 {
 	if (other->GetGameObject()->GetTag() == "Obsticle")
 	{
 		m_gameOverUI->SetActive(true);
 		Game::Get()->GetScene()->GetGameObject("Track Manager")->GetComponent<TrackManager>()->SetSpeed(0);
+		Game::Get()->GetScene()->GetGameObject("Timer")->GetComponent<TimerUI>()->SetActive(false);
+		m_slideSpeed = 0;
 	}
 }
 

@@ -10,7 +10,7 @@ public:
 
 	void Update() override;
 
-	void CollisionStay(const PhysicsComponent*) const override;
+	void CollisionStay(const PhysicsComponent*) override;
 
 	void SetGameOverUI(GameObject* gameoverUI) { m_gameOverUI = gameoverUI; }
 

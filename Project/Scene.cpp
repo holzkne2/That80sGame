@@ -11,6 +11,7 @@
 #include "DebugDraw.h"
 #include "PrefabLoader.h"
 #include "PhysicsComponent.h"
+#include "TimerUI.h"
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -465,6 +466,24 @@ void Scene::LoadScene1()
 	gameObject->AddComponent<CameraFollow>()->SetTarget(player->GetTransform());
 
 	PrefabLoader::SavePrefab(gameObject.get());
+	AddGameObject(gameObject);
+
+	///
+	/// Timer
+	///
+	gameObject = std::make_unique<GameObject>("Timer");
+	UITextRenderer* uiTextRenderer = gameObject->AddComponent<UITextRenderer>();
+	rectTransform = dynamic_cast<RectTransform*>(gameObject->GetTransform());
+	uiTextRenderer->SetFont(deviceResources->GetD3DDevice(), L"StillTime64.spritefont");
+	uiTextRenderer->SetColor(Color(Colors::White));
+	uiTextRenderer->SetText(L"00:00");
+
+	gameObject->AddComponent<TimerUI>()->SetUI(uiTextRenderer);
+
+	rectTransform->SetPosition(Vector3(0, 0, 0));
+	rectTransform->SetScale(1);
+	rectTransform->SetAnchors(Vector2(0, 0));
+
 	AddGameObject(gameObject);
 }
 

@@ -30,7 +30,8 @@ void GameObject::UpdateComponents()
 {
 	for (unsigned int i = 0; i < m_components.size(); i++)
 	{
-		m_components[i]->Update();
+		if (m_components[i]->IsActive())
+			m_components[i]->Update();
 	}
 }
 
@@ -38,7 +39,8 @@ void GameObject::LateUpdateComponents()
 {
 	for (unsigned int i = 0; i < m_components.size(); i++)
 	{
-		m_components[i]->LateUpdate();
+		if (m_components[i]->IsActive())
+			m_components[i]->LateUpdate();
 	}
 }
 
@@ -50,7 +52,7 @@ bool GameObject::IsActive()
 		return m_active && m_transform->GetParent()->GetGameObject()->IsActive();
 }
 
-void GameObject::CollisionStay(const PhysicsComponent* other) const
+void GameObject::CollisionStay(const PhysicsComponent* other)
 {
 	for (unsigned int i = 0; i < m_components.size(); i++)
 	{

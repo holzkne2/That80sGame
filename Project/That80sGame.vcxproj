@@ -192,6 +192,7 @@
     <ClInclude Include="PrefabLoader.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="ShipController.h" />
+    <ClInclude Include="TimerUI.h" />
     <ClInclude Include="TrackManager.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Component.h" />
@@ -222,6 +223,7 @@
     <ClCompile Include="PrefabLoader.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="ShipController.cpp" />
+    <ClCompile Include="TimerUI.cpp" />
     <ClCompile Include="TrackManager.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="Component.cpp" />

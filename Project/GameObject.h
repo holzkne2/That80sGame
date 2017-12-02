@@ -41,7 +41,7 @@ public:
 	std::string GetTag() const { return m_tag; }
 	void SetTag(std::string tag) { m_tag = tag; }
 
-	void CollisionStay(const PhysicsComponent*) const;
+	void CollisionStay(const PhysicsComponent*);
 
 	virtual void Save(std::map<std::string, std::string>& data) override;
 	virtual void Load(std::map<std::string, std::string>& data) override;

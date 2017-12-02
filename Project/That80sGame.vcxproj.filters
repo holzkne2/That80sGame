@@ -37,6 +37,7 @@
     <ClInclude Include="PrefabLoader.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="PhysicsComponent.h" />
+    <ClInclude Include="TimerUI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -64,6 +65,7 @@
     <ClCompile Include="PrefabLoader.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="PhysicsComponent.cpp" />
+    <ClCompile Include="TimerUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />
