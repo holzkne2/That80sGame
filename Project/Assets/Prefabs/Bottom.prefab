@@ -1,20 +1,20 @@
-class PhysicsComponent:27112032
+class GameObject:17714928
+Active:True
+Name:Bottom
+Transform:141659080
+
+class PhysicsComponent:17751040
 Active:True
 Boxes:(2.990000,0.240000,0.490000)
-GameObject:151756808
+GameObject:17714928
 Group:2
 Kinematic:True
 Mask:1
 Mass:0.000000
 
-class Transform:76238128
+class Transform:141659080
 Parent:0
 Position:(0.000000,1.000000,0.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:1.000000
-
-class GameObject:151756808
-Active:True
-Name:Bottom
-Transform:76238128
 

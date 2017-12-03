@@ -82,6 +82,9 @@ void Transform::SetParent(Transform* parent)
 
 	m_parent = parent;
 	m_parent->AddChild(this);
+
+	if (!parent->IsActive() && Object::IsSelfActive())
+		m_gameObject->OnDisable();
 }
 
 void Transform::RemoveChild(Transform* child)
@@ -174,4 +177,30 @@ void Transform::Load(std::map<std::string, std::string>& data)
 	m_position = stov3(data["Position"]);
 	m_rotation = stoq(data["Rotation"]);
 	m_scale = stof(data["Scale"]);
+}
+
+void Transform::OnDisable()
+{
+	for (unsigned int i = 0; i < m_childern.size(); i++)
+	{
+		m_childern[i]->GetGameObject()->OnDisable();
+	}
+}
+
+void Transform::OnEnable()
+{
+	for (unsigned int i = 0; i < m_childern.size(); i++)
+	{
+		m_childern[i]->GetGameObject()->OnEnable();
+	}
+}
+
+bool Transform::IsActive()
+{
+	return m_gameObject->IsActive();
+}
+
+bool Transform::IsSelfActive()
+{
+	return m_gameObject->IsSelfActive();
 }

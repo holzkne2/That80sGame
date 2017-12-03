@@ -5,7 +5,6 @@
 GameObject::GameObject()
 {
 	m_transform = std::make_unique<Transform>(this);
-	m_active = true;
 }
 
 GameObject::GameObject(std::string name) : GameObject()
@@ -47,9 +46,27 @@ void GameObject::LateUpdateComponents()
 bool GameObject::IsActive()
 {
 	if (m_transform->GetParent() == nullptr)
-		return m_active;
+		return Object::IsSelfActive();
 	else
-		return m_active && m_transform->GetParent()->GetGameObject()->IsActive();
+		return Object::IsSelfActive() && m_transform->GetParent()->GetGameObject()->IsActive();
+}
+
+void GameObject::OnDisable()
+{
+	m_transform->OnDisable();
+	for (unsigned int i = 0; i < m_components.size(); i++)
+	{
+		m_components[i]->OnDisable();
+	}
+}
+
+void GameObject::OnEnable()
+{
+	m_transform->OnEnable();
+	for (unsigned int i = 0; i < m_components.size(); i++)
+	{
+		m_components[i]->OnEnable();
+	}
 }
 
 void GameObject::CollisionStay(const PhysicsComponent* other)
@@ -65,7 +82,7 @@ void GameObject::Save(std::map<std::string, std::string>& data)
 	Object::Save(data);
 
 	data.insert(std::pair<std::string, std::string>("Name", m_name));
-	data.insert(std::pair<std::string, std::string>("Active", m_active ? "True" : "False"));
+	data.insert(std::pair<std::string, std::string>("Active", Object::IsSelfActive() ? "True" : "False"));
 	data.insert(std::pair<std::string, std::string>("Transform", std::to_string((int)m_transform.get())));
 }
 

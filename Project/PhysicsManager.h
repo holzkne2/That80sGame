@@ -17,6 +17,7 @@ public:
 	void Tick(float);
 
 	void AddCollider(PhysicsComponent*, int, int);
+	void RemoveCollider(PhysicsComponent*);
 
 	DebugDraw* GetDebugDraw() { return m_debugDraw.get(); }
 

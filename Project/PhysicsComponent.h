@@ -39,6 +39,9 @@ public:
 
 	virtual void Save(std::map<std::string, std::string>& data) override;
 
+	void OnDisable() override;
+	void OnEnable() override;
+
 private:
 	std::vector<std::unique_ptr<btBoxShape>> m_boxColliders;
 	std::vector<std::unique_ptr<btConvexHullShape>> m_meshColliders;

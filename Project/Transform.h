@@ -53,6 +53,12 @@ public:
 	virtual void Save(std::map<std::string, std::string>& data) override;
 	virtual void Load(std::map<std::string, std::string>& data) override;
 
+	bool IsActive() override;
+	bool IsSelfActive() override;
+
+	void OnDisable() override;
+	void OnEnable() override;
+
 private:
 	void RemoveChild(Transform*);
 	void AddChild(Transform*);

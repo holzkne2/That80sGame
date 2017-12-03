@@ -21,10 +21,7 @@ public:
 	virtual void Update() {}
 	virtual void LateUpdate() {}
 
-	bool IsActive();
-
-	bool IsSelfActive() { return m_active; }
-	virtual void SetActive(bool active) { m_active = active; }
+	bool IsActive() override;
 
 	virtual void CollisionStay(const PhysicsComponent*) {}
 
@@ -33,7 +30,6 @@ public:
 
 protected:
 	GameObject* m_gameObject;
-	bool m_active;
 
 private:
 	void SetGameObject(GameObject*);

@@ -12,6 +12,11 @@ PhysicsComponent::PhysicsComponent(GameObject* gameObject) : Component(gameObjec
 	bool m_kinematic = false;
 	int m_group = 0;
 	int m_mask = 0;
+
+	if (m_gameObject != nullptr && !m_gameObject->IsActive())
+		OnDisable();
+	else
+		OnEnable();
 }
 
 
@@ -121,11 +126,11 @@ void PhysicsComponent::init()
 		m_rigidBody->setCollisionFlags(m_rigidBody->getCollisionFlags() |
 			btCollisionObject::CF_CHARACTER_OBJECT);
 	}
-
 	m_rigidBody->setActivationState(DISABLE_DEACTIVATION);
 	m_rigidBody->setUserPointer(this);
 
-	Game::Get()->GetPhysicsManager()->AddCollider(this, m_group, m_mask);
+	if (IsActive())
+		Game::Get()->GetPhysicsManager()->AddCollider(this, m_group, m_mask);
 }
 
 void PhysicsComponent::Save(std::map<std::string, std::string>& data)
@@ -163,4 +168,16 @@ void PhysicsComponent::Save(std::map<std::string, std::string>& data)
 		}
 		data.insert(std::pair<std::string, std::string>("Meshes", buffer));
 	}
+}
+
+void PhysicsComponent::OnDisable()
+{
+	if (m_rigidBody != nullptr)
+		Game::Get()->GetPhysicsManager()->RemoveCollider(this);
+}
+
+void PhysicsComponent::OnEnable()
+{
+	if (m_rigidBody != nullptr)
+		Game::Get()->GetPhysicsManager()->AddCollider(this, m_group, m_mask);
 }

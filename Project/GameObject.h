@@ -33,8 +33,10 @@ public:
 	void UpdateComponents();
 	void LateUpdateComponents();
 
-	bool IsActive();
-	void SetActive(bool active) { m_active = active; }
+	bool IsActive() override;
+	
+	void OnDisable();
+	void OnEnable();
 
 	std::string GetName() const { return m_name; }
 
@@ -56,7 +58,6 @@ private:
 
 	std::string m_name;
 	std::string m_tag;
-	bool m_active;
 };
 
 template<typename T> T* GameObject::AddComponent()
