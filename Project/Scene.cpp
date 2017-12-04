@@ -229,7 +229,7 @@ void Scene::LoadScene1()
 	collisionPointsTreeLeaves.push_back(Vector3(2.677, 5.562, -0.174));
 	collisionPointsTreeLeaves.push_back(Vector3(2.017, 5.013, -1.829));
 
-	if (true)
+	if (false)
 	{
 		///
 		/// Grid
@@ -321,6 +321,17 @@ void Scene::LoadScene1()
 	else
 	{
 		GameObject* part = PrefabLoader::LoadPrefab("Part 1");
+		trackManager->AddObject(part);
+	}
+
+	if (true)
+	{
+		GameObject* part = PrefabLoader::LoadPrefab("Part 1");
+		part->SetName("Part 2");
+		trackManager->AddObject(part);
+
+		part = PrefabLoader::LoadPrefab("Part 1");
+		part->SetName("Part 4");
 		trackManager->AddObject(part);
 	}
 

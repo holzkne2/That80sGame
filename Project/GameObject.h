@@ -39,6 +39,7 @@ public:
 	void OnEnable();
 
 	std::string GetName() const { return m_name; }
+	void SetName(std::string name) { m_name = name; }
 
 	std::string GetTag() const { return m_tag; }
 	void SetTag(std::string tag) { m_tag = tag; }

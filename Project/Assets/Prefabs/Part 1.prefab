@@ -1,128 +1,135 @@
-class GameObject:137459920
+class PhysicsComponent:13582056
 Active:True
-Name:Tower Collider
-Transform:137467192
-
-class Transform:137467192
-Parent:137946064
-Position:(0.000000,0.000000,0.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class PhysicsComponent:137467320
-Active:True
-GameObject:137459920
+GameObject:141220112
 Group:4
 Kinematic:True
 Mask:1
 Mass:0.000000
 Meshes:(-2.000000,0.000000,-2.000000);(-2.000000,0.000000,2.000000);(-1.248630,4.693000,-1.248630);(2.000000,0.000000,-2.000000);(2.000000,0.000000,2.000000);(-1.248630,4.693000,1.248630);(1.248630,4.693000,-1.248630);(1.248630,4.693000,1.248630)
 
-class Transform:137676512
-Parent:0
-Position:(0.000000,0.000000,250.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class ModelRenderer:137676712
+class PhysicsComponent:13582416
 Active:True
-GameObject:137837872
-Is Alpha:False
-file Name:.\Assets\Models\TestGrid500.cmo
-
-class GameObject:137837872
-Active:False
-Name:Part 1
-Transform:137676512
-
-class GameObject:137876744
-Active:True
-Name:Tree
-Transform:137880200
-
-class GameObject:137877176
-Active:True
-Name:Tree Collider
-Transform:137879512
-
-class Transform:137877864
-Parent:137950768
-Position:(0.000000,0.000000,0.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class ModelRenderer:137878936
-Active:True
-GameObject:137876744
-Is Alpha:False
-file Name:.\Assets\Models\Tree.cmo
-
-class Transform:137879512
-Parent:137880200
-Position:(0.000000,0.000000,0.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class Transform:137880200
-Parent:137676512
-Position:(0.100000,0.000000,-190.000000)
-Rotation:(0.000000,0.000000,0.000000,1.000000)
-Scale:1.000000
-
-class PhysicsComponent:137921512
-Active:True
-GameObject:137877176
+GameObject:141220496
 Group:4
 Kinematic:True
 Mask:1
 Mass:0.000000
 Meshes:(-2.833915,0.000000,-1.740000);(-3.906000,0.000000,-1.499825);(-2.483690,1.036000,-0.127823);(-2.005763,0.996957,-0.197860);(0.288285,0.749924,-0.482964);(1.151612,0.000000,-1.377921);(-3.906000,0.000000,1.499881);(-2.307813,1.032958,0.286784);(-1.905590,0.996957,0.200889);(3.906000,0.000000,0.055859);(-2.919559,0.000000,1.635000);(1.083556,0.000000,0.732776)|(-2.484000,1.036075,-0.127975);(-2.307978,1.033196,0.287000);(-1.860028,3.096972,0.205961);(-1.925003,3.097795,-0.101959);(-2.006017,0.997000,-0.198000);(-1.906018,0.997000,0.200976);(-1.648000,2.964940,0.155970);(-1.684006,2.955891,-0.109982)|(-1.925000,3.098017,-0.101973);(-1.859921,3.097082,0.206000);(-0.649089,4.864813,0.049987);(-0.619063,4.821835,-0.167000);(-1.683975,2.956000,-0.109969);(-1.647971,2.965157,0.155979);(-0.570015,4.744846,0.118993);(-0.537136,4.705979,-0.048995)|(2.016739,5.012893,-1.829000);(2.677000,5.561877,-0.173897);(2.446949,4.660027,1.111950);(0.201022,4.309000,-1.704792);(-1.182753,4.742080,-1.540928);(0.863882,4.600050,1.993000);(-1.749000,5.068944,0.082000);(-0.889881,4.359042,1.548921);(-1.100870,4.447105,-0.817756)
 
-class PhysicsComponent:137944664
+class PhysicsComponent:13583016
 Active:True
-GameObject:137950344
+GameObject:141218448
 Group:4
 Kinematic:True
 Mask:1
 Mass:0.000000
 Meshes:(-2.000000,0.000000,-2.000000);(-2.000000,0.000000,2.000000);(-1.248630,4.693000,-1.248630);(2.000000,0.000000,-2.000000);(2.000000,0.000000,2.000000);(-1.248630,4.693000,1.248630);(1.248630,4.693000,-1.248630);(1.248630,4.693000,1.248630)
 
-class Transform:137946064
-Parent:137676512
+class ModelRenderer:141175392
+Active:True
+GameObject:141219856
+Is Alpha:False
+file Name:.\Assets\Models\TestGrid500.cmo
+
+class GameObject:141218448
+Active:True
+Name:Tower Collider
+Tag:Obsticle
+Transform:141648656
+
+class GameObject:141219088
+Active:True
+Name:Tower
+Tag:Default
+Transform:141647984
+
+class GameObject:141219856
+Active:False
+Name:Part 1
+Tag:Default
+Transform:141649104
+
+class GameObject:141220112
+Active:True
+Name:Tower Collider
+Tag:Obsticle
+Transform:141648544
+
+class GameObject:141220240
+Active:True
+Name:Tower 1
+Tag:Default
+Transform:141651120
+
+class GameObject:141220368
+Active:True
+Name:Tree
+Tag:Default
+Transform:141648768
+
+class GameObject:141220496
+Active:True
+Name:Tree Collider
+Tag:Obsticle
+Transform:141651232
+
+class ModelRenderer:141370144
+Active:True
+GameObject:141219088
+Is Alpha:False
+file Name:.\Assets\Models\Tower01.cmo
+
+class ModelRenderer:141370288
+Active:True
+GameObject:141220368
+Is Alpha:False
+file Name:.\Assets\Models\Tree.cmo
+
+class ModelRenderer:141371368
+Active:True
+GameObject:141220240
+Is Alpha:False
+file Name:.\Assets\Models\Tower01.cmo
+
+class Transform:141647984
+Parent:141649104
 Position:(-1.500000,0.000000,-220.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:1.000000
 
-class ModelRenderer:137946192
-Active:True
-GameObject:138011120
-Is Alpha:False
-file Name:.\Assets\Models\Tower01.cmo
+class Transform:141648544
+Parent:141651120
+Position:(0.000000,0.000000,0.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
 
-class GameObject:137947992
-Active:True
-Name:Tower 1
-Transform:137950768
+class Transform:141648656
+Parent:141647984
+Position:(0.000000,0.000000,0.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
 
-class GameObject:137950344
-Active:True
-Name:Tower Collider
-Transform:137877864
+class Transform:141648768
+Parent:141649104
+Position:(0.100000,0.000000,-190.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
 
-class Transform:137950768
-Parent:137676512
+class Transform:141649104
+Parent:0
+Position:(0.000000,0.000000,250.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
+
+class Transform:141651120
+Parent:141649104
 Position:(1.500000,0.000000,-205.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:1.000000
 
-class ModelRenderer:137960104
-Active:True
-GameObject:137947992
-Is Alpha:False
-file Name:.\Assets\Models\Tower01.cmo
-
-class GameObject:138011120
-Active:True
-Name:Tower
-Transform:137946064
+class Transform:141651232
+Parent:141648768
+Position:(0.000000,0.000000,0.000000)
+Rotation:(0.000000,0.000000,0.000000,1.000000)
+Scale:1.000000
 
