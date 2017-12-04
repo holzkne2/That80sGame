@@ -41,7 +41,6 @@ public:
 	DirectX::SimpleMath::Matrix GetWorldToLocalMatrix();
 	DirectX::SimpleMath::Matrix GetLocalToWorldMatrix();
 
-	// TODO: const
 	GameObject* GetGameObject() { return m_gameObject; }
 
 	Transform* GetParent() { return m_parent; }

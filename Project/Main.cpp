@@ -71,14 +71,14 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
         HWND hwnd = CreateWindowEx(0, L"That80sGameWindowClass", L"That80sGame", WS_OVERLAPPEDWINDOW,
             CW_USEDEFAULT, CW_USEDEFAULT, rc.right - rc.left, rc.bottom - rc.top, nullptr, nullptr, hInstance,
             nullptr);
-        // TODO: Change to CreateWindowEx(WS_EX_TOPMOST, L"That80sGameWindowClass", L"That80sGame", WS_POPUP,
+        // Change to CreateWindowEx(WS_EX_TOPMOST, L"That80sGameWindowClass", L"That80sGame", WS_POPUP,
         // to default to fullscreen.
 
         if (!hwnd)
             return 1;
 
         ShowWindow(hwnd, nCmdShow);
-        // TODO: Change nCmdShow to SW_SHOWMAXIMIZED to default to fullscreen.
+        // Change nCmdShow to SW_SHOWMAXIMIZED to default to fullscreen.
 
         SetWindowLongPtr(hwnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(g_game.get()) );
 
@@ -119,7 +119,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     static bool s_in_suspend = false;
     static bool s_minimized = false;
     static bool s_fullscreen = false;
-    // TODO: Set s_fullscreen to true if defaulting to fullscreen.
+    // Set s_fullscreen to true if defaulting to fullscreen.
 
     auto game = reinterpret_cast<Game*>(GetWindowLongPtr(hWnd, GWLP_USERDATA));
 
@@ -224,8 +224,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 SetWindowLongPtr(hWnd, GWL_STYLE, WS_OVERLAPPEDWINDOW);
                 SetWindowLongPtr(hWnd, GWL_EXSTYLE, 0);
 
-                int width = 800;
-                int height = 600;
+                int width = 1080;
+                int height = 720;
                 if (game)
                     game->GetDefaultSize(width, height);
 

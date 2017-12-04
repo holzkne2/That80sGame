@@ -44,7 +44,7 @@ void Game::Initialize(HWND window, int width, int height)
 
 	m_scene->LoadScene(0);
 
-    // TODO: Change the timer settings if you want something other than the default variable timestep mode.
+    // Change the timer settings if you want something other than the default variable timestep mode.
     // e.g. for 60 FPS fixed timestep update logic, call:    
     m_timer.SetFixedTimeStep(true);
     m_timer.SetTargetElapsedSeconds(1.0 / 60);
@@ -67,7 +67,7 @@ void Game::Tick()
 void Game::Update(DX::StepTimer const& timer)
 {
     float elapsedTime = float(timer.GetElapsedSeconds());
-    // TODO: Add your game logic here.
+    // Add your game logic here.
     elapsedTime;
 
 	m_physicsManager->Tick(elapsedTime);
@@ -120,27 +120,27 @@ void Game::Clear()
 // Message handlers
 void Game::OnActivated()
 {
-    // TODO: Game is becoming active window.
+    // Game is becoming active window.
 	m_gamePad->Resume();
 	m_buttons.Reset();
 }
 
 void Game::OnDeactivated()
 {
-    // TODO: Game is becoming background window.
+    // Game is becoming background window.
 	m_gamePad->Suspend();
 }
 
 void Game::OnSuspending()
 {
-    // TODO: Game is being power-suspended (or minimized).
+    // Game is being power-suspended (or minimized).
 }
 
 void Game::OnResuming()
 {
     m_timer.ResetElapsedTime();
 
-    // TODO: Game is being power-resumed (or returning from minimize).
+    // Game is being power-resumed (or returning from minimize).
 	m_buttons.Reset();
 }
 
@@ -151,15 +151,15 @@ void Game::OnWindowSizeChanged(int width, int height)
 
     CreateWindowSizeDependentResources();
 
-    // TODO: Game window is being resized.
+    // Game window is being resized.
 }
 
 // Properties
 void Game::GetDefaultSize(int& width, int& height) const
 {
-    // TODO: Change to desired default window size (note minimum size is 320x200).
-    width = 800;
-    height = 600;
+    // Change to desired default window size (note minimum size is 320x200).
+    width = 1080;
+    height = 720;
 }
 #pragma endregion
 
@@ -169,25 +169,25 @@ void Game::CreateDeviceDependentResources()
 {
     auto device = m_deviceResources->GetD3DDevice();
 
-    // TODO: Initialize device dependent objects here (independent of window size).
+    // Initialize device dependent objects here (independent of window size).
     device;
 }
 
 // Allocate all memory resources that change on a window SizeChanged event.
 void Game::CreateWindowSizeDependentResources()
 {
-    // TODO: Initialize windows-size dependent objects here.
+    // Initialize windows-size dependent objects here.
 }
 
 void Game::OnDeviceLost()
 {
-    // TODO: Add Direct3D resource cleanup here.
+    // Add Direct3D resource cleanup here.
 	m_scene->OnDeviceLost();
 }
 
 void Game::OnDeviceRestored()
 {
-	// TODO: Rebuild Scene
+	// Rebuild Scene
 
     CreateDeviceDependentResources();
 

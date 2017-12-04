@@ -300,7 +300,6 @@ void Scene::LoadScene1()
 
 		AddGameObject(gameObject);
 
-		// TODO: Add Tags/Layers
 		gameObject = std::make_unique<GameObject>("Tree Collider");
 		gameObject->GetTransform()->SetParent(last->GetTransform());
 		gameObject->GetTransform()->SetLocalPosition(Vector3(0, 0, 0));
@@ -542,7 +541,7 @@ void Scene::Render()
 
 	deviceResources->PIXBeginEvent(L"Render");
 	auto context = deviceResources->GetD3DDeviceContext();
-	// TODO: Add your rendering code here.
+	// Add your rendering code here.
 	context;
 
 

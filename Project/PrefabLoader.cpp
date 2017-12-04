@@ -23,8 +23,6 @@ PrefabLoader::~PrefabLoader()
 {
 }
 
-// TODO: GameObject Controls Component
-
 void PrefabLoader::SavePrefab(GameObject* gameObject)
 {
 	std::map<int, ObjectData> objects = std::map<int, ObjectData>();
