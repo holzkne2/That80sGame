@@ -1,10 +1,10 @@
-class GameObject:143856936
+class GameObject:146344888
 Active:False
 Name:Game Over
 Tag:Default
-Transform:143857576
+Transform:146345016
 
-class RectTransform:143857576
+class RectTransform:146345016
 Anchors:(0.500000,0.500000)
 Parent:0
 Pivot:(1024.000000,1024.000000)
@@ -12,9 +12,9 @@ Position:(0.000000,0.000000,0.000000)
 Rotation:(-0.000000,0.000000,-0.000000,1.000000)
 Scale:0.330000
 
-class UIImageRenderer:144025128
+class UIImageRenderer:147389280
 Active:True
 Color:(1.000000,1.000000,1.000000,1.000000)
 File Name:GameOver.png
-GameObject:143856936
+GameObject:146344888
 

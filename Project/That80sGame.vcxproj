@@ -248,6 +248,7 @@
     <Image Include="..\..\..\That 80%27s Game\That80sGame\Project\GridThin.dds" />
     <Image Include="..\..\..\That 80%27s Game\That80sGame\Project\GridThin.png" />
     <Image Include="..\..\..\That 80%27s Game\That80sGame\Project\Sun.dds" />
+    <Image Include="80sTowerGradient.dds" />
     <Image Include="Arrow.png" />
     <Image Include="GameOver.png" />
     <Image Include="GameTitle.png" />
@@ -261,6 +262,7 @@
     <None Include="Assets\Models\MenuTerrain.cmo" />
     <None Include="Assets\Models\Ship01.cmo" />
     <None Include="Assets\Models\Sun.cmo" />
+    <None Include="Assets\Models\TallTower.cmo" />
     <None Include="Assets\Models\TestGrid500.cmo" />
     <None Include="Assets\Models\Tower01.cmo" />
     <None Include="Assets\Models\Tree.cmo" />

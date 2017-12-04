@@ -229,7 +229,7 @@ void Scene::LoadScene1()
 	collisionPointsTreeLeaves.push_back(Vector3(2.677, 5.562, -0.174));
 	collisionPointsTreeLeaves.push_back(Vector3(2.017, 5.013, -1.829));
 
-	if (false)
+	if (true)
 	{
 		///
 		/// Grid
@@ -270,20 +270,20 @@ void Scene::LoadScene1()
 
 		AddGameObject(gameObject);
 
-		gameObject = std::make_unique<GameObject>("Tower 1");
-		gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Tower01.cmo");
+		gameObject = std::make_unique<GameObject>("Tall Tower 1");
+		gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"TallTower.cmo");
 		gameObject->GetTransform()->SetParent(tempParent->GetTransform());
 		gameObject->GetTransform()->SetPosition(Vector3(1.5, 0, 45));
 		last = gameObject.get();
 
 		AddGameObject(gameObject);
 
-		gameObject = std::make_unique<GameObject>("Tower Collider");
+		gameObject = std::make_unique<GameObject>("Tall Tower Collider");
 		gameObject->GetTransform()->SetParent(last->GetTransform());
-		gameObject->GetTransform()->SetLocalPosition(Vector3(0, 0, 0));
+		gameObject->GetTransform()->SetLocalPosition(Vector3(0, 13, 0));
 		gameObject->SetTag("Obsticle");
 		physics = gameObject->AddComponent<PhysicsComponent>();
-		physics->AddMeshCollider(collisionPointsTower);
+		physics->AddBoxCollider(Vector3(1, 13, 1));
 		physics->SetMass(0);
 		physics->SetKinematic(true);
 		physics->SetGroup(collisiontypes::COL_OBSTICLE);
@@ -340,8 +340,8 @@ void Scene::LoadScene1()
 	///
 	gameObject = std::make_unique<GameObject>("Sun");
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Sun.cmo", true);
-	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 500));
-	gameObject->GetTransform()->SetScale(5);
+	gameObject->GetTransform()->SetPosition(Vector3(0, -150, 1000));
+	gameObject->GetTransform()->SetScale(20);
 
 	PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);

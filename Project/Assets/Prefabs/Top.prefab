@@ -1,21 +1,21 @@
-class GameObject:143855400
+class GameObject:146342328
 Active:True
 Name:Top
 Tag:Default
-Transform:144879784
+Transform:146804800
 
-class PhysicsComponent:144844656
-Active:True
-Boxes:(2.990000,0.240000,0.490000)
-GameObject:143855400
-Group:2
-Kinematic:True
-Mask:1
-Mass:0.000000
-
-class Transform:144879784
+class Transform:146804800
 Parent:0
 Position:(0.000000,5.750000,0.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:1.000000
+
+class PhysicsComponent:147365208
+Active:True
+Boxes:(2.990000,0.240000,0.490000)
+GameObject:146342328
+Group:2
+Kinematic:True
+Mask:1
+Mass:0.000000
 
