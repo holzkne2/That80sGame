@@ -64,7 +64,7 @@ void PhysicsComponent::AddMeshCollider(const std::vector<Vector3>& points)
 		hull->addPoint(smV3_btV3(points[i]), false);
 	}
 
-	hull->initializePolyhedralFeatures(0.01);
+	hull->initializePolyhedralFeatures();
 	hull->optimizeConvexHull();
 	hull->setUserPointer(this);
 }

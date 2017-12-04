@@ -65,7 +65,7 @@ void PhysicsManager::Tick(float deltaTime)
 	
 
 	int numManifolds = m_dynamicsWorld->getDispatcher()->getNumManifolds();
-	for (unsigned int i = 0; i < numManifolds; i++)
+	for (int i = 0; i < numManifolds; i++)
 	{
 		btPersistentManifold* contactManifold = m_dynamicsWorld->getDispatcher()->getManifoldByIndexInternal(i);
 		if (contactManifold->getNumContacts() > 0) {

@@ -78,7 +78,7 @@ void Scene::LoadScene0()
 	RectTransform* rectTransform = dynamic_cast<RectTransform*>(gameObject->GetTransform());
 	uiImageRenderer->SetImage(deviceResources->GetD3DDevice(), L"GameTitle.png");
 
-	rectTransform->SetPivot(Vector2(uiImageRenderer->GetWidth() / 2.0, uiImageRenderer->GetHeight() / 2.0));
+	rectTransform->SetPivot(Vector2(uiImageRenderer->GetWidth() / 2.0f, uiImageRenderer->GetHeight() / 2.0f));
 	rectTransform->SetPosition(Vector3(0, 0, 0));
 	rectTransform->SetScale(0.75);
 	rectTransform->SetAnchors(Vector2(0.5, 0.25));
@@ -94,7 +94,7 @@ void Scene::LoadScene0()
 	uiImageRenderer->SetImage(deviceResources->GetD3DDevice(), L"Arrow.png");
 	uiImageRenderer->SetColor(Color(Colors::Red));
 
-	rectTransform->SetPivot(Vector2(uiImageRenderer->GetWidth() / 2.0, uiImageRenderer->GetHeight() / 2.0));
+	rectTransform->SetPivot(Vector2(uiImageRenderer->GetWidth() / 2.0f, uiImageRenderer->GetHeight() / 2.0f));
 	rectTransform->SetPosition(Vector3(0, 0, 0));
 	rectTransform->SetScale(1);
 	rectTransform->SetAnchors(Vector2(0.45, 0.66));
@@ -111,7 +111,7 @@ void Scene::LoadScene0()
 	uiTextRenderer->SetColor(Color(Colors::Cyan));
 	uiTextRenderer->SetText(L"Play");
 
-	rectTransform->SetPivot(uiTextRenderer->GetFont()->MeasureString(uiTextRenderer->GetText().c_str()) / 2.0);
+	rectTransform->SetPivot(uiTextRenderer->GetFont()->MeasureString(uiTextRenderer->GetText().c_str()) / 2.0f);
 	rectTransform->SetPosition(Vector3(0, 0, 0));
 	rectTransform->SetScale(1);
 	rectTransform->SetAnchors(Vector2(0.5, 0.66));
@@ -353,7 +353,7 @@ void Scene::LoadScene1()
 	UIImageRenderer* uiImageRenderer = gameObject->AddComponent<UIImageRenderer>();
 	uiImageRenderer->SetImage(deviceResources->GetD3DDevice(), L"GameOver.png");
 	RectTransform* rectTransform = dynamic_cast<RectTransform*>(gameObject->GetTransform());
-	rectTransform->SetPivot(Vector2(uiImageRenderer->GetWidth() / 2.0, uiImageRenderer->GetHeight() / 2.0));
+	rectTransform->SetPivot(Vector2(uiImageRenderer->GetWidth() / 2.0f, uiImageRenderer->GetHeight() / 2.0f));
 	rectTransform->SetScale(0.33);
 	rectTransform->SetAnchors(Vector2(0.5, 0.5));
 	GameObject* last = gameObject.get();
@@ -672,6 +672,7 @@ GameObject* Scene::GetGameObject(std::string name)
 		if (m_gameObjects[i]->GetName() == name)
 			return m_gameObjects[i].get();
 	}
+	return nullptr;
 }
 
 std::vector<GameObject*> Scene::GetGameObjects(std::string name)
@@ -690,6 +691,7 @@ GameObject* Scene::GetGameObjectWithTag(std::string tag)
 		if (m_gameObjects[i]->GetTag() == tag)
 			return m_gameObjects[i].get();
 	}
+	return nullptr;
 }
 
 std::vector<GameObject*> Scene::GetGameObjectsWithTag(std::string tag)

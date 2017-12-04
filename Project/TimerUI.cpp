@@ -17,7 +17,7 @@ void TimerUI::Update()
 	float deltaTime = Game::Get()->GetTimer()->GetElapsedSeconds();
 	m_totalTime += deltaTime;
 
-	int min = m_totalTime / 60;
+	int min = (int)m_totalTime / 60;
 	int sec = (int)m_totalTime % 60;
 
 	std::wstring minuteString = std::to_wstring(min);

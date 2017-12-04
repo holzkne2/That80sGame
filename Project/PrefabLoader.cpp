@@ -67,7 +67,7 @@ void PrefabLoader::SavePrefab(GameObject* gameObject, std::map<int, ObjectData>&
 		objects.insert(std::pair<int, ObjectData>((int)(components->at(i).get()), data));
 	}
 
-	for (unsigned int i = 0; i < gameObject->GetTransform()->ChildCount(); i++)
+	for (int i = 0; i < gameObject->GetTransform()->ChildCount(); i++)
 	{
 		SavePrefab(gameObject->GetTransform()->GetChild(i)->GetGameObject(), objects);
 	}

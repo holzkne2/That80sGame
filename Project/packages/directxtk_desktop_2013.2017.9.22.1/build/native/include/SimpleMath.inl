@@ -3039,7 +3039,7 @@ inline Vector3 Quaternion::EulerAngles() const
 		euler.y = (float)asin(std::min<float>(1.0, std::max<float>(-1.0, (float)test)));
 	}
 
-	return euler * (180.0 / XM_PI);
+	return euler * (180.0f / XM_PI);
 }
 
 inline float Quaternion::Length() const
