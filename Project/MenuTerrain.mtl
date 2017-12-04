@@ -1,7 +1,0 @@
-newmtl lambert3SG
-illum 4
-Ka 1 1 1
-Kd .0023 0.8975 0.0781
-Ks 0 0 0
-map_Kd GridThin.dds
-Ni 1.00

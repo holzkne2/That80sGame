@@ -1,18 +1,18 @@
-class ModelRenderer:146297344
-Active:True
-GameObject:146342712
-Is Alpha:True
-file Name:.\Assets\Models\Sun.cmo
-
-class GameObject:146342712
+class GameObject:15813848
 Active:True
 Name:Sun
 Tag:Default
-Transform:147414568
+Transform:141978064
 
-class Transform:147414568
+class Transform:141978064
 Parent:0
 Position:(0.000000,-150.000000,1000.000000)
 Rotation:(0.000000,0.000000,0.000000,1.000000)
 Scale:20.000000
+
+class ModelRenderer:142114800
+Active:True
+GameObject:15813848
+Is Alpha:True
+file Name:.\Assets\Models\Sun.cmo
 
