@@ -50,7 +50,7 @@ public:
 
 private:
 	void SetTransform(Transform* transform) { m_transform.reset(transform); transform->m_gameObject = this; }
-	void AddPrebuiltComponent(Component* component) { m_components.push_back(std::unique_ptr<Component>(component)); }
+	void AddPrebuiltComponent(Component* component);
 
 private:
 	std::unique_ptr<Transform> m_transform;
@@ -66,7 +66,12 @@ template<typename T> T* GameObject::AddComponent()
 		return nullptr;
 
 	m_components.push_back(std::make_unique<T>(this));
-	return dynamic_cast<T*>(m_components[m_components.size() - 1].get());
+	Component* component = m_components[m_components.size() - 1].get();
+	if (IsActive())
+		component->OnEnable();
+	else
+		component->OnDisable();
+	return dynamic_cast<T*>(component);
 }
 
 template<typename T> T* GameObject::GetComponent()

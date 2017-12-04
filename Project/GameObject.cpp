@@ -51,6 +51,15 @@ bool GameObject::IsActive()
 		return Object::IsSelfActive() && m_transform->GetParent()->GetGameObject()->IsActive();
 }
 
+void GameObject::AddPrebuiltComponent(Component* component)
+{
+	m_components.push_back(std::unique_ptr<Component>(component));
+	if (component->IsActive())
+		component->OnEnable();
+	else
+		component->OnDisable();
+}
+
 void GameObject::OnDisable()
 {
 	m_transform->OnDisable();

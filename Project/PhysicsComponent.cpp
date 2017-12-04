@@ -12,11 +12,6 @@ PhysicsComponent::PhysicsComponent(GameObject* gameObject) : Component(gameObjec
 	bool m_kinematic = false;
 	int m_group = 0;
 	int m_mask = 0;
-
-	if (m_gameObject != nullptr && !m_gameObject->IsActive())
-		OnDisable();
-	else
-		OnEnable();
 }
 
 
