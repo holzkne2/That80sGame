@@ -253,13 +253,16 @@
     <Image Include="GameOver.png" />
     <Image Include="GameTitle.png" />
     <Image Include="directx.ico" />
+    <Image Include="Pyramid.dds" />
     <Image Include="TreeUVs.dds" />
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="settings.manifest" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Models\Grid250.cmo" />
     <None Include="Assets\Models\MenuTerrain.cmo" />
+    <None Include="Assets\Models\Pyramid.cmo" />
     <None Include="Assets\Models\Ship01.cmo" />
     <None Include="Assets\Models\Sun.cmo" />
     <None Include="Assets\Models\TallTower.cmo" />

@@ -18,17 +18,20 @@ TrackManager::~TrackManager()
 
 void TrackManager::Update()
 {
+	const float GridLength = 250;
+	const float HalfGridLength = GridLength / 2.0f;
+
 	// Spawn Objects
 	GameObject* gameObject;
 	if (m_deadObjects.size() > 0 && m_liveObjects.size() < m_liveThreshold)
 	{
 		Vector3 place;
 		if (m_liveObjects.size() == 0)
-			place = Vector3(0, 0, 250);
+			place = Vector3(0, 0, HalfGridLength);
 		else
 		{
 			place = m_liveObjects[m_liveObjects.size() - 1]->GetTransform()->GetPosition()
-				+ Vector3(0, 0, 500);
+				+ Vector3(0, 0, GridLength);
 		}
 
 		// TODO: Randomize
@@ -50,7 +53,7 @@ void TrackManager::Update()
 	}
 
 	// Remove Objects
-	if (m_liveObjects[0]->GetTransform()->GetPosition().z <= -250)
+	if (m_liveObjects[0]->GetTransform()->GetPosition().z <= -HalfGridLength)
 	{
 		gameObject = m_liveObjects[0];
 		m_liveObjects.erase(m_liveObjects.begin());

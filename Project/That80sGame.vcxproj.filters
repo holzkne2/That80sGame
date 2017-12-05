@@ -98,6 +98,9 @@
     <Image Include="80sTowerGradient.dds">
       <Filter>Assets</Filter>
     </Image>
+    <Image Include="Pyramid.dds">
+      <Filter>Assets</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="settings.manifest">
@@ -128,6 +131,12 @@
       <Filter>Assets</Filter>
     </None>
     <None Include="Assets\Models\TallTower.cmo">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\Models\Pyramid.cmo">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Assets\Models\Grid250.cmo">
       <Filter>Assets</Filter>
     </None>
   </ItemGroup>

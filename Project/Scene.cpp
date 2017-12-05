@@ -136,11 +136,12 @@ void Scene::LoadScene0()
 	AddGameObject(gameObject);
 
 	///
-	/// Ship
+	/// Tree
 	///
 	gameObject = std::make_unique<GameObject>("Tree");
 	gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Tree.cmo");
 	gameObject->GetTransform()->SetPosition(Vector3(0, -1.75, 6));
+	gameObject->GetTransform()->SetLocalRotation(Quaternion::Euler(Vector3(0, 180, 0)));
 
 	AddGameObject(gameObject);
 
@@ -183,6 +184,13 @@ void Scene::LoadScene1()
 	collisionPointsTower.push_back(Vector3(-1.249, 4.693, -1.249));
 	collisionPointsTower.push_back(Vector3(-1.249, 4.693, 1.249));
 
+	std::vector<Vector3> collisionPointsPyramid;
+	collisionPointsPyramid.push_back(Vector3(2, 0, 2));
+	collisionPointsPyramid.push_back(Vector3(2, 0, -2));
+	collisionPointsPyramid.push_back(Vector3(-2, 0, -2));
+	collisionPointsPyramid.push_back(Vector3(-2, 0, 2));
+	collisionPointsPyramid.push_back(Vector3(0, 4.693, 0));
+
 	// Technically not needed
 	std::vector<Vector3> collisionPointsTreeBase;
 	collisionPointsTreeBase.push_back(Vector3(3.906, 0, 0.056));
@@ -217,7 +225,7 @@ void Scene::LoadScene1()
 	collisionPointsTreeTrunk2.push_back(Vector3(-0.619, 4.822, -0.167));
 	collisionPointsTreeTrunk2.push_back(Vector3(-0.649, 4.865, 0.05));
 	collisionPointsTreeTrunk2.push_back(Vector3(-0.57, 4.745, 0.119));
-	
+
 	std::vector<Vector3> collisionPointsTreeLeaves;
 	collisionPointsTreeLeaves.push_back(Vector3(0.201, 4.309, -1.705));
 	collisionPointsTreeLeaves.push_back(Vector3(-1.183, 4.742, -1.541));
@@ -230,6 +238,112 @@ void Scene::LoadScene1()
 	collisionPointsTreeLeaves.push_back(Vector3(2.017, 5.013, -1.829));
 
 	if (true)
+	{
+		gameObject = std::make_unique<GameObject>("Part A");
+		gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Grid250.cmo");
+		gameObject->GetTransform()->SetPosition(Vector3(0, 0, 125));
+
+		tempParent = gameObject.get();
+		trackManager->AddObject(gameObject.get());
+
+		AddGameObject(gameObject);
+
+		GameObject* last;
+		PhysicsComponent* physics;
+		//Gen Tall Towers
+		std::vector<Vector3> positions = { Vector3(-2, 0, 20), Vector3(-1, 0, 23), Vector3(2, 0, 35),
+			Vector3(1, 0, 38), Vector3(0, 0, 150), Vector3(0, 0, 200), Vector3(0, 0, 250) };
+		for (unsigned int i = 0; i < 7; ++i) {
+			gameObject = std::make_unique<GameObject>("Tall Tower");
+			gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"TallTower.cmo");
+			gameObject->GetTransform()->SetParent(tempParent->GetTransform());
+			gameObject->GetTransform()->SetPosition(positions[i]);
+			last = gameObject.get();
+
+			AddGameObject(gameObject);
+
+			gameObject = std::make_unique<GameObject>("Tall Tower Collider");
+			gameObject->GetTransform()->SetParent(last->GetTransform());
+			gameObject->GetTransform()->SetLocalPosition(Vector3(0, 13, 0));
+			gameObject->SetTag("Obsticle");
+			physics = gameObject->AddComponent<PhysicsComponent>();
+			physics->AddBoxCollider(Vector3(1, 13, 1));
+			physics->SetMass(0);
+			physics->SetKinematic(true);
+			physics->SetGroup(collisiontypes::COL_OBSTICLE);
+			physics->SetMask(collisiontypes::COL_SHIP);
+			physics->init();
+
+			AddGameObject(gameObject);
+		}
+		// Gen Towers
+		positions = { Vector3(-1.75, 0, 70), Vector3(-1.75, 0, 80), Vector3(-1.75, 0, 90), 
+			Vector3(0, 0, 100), Vector3(-2.5, 0, 115), Vector3(-2.5, 0, 130),
+			Vector3(2.5, 0, 115), Vector3(2.5, 0, 130) };
+		for (unsigned int i = 0; i < 8; ++i) {
+			gameObject = std::make_unique<GameObject>("Tower");
+			gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Pyramid.cmo");
+			gameObject->GetTransform()->SetParent(tempParent->GetTransform());
+			gameObject->GetTransform()->SetPosition(positions[i]);
+			last = gameObject.get();
+
+			AddGameObject(gameObject);
+
+			gameObject = std::make_unique<GameObject>("Tower Collider");
+			gameObject->GetTransform()->SetParent(last->GetTransform());
+			gameObject->GetTransform()->SetLocalPosition(Vector3(0, 0, 0));
+			gameObject->SetTag("Obsticle");
+			physics = gameObject->AddComponent<PhysicsComponent>();
+			physics->AddMeshCollider(collisionPointsPyramid);
+			physics->SetMass(0);
+			physics->SetKinematic(true);
+			physics->SetGroup(collisiontypes::COL_OBSTICLE);
+			physics->SetMask(collisiontypes::COL_SHIP);
+			physics->init();
+
+			AddGameObject(gameObject);
+		}
+
+		positions = { Vector3(0, 0, 55), Vector3(0, 0, 225) };
+		std::vector<Quaternion> rotation = { Quaternion(), Quaternion::Euler(Vector3(0, 180, 0)) };
+		// Gen Trees
+		for (unsigned int i = 0; i < 2; ++i) {
+			gameObject = std::make_unique<GameObject>("Tree");
+			gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Tree.cmo");
+			gameObject->GetTransform()->SetParent(tempParent->GetTransform());
+			// TODO: Fix Rotation
+			//gameObject->GetTransform()->SetLocalRotation(rotation[i]);
+			gameObject->GetTransform()->SetPosition(positions[i]);
+			last = gameObject.get();
+
+			AddGameObject(gameObject);
+
+			gameObject = std::make_unique<GameObject>("Tree Collider");
+			gameObject->GetTransform()->SetParent(last->GetTransform());
+			gameObject->GetTransform()->SetLocalPosition(Vector3(0, 0, 0));
+			gameObject->SetTag("Obsticle");
+			physics = gameObject->AddComponent<PhysicsComponent>();
+			physics->AddMeshCollider(collisionPointsTreeBase);
+			physics->AddMeshCollider(collisionPointsTreeTrunk1);
+			physics->AddMeshCollider(collisionPointsTreeTrunk2);
+			physics->AddMeshCollider(collisionPointsTreeLeaves);
+			physics->SetMass(0);
+			physics->SetKinematic(true);
+			physics->SetGroup(collisiontypes::COL_OBSTICLE);
+			physics->SetMask(collisiontypes::COL_SHIP);
+			physics->init();
+
+			AddGameObject(gameObject);
+		}
+
+		PrefabLoader::SavePrefab(tempParent);
+	}
+	if (true) {
+		GameObject* part = PrefabLoader::LoadPrefab("Part A");
+		trackManager->AddObject(part);
+	}
+
+	/*if (false)
 	{
 		///
 		/// Grid
@@ -318,13 +432,13 @@ void Scene::LoadScene1()
 
 		PrefabLoader::SavePrefab(tempParent);
 	}
-	else
+	if (false)
 	{
 		GameObject* part = PrefabLoader::LoadPrefab("Part 1");
 		trackManager->AddObject(part);
 	}
 
-	if (true)
+	if (false)
 	{
 		GameObject* part = PrefabLoader::LoadPrefab("Part 1");
 		part->SetName("Part 2");
@@ -334,6 +448,7 @@ void Scene::LoadScene1()
 		part->SetName("Part 4");
 		trackManager->AddObject(part);
 	}
+	*/
 
 	///
 	/// Sun
@@ -414,7 +529,7 @@ void Scene::LoadScene1()
 	/// Constraint Box
 	///
 	gameObject = std::make_unique<GameObject>("Top");
-	gameObject->GetTransform()->SetPosition(Vector3(0, 5.75, 0));
+	gameObject->GetTransform()->SetPosition(Vector3(0, 4.75, 0));
 	physics = gameObject->AddComponent<PhysicsComponent>();
 	physics->AddBoxCollider(Vector3(3, 0.25, 0.5));
 	physics->SetMass(0);
@@ -427,7 +542,7 @@ void Scene::LoadScene1()
 	AddGameObject(gameObject);
 
 	gameObject = std::make_unique<GameObject>("Bottom");
-	gameObject->GetTransform()->SetPosition(Vector3(0, 1, 0));
+	gameObject->GetTransform()->SetPosition(Vector3(0, 0, 0));
 	physics = gameObject->AddComponent<PhysicsComponent>();
 	physics->AddBoxCollider(Vector3(3, 0.25, 0.5));
 	physics->SetMass(0);
@@ -440,7 +555,7 @@ void Scene::LoadScene1()
 	AddGameObject(gameObject);
 
 	gameObject = std::make_unique<GameObject>("Left");
-	gameObject->GetTransform()->SetPosition(Vector3(3.5, 2.5, 0));
+	gameObject->GetTransform()->SetPosition(Vector3(4.25, 2.5, 0));
 	physics = gameObject->AddComponent<PhysicsComponent>();
 	physics->AddBoxCollider(Vector3(0.25, 3, 0.5));
 	physics->SetMass(0);
@@ -453,7 +568,7 @@ void Scene::LoadScene1()
 	AddGameObject(gameObject);
 
 	gameObject = std::make_unique<GameObject>("Right");
-	gameObject->GetTransform()->SetPosition(Vector3(-3.5, 2.5, 0));
+	gameObject->GetTransform()->SetPosition(Vector3(-4.25, 2.5, 0));
 	physics = gameObject->AddComponent<PhysicsComponent>();
 	physics->AddBoxCollider(Vector3(0.25, 3, 0.5));
 	physics->SetMass(0);
@@ -470,7 +585,7 @@ void Scene::LoadScene1()
 	///
 	gameObject = std::make_unique<GameObject>("Camera");
 	gameObject->AddComponent<Camera>();
-	gameObject->GetTransform()->SetPosition(Vector3(0, 5, -3.5));
+	gameObject->GetTransform()->SetPosition(Vector3(0, 4, -3.5));
 	gameObject->GetTransform()->SetRotation(
 		Quaternion::Euler(Vector3(-20, 180, 0)));
 	gameObject->AddComponent<CameraFollow>()->SetTarget(player->GetTransform());
