@@ -32,6 +32,8 @@ void TrackManager::Update()
 		{
 			place = m_liveObjects[m_liveObjects.size() - 1]->GetTransform()->GetPosition()
 				+ Vector3(0, 0, GridLength);
+			// Offset to prevent gap
+			place.z -= 0.01f;
 		}
 
 		// TODO: Randomize

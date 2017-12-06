@@ -237,6 +237,86 @@ void Scene::LoadScene1()
 	collisionPointsTreeLeaves.push_back(Vector3(2.677, 5.562, -0.174));
 	collisionPointsTreeLeaves.push_back(Vector3(2.017, 5.013, -1.829));
 
+	std::vector<Vector3> collisionPointsRing1;
+	collisionPointsRing1.push_back(Vector3(0, 3, -0.5));
+	collisionPointsRing1.push_back(Vector3(0, 3.5, 0));
+	collisionPointsRing1.push_back(Vector3(0, 3, 0.5));
+	collisionPointsRing1.push_back(Vector3(0, 2.5, 0));
+	collisionPointsRing1.push_back(Vector3(2.121, 2.121, -0.5));
+	collisionPointsRing1.push_back(Vector3(2.475, 2.475, 0));
+	collisionPointsRing1.push_back(Vector3(2.121, 2.121, 0.5));
+	collisionPointsRing1.push_back(Vector3(1.768, 1.768, 0));
+
+	std::vector<Vector3> collisionPointsRing2;
+	collisionPointsRing2.push_back(Vector3(2.121, 2.121, -0.5));
+	collisionPointsRing2.push_back(Vector3(2.475, 2.475, 0));
+	collisionPointsRing2.push_back(Vector3(2.121, 2.121, 0.5));
+	collisionPointsRing2.push_back(Vector3(1.768, 1.768, 0));
+	collisionPointsRing2.push_back(Vector3(3, 0, -0.5));
+	collisionPointsRing2.push_back(Vector3(3.5, 0, 0));
+	collisionPointsRing2.push_back(Vector3(3, 0, 0.5));
+	collisionPointsRing2.push_back(Vector3(2.5, 0, 0));
+
+	std::vector<Vector3> collisionPointsRing3;
+	collisionPointsRing3.push_back(Vector3(2.121, -2.121, -0.5));
+	collisionPointsRing3.push_back(Vector3(2.475, -2.475, 0));
+	collisionPointsRing3.push_back(Vector3(2.121, -2.121, 0.5));
+	collisionPointsRing3.push_back(Vector3(1.768, -1.768, 0));
+	collisionPointsRing3.push_back(Vector3(3, 0, -0.5));
+	collisionPointsRing3.push_back(Vector3(3.5, 0, 0));
+	collisionPointsRing3.push_back(Vector3(3, 0, 0.5));
+	collisionPointsRing3.push_back(Vector3(2.5, 0, 0));
+
+	std::vector<Vector3> collisionPointsRing4;
+	collisionPointsRing4.push_back(Vector3(0, -3, -0.5));
+	collisionPointsRing4.push_back(Vector3(0, -3.5, 0));
+	collisionPointsRing4.push_back(Vector3(0, -3, 0.5));
+	collisionPointsRing4.push_back(Vector3(0, -2.5, 0));
+	collisionPointsRing4.push_back(Vector3(2.121, -2.121, -0.5));
+	collisionPointsRing4.push_back(Vector3(2.475, -2.475, 0));
+	collisionPointsRing4.push_back(Vector3(2.121, -2.121, 0.5));
+	collisionPointsRing4.push_back(Vector3(1.768, -1.768, 0));
+
+	std::vector<Vector3> collisionPointsRing1f;
+	collisionPointsRing1f.push_back(Vector3(0, 3, -0.5));
+	collisionPointsRing1f.push_back(Vector3(0, 3.5, 0));
+	collisionPointsRing1f.push_back(Vector3(0, 3, 0.5));
+	collisionPointsRing1f.push_back(Vector3(0, 2.5, 0));
+	collisionPointsRing1f.push_back(Vector3(-2.121, 2.121, -0.5));
+	collisionPointsRing1f.push_back(Vector3(-2.475, 2.475, 0));
+	collisionPointsRing1f.push_back(Vector3(-2.121, 2.121, 0.5));
+	collisionPointsRing1f.push_back(Vector3(-1.768, 1.768, 0));
+
+	std::vector<Vector3> collisionPointsRing2f;
+	collisionPointsRing2f.push_back(Vector3(-2.121, 2.121, -0.5));
+	collisionPointsRing2f.push_back(Vector3(-2.475, 2.475, 0));
+	collisionPointsRing2f.push_back(Vector3(-2.121, 2.121, 0.5));
+	collisionPointsRing2f.push_back(Vector3(-1.768, 1.768, 0));
+	collisionPointsRing2f.push_back(Vector3(-3, 0, -0.5));
+	collisionPointsRing2f.push_back(Vector3(-3.5, 0, 0));
+	collisionPointsRing2f.push_back(Vector3(-3, 0, 0.5));
+	collisionPointsRing2f.push_back(Vector3(-2.5, 0, 0));
+
+	std::vector<Vector3> collisionPointsRing3f;
+	collisionPointsRing3f.push_back(Vector3(-2.121, -2.121, -0.5));
+	collisionPointsRing3f.push_back(Vector3(-2.475, -2.475, 0));
+	collisionPointsRing3f.push_back(Vector3(-2.121, -2.121, 0.5));
+	collisionPointsRing3f.push_back(Vector3(-1.768, -1.768, 0));
+	collisionPointsRing3f.push_back(Vector3(-3, 0, -0.5));
+	collisionPointsRing3f.push_back(Vector3(-3.5, 0, 0));
+	collisionPointsRing3f.push_back(Vector3(-3, 0, 0.5));
+	collisionPointsRing3f.push_back(Vector3(-2.5, 0, 0));
+
+	std::vector<Vector3> collisionPointsRing4f;
+	collisionPointsRing4f.push_back(Vector3(0, -3, -0.5));
+	collisionPointsRing4f.push_back(Vector3(0, -3.5, 0));
+	collisionPointsRing4f.push_back(Vector3(0, -3, 0.5));
+	collisionPointsRing4f.push_back(Vector3(0, -2.5, 0));
+	collisionPointsRing4f.push_back(Vector3(-2.121, -2.121, -0.5));
+	collisionPointsRing4f.push_back(Vector3(-2.475, -2.475, 0));
+	collisionPointsRing4f.push_back(Vector3(-2.121, -2.121, 0.5));
+	collisionPointsRing4f.push_back(Vector3(-1.768, -1.768, 0));
+
 	if (true)
 	{
 		gameObject = std::make_unique<GameObject>("Part A");
@@ -327,6 +407,39 @@ void Scene::LoadScene1()
 			physics->AddMeshCollider(collisionPointsTreeTrunk1);
 			physics->AddMeshCollider(collisionPointsTreeTrunk2);
 			physics->AddMeshCollider(collisionPointsTreeLeaves);
+			physics->SetMass(0);
+			physics->SetKinematic(true);
+			physics->SetGroup(collisiontypes::COL_OBSTICLE);
+			physics->SetMask(collisiontypes::COL_SHIP);
+			physics->init();
+
+			AddGameObject(gameObject);
+		}
+
+		positions = { Vector3(0, 1, 170), Vector3(0, 1.5, 175), Vector3(0, 2, 180) };
+		// Gen Rings
+		for (unsigned int i = 0; i < 3; ++i) {
+			gameObject = std::make_unique<GameObject>("Ring");
+			gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ring.cmo");
+			gameObject->GetTransform()->SetParent(tempParent->GetTransform());
+			gameObject->GetTransform()->SetPosition(positions[i]);
+			last = gameObject.get();
+
+			AddGameObject(gameObject);
+
+			gameObject = std::make_unique<GameObject>("Ring Collider");
+			gameObject->GetTransform()->SetParent(last->GetTransform());
+			gameObject->GetTransform()->SetLocalPosition(Vector3(0, 0, 0));
+			gameObject->SetTag("Obsticle");
+			physics = gameObject->AddComponent<PhysicsComponent>();
+			physics->AddMeshCollider(collisionPointsRing1);
+			physics->AddMeshCollider(collisionPointsRing2);
+			physics->AddMeshCollider(collisionPointsRing3);
+			physics->AddMeshCollider(collisionPointsRing4);
+			physics->AddMeshCollider(collisionPointsRing1f);
+			physics->AddMeshCollider(collisionPointsRing2f);
+			physics->AddMeshCollider(collisionPointsRing3f);
+			physics->AddMeshCollider(collisionPointsRing4f);
 			physics->SetMass(0);
 			physics->SetKinematic(true);
 			physics->SetGroup(collisiontypes::COL_OBSTICLE);
