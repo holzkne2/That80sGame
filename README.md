@@ -10,6 +10,6 @@ Dependencies:
 # Screen Shot
 ![Alt text](/Screenshots/That80sGameScreenShot001.jpg "Main Menu")
 
-![Alt text](/Screenshots/That80sGameVideo002.gif "Gameplay")
+![Alt text](/Screenshots/That80sGameVideo007.gif "Gameplay")
 
 ![Alt text](/Screenshots/That80sGameVideo006.gif "Collision Detection")
