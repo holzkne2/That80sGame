@@ -24,9 +24,8 @@ public:
 	std::vector<DirectX::SimpleMath::Vector3> GetVertices() {}
 
 private:
-	std::unique_ptr<DirectX::IEffectFactory> m_fxFactory;
-	std::unique_ptr<DirectX::Model> m_model;
-
+	DirectX::Model* m_model;
+	const wchar_t* m_filename;
 	bool m_alpha;
 };
 

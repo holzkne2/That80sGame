@@ -13,6 +13,7 @@
 #include "Transform.h"
 #include "Scene.h"
 #include "PhysicsManager.h"
+#include "AssetHelper.h"
 
 // A basic game implementation that creates a D3D11 device and
 // provides a game loop.
@@ -74,6 +75,9 @@ private:
 	std::unique_ptr<PhysicsManager> m_physicsManager;
 
 	DirectX::GamePad::ButtonStateTracker m_buttons;
+
+	std::unique_ptr<AssetHelper> m_assetHelper;
+
 	// Singleton
 public:
 	static Game* Get()

@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "PhysicsManager.h"
 #include "GameObject.h"
+#include "Game.h"
 
 #include <iostream>
 
@@ -78,7 +79,8 @@ void PhysicsManager::Tick(float deltaTime)
 		}
 	}
 
-	m_dynamicsWorld->debugDrawWorld();
+	if (m_debugDraw->IsActive())
+		m_dynamicsWorld->debugDrawWorld();
 }
 
 void PhysicsManager::AddCollider(PhysicsComponent* collider, int group, int mask)

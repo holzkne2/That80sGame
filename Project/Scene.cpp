@@ -42,6 +42,8 @@ void Scene::LoadScene(int sceneIndex)
 
 void Scene::Init()
 {
+	AssetHelper::Get().Reset();
+
 	DX::DeviceResources* deviceResources = Game::Get()->GetDeviceResources();
 
 	m_states = std::make_unique<CommonStates>(deviceResources->GetD3DDevice());
@@ -169,7 +171,7 @@ void Scene::LoadScene1()
 	std::unique_ptr<GameObject> gameObject = std::make_unique<GameObject>("Track Manager");
 	TrackManager* trackManager = gameObject->AddComponent<TrackManager>();
 
-	PrefabLoader::SavePrefab(gameObject.get());
+	//PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 
 	GameObject* tempParent;
@@ -453,7 +455,7 @@ void Scene::LoadScene1()
 	}
 
 	// Part B
-	if (true)
+	if (false)
 	{
 		gameObject = std::make_unique<GameObject>("Part B");
 		gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Grid250.cmo");
@@ -590,8 +592,8 @@ void Scene::LoadScene1()
 		GameObject* part = PrefabLoader::LoadPrefab("Part A");
 		trackManager->AddObject(part);
 
-		//part = PrefabLoader::LoadPrefab("Part B");
-		//trackManager->AddObject(part);
+		part = PrefabLoader::LoadPrefab("Part B");
+		trackManager->AddObject(part);
 	}
 
 	/*if (false)
@@ -709,7 +711,7 @@ void Scene::LoadScene1()
 	gameObject->GetTransform()->SetPosition(Vector3(0, -150, 1000));
 	gameObject->GetTransform()->SetScale(20);
 
-	PrefabLoader::SavePrefab(gameObject.get());
+	//PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 
 	///
@@ -725,7 +727,7 @@ void Scene::LoadScene1()
 	GameObject* last = gameObject.get();
 	gameObject->SetActive(false);
 
-	PrefabLoader::SavePrefab(gameObject.get());
+	//PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 
 	PhysicsComponent* physics;
@@ -789,7 +791,7 @@ void Scene::LoadScene1()
 	physics->SetMask(collisiontypes::COL_SHIP);
 	physics->init();
 
-	PrefabLoader::SavePrefab(gameObject.get());
+	//PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 
 	gameObject = std::make_unique<GameObject>("Bottom");
@@ -802,7 +804,7 @@ void Scene::LoadScene1()
 	physics->SetMask(collisiontypes::COL_SHIP);
 	physics->init();
 
-	PrefabLoader::SavePrefab(gameObject.get());
+	//PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 
 	gameObject = std::make_unique<GameObject>("Left");
@@ -815,7 +817,7 @@ void Scene::LoadScene1()
 	physics->SetMask(collisiontypes::COL_SHIP);
 	physics->init();
 
-	PrefabLoader::SavePrefab(gameObject.get());
+	//PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 
 	gameObject = std::make_unique<GameObject>("Right");
@@ -828,7 +830,7 @@ void Scene::LoadScene1()
 	physics->SetMask(collisiontypes::COL_SHIP);
 	physics->init();
 
-	PrefabLoader::SavePrefab(gameObject.get());
+	//PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 
 	///
@@ -841,7 +843,7 @@ void Scene::LoadScene1()
 		Quaternion::Euler(Vector3(-20, 180, 0)));
 	gameObject->AddComponent<CameraFollow>()->SetTarget(player->GetTransform());
 
-	PrefabLoader::SavePrefab(gameObject.get());
+	//PrefabLoader::SavePrefab(gameObject.get());
 	AddGameObject(gameObject);
 
 	///

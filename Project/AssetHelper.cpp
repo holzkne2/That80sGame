@@ -67,3 +67,25 @@ bool AssetHelper::FileExists(const std::string& file)
 	struct  stat buffer;
 	return (stat(file.c_str(), &buffer) == 0);
 }
+
+DirectX::Model* AssetHelper::GetModel(ID3D11Device* device, const wchar_t* filename,
+	const bool& isAlpha)
+{
+	auto itr = m_models.find(filename);
+	if (itr != m_models.end()) {
+		return m_models[filename].m_model.get();
+	}
+
+	m_models[filename].m_fxFactory = std::make_unique<EffectFactory>(device);;
+	m_models[filename].m_model = Model::CreateFromCMO(device,
+		GetModelPath(filename).c_str(), *(m_models[filename].m_fxFactory));
+
+	if (isAlpha)
+	{
+		for (unsigned int m = 0; m < m_models[filename].m_model->meshes.size(); ++m)
+			for (unsigned int p = 0; p < m_models[filename].m_model->meshes[m]->meshParts.size(); ++p)
+				m_models[filename].m_model->meshes[m]->meshParts[p]->isAlpha = true;
+	}
+
+	return m_models[filename].m_model.get();
+}

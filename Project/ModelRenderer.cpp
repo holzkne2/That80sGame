@@ -18,16 +18,10 @@ ModelRenderer::~ModelRenderer()
 
 void ModelRenderer::SetModel(ID3D11Device* device, const wchar_t* fileName, bool isAlpha)
 {
-	m_fxFactory = std::make_unique<EffectFactory>(device);
-	m_model = Model::CreateFromCMO(device,
-		AssetHelper::GetModelPath(fileName).c_str(), *m_fxFactory);
+	m_filename = fileName;
+	m_model = AssetHelper::Get().GetModel(device, fileName, isAlpha);
 
-	if (m_alpha = isAlpha)
-	{
-		for (unsigned int m = 0; m < m_model->meshes.size(); ++m)
-			for (unsigned int p = 0; p < m_model->meshes[m]->meshParts.size(); ++p)
-				m_model->meshes[m]->meshParts[p]->isAlpha = true;
-	}
+	m_alpha = isAlpha;
 }
 
 void ModelRenderer::Render(ID3D11DeviceContext* context, CommonStates* states,
@@ -39,14 +33,12 @@ void ModelRenderer::Render(ID3D11DeviceContext* context, CommonStates* states,
 
 void ModelRenderer::OnDeviceLost()
 {
-	m_fxFactory.reset();
-	m_model.reset();
 }
 
 void ModelRenderer::Save(std::map<std::string, std::string>& data)
 {
 	Component::Save(data);
 
-	data.insert(std::pair<std::string, std::string>("file Name", wc_s(m_model->name.c_str())));
+	data.insert(std::pair<std::string, std::string>("file Name", wc_s(m_filename)));
 	data.insert(std::pair<std::string, std::string>("Is Alpha", m_alpha ? "True" : "False"));
 }
