@@ -191,7 +191,6 @@ void Scene::LoadScene1()
 	collisionPointsPyramid.push_back(Vector3(-2, 0, 2));
 	collisionPointsPyramid.push_back(Vector3(0, 4.693, 0));
 
-	// Technically not needed
 	std::vector<Vector3> collisionPointsTreeBase;
 	collisionPointsTreeBase.push_back(Vector3(3.906, 0, 0.056));
 	collisionPointsTreeBase.push_back(Vector3(1.152, 0, -1.378));
@@ -317,7 +316,8 @@ void Scene::LoadScene1()
 	collisionPointsRing4f.push_back(Vector3(-2.121, -2.121, 0.5));
 	collisionPointsRing4f.push_back(Vector3(-1.768, -1.768, 0));
 
-	if (true)
+	// Part A
+	if (false)
 	{
 		gameObject = std::make_unique<GameObject>("Part A");
 		gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Grid250.cmo");
@@ -451,9 +451,147 @@ void Scene::LoadScene1()
 
 		PrefabLoader::SavePrefab(tempParent);
 	}
+
+	// Part B
+	if (true)
+	{
+		gameObject = std::make_unique<GameObject>("Part B");
+		gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Grid250.cmo");
+		gameObject->GetTransform()->SetPosition(Vector3(0, 0, 125));
+
+		tempParent = gameObject.get();
+		trackManager->AddObject(gameObject.get());
+
+		AddGameObject(gameObject);
+
+		GameObject* last;
+		PhysicsComponent* physics;
+		//Gen Tall Towers
+		std::vector<Vector3> positions = { Vector3(-3.5, 0, 180), Vector3(3.5, 0, 180) };
+		for (unsigned int i = 0; i < 2; ++i) {
+			gameObject = std::make_unique<GameObject>("Tall Tower");
+			gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"TallTower.cmo");
+			gameObject->GetTransform()->SetParent(tempParent->GetTransform());
+			gameObject->GetTransform()->SetPosition(positions[i]);
+			last = gameObject.get();
+
+			AddGameObject(gameObject);
+
+			gameObject = std::make_unique<GameObject>("Tall Tower Collider");
+			gameObject->GetTransform()->SetParent(last->GetTransform());
+			gameObject->GetTransform()->SetLocalPosition(Vector3(0, 13, 0));
+			gameObject->SetTag("Obsticle");
+			physics = gameObject->AddComponent<PhysicsComponent>();
+			physics->AddBoxCollider(Vector3(1, 13, 1));
+			physics->SetMass(0);
+			physics->SetKinematic(true);
+			physics->SetGroup(collisiontypes::COL_OBSTICLE);
+			physics->SetMask(collisiontypes::COL_SHIP);
+			physics->init();
+
+			AddGameObject(gameObject);
+		}
+		// Gen Towers
+		positions = { Vector3(1.75, 0, 90), Vector3(1.75, 0, 100), Vector3(1.75, 0, 110) };
+		for (unsigned int i = 0; i < 3; ++i) {
+			gameObject = std::make_unique<GameObject>("Tower");
+			gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Pyramid.cmo");
+			gameObject->GetTransform()->SetParent(tempParent->GetTransform());
+			gameObject->GetTransform()->SetPosition(positions[i]);
+			last = gameObject.get();
+
+			AddGameObject(gameObject);
+
+			gameObject = std::make_unique<GameObject>("Tower Collider");
+			gameObject->GetTransform()->SetParent(last->GetTransform());
+			gameObject->GetTransform()->SetLocalPosition(Vector3(0, 0, 0));
+			gameObject->SetTag("Obsticle");
+			physics = gameObject->AddComponent<PhysicsComponent>();
+			physics->AddMeshCollider(collisionPointsPyramid);
+			physics->SetMass(0);
+			physics->SetKinematic(true);
+			physics->SetGroup(collisiontypes::COL_OBSTICLE);
+			physics->SetMask(collisiontypes::COL_SHIP);
+			physics->init();
+
+			AddGameObject(gameObject);
+		}
+
+		positions = { Vector3(0, 0, 75) };
+		// Gen Trees
+		for (unsigned int i = 0; i < 1; ++i) {
+			gameObject = std::make_unique<GameObject>("Tree");
+			gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Tree.cmo");
+			gameObject->GetTransform()->SetParent(tempParent->GetTransform());
+			gameObject->GetTransform()->SetPosition(positions[i]);
+			last = gameObject.get();
+
+			AddGameObject(gameObject);
+
+			gameObject = std::make_unique<GameObject>("Tree Collider");
+			gameObject->GetTransform()->SetParent(last->GetTransform());
+			gameObject->GetTransform()->SetLocalPosition(Vector3(0, 0, 0));
+			gameObject->SetTag("Obsticle");
+			physics = gameObject->AddComponent<PhysicsComponent>();
+			physics->AddMeshCollider(collisionPointsTreeBase);
+			physics->AddMeshCollider(collisionPointsTreeTrunk1);
+			physics->AddMeshCollider(collisionPointsTreeTrunk2);
+			physics->AddMeshCollider(collisionPointsTreeLeaves);
+			physics->SetMass(0);
+			physics->SetKinematic(true);
+			physics->SetGroup(collisiontypes::COL_OBSTICLE);
+			physics->SetMask(collisiontypes::COL_SHIP);
+			physics->init();
+
+			AddGameObject(gameObject);
+		}
+
+		positions = { Vector3(1, 2.5, 20), Vector3(0, 2.5, 25), Vector3(-1, 2.5, 30),
+			Vector3(0, 1.5, 50), Vector3(0, 2, 55), Vector3(0, 2.5, 60),
+			Vector3(1, 2.5, 130), Vector3(0, 2.5, 135), Vector3(-1, 2.5, 140),
+			Vector3(-1, 2.5, 160), Vector3(0, 2.5, 165), Vector3(1, 2.5, 170),
+			Vector3(0, 3, 220), Vector3(0, 2, 230), Vector3(0, 1, 240) };
+		// Gen Rings
+		for (unsigned int i = 0; i < 15; ++i) {
+			gameObject = std::make_unique<GameObject>("Ring");
+			gameObject->AddComponent<ModelRenderer>()->SetModel(deviceResources->GetD3DDevice(), L"Ring.cmo");
+			gameObject->GetTransform()->SetParent(tempParent->GetTransform());
+			gameObject->GetTransform()->SetPosition(positions[i]);
+			last = gameObject.get();
+
+			AddGameObject(gameObject);
+
+			gameObject = std::make_unique<GameObject>("Ring Collider");
+			gameObject->GetTransform()->SetParent(last->GetTransform());
+			gameObject->GetTransform()->SetLocalPosition(Vector3(0, 0, 0));
+			gameObject->SetTag("Obsticle");
+			physics = gameObject->AddComponent<PhysicsComponent>();
+			physics->AddMeshCollider(collisionPointsRing1);
+			physics->AddMeshCollider(collisionPointsRing2);
+			physics->AddMeshCollider(collisionPointsRing3);
+			physics->AddMeshCollider(collisionPointsRing4);
+			physics->AddMeshCollider(collisionPointsRing1f);
+			physics->AddMeshCollider(collisionPointsRing2f);
+			physics->AddMeshCollider(collisionPointsRing3f);
+			physics->AddMeshCollider(collisionPointsRing4f);
+			physics->SetMass(0);
+			physics->SetKinematic(true);
+			physics->SetGroup(collisiontypes::COL_OBSTICLE);
+			physics->SetMask(collisiontypes::COL_SHIP);
+			physics->init();
+
+			AddGameObject(gameObject);
+		}
+
+		PrefabLoader::SavePrefab(tempParent);
+	}
+
 	if (true) {
 		GameObject* part = PrefabLoader::LoadPrefab("Part A");
 		trackManager->AddObject(part);
+
+		//part = PrefabLoader::LoadPrefab("Part B");
+		//trackManager->AddObject(part);
 	}
 
 	/*if (false)
